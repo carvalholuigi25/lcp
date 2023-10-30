@@ -6,7 +6,7 @@ import ImportMyPlugins from "./plugins/impMyPlugins";
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { notFound } from 'next/navigation';
-import { NextIntlClientProvider, useMessages } from 'next-intl';
+import { NextIntlClientProvider, useMessages, useNow } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
 
 const inter = Inter({ subsets: ['latin'] })
@@ -28,6 +28,7 @@ export default function RootLayout({
   children: React.ReactNode,
   params: any
 }) {
+  const timeZone = 'Europe/Lisbon';
   const isValidLocale = locales.some((cur: any) => cur === locale);
   if (!isValidLocale) notFound();
 
@@ -35,11 +36,8 @@ export default function RootLayout({
 
   return (
     <html lang={locale}>
-      <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-      </head>
       <body className={inter.className + " " + `theme theme-${theme ?? 'default'}`} suppressHydrationWarning={true}>
-        <NextIntlClientProvider locale={locale} messages={useMessages()}>
+        <NextIntlClientProvider locale={locale} messages={useMessages()} timeZone={timeZone} now={useNow()}>
           {children}
           <ImportMyPlugins />
         </NextIntlClientProvider>
