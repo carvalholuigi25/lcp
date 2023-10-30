@@ -1,11 +1,11 @@
+import { useTranslations } from 'next-intl';
+import { unstable_setRequestLocale } from 'next-intl/server';
+import Image from 'next/image';
 import styles from './styles/page/page.module.scss';
 import Navbar from "./components/navbar";
 import Header from './components/header';
 import Footer from './components/footer';
 import ContactComponent from './components/contact';
-import Image from 'next/image';
-import { useTranslations } from 'next-intl';
-import { unstable_setRequestLocale } from 'next-intl/server';
 
 export default function Home({ params: {locale} }: { params: any }) {
   unstable_setRequestLocale(locale);

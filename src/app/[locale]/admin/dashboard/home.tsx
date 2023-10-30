@@ -1,11 +1,11 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
+import { useTranslations } from 'next-intl';
 import admstyles from '../../styles/admin/admin.module.scss';
 import NavbarAdmin from '../../components/admin/navbar';
 import SidebarAdmin from '../../components/admin/sidebar';
 import { BarChartComponent, LineChartComponent } from '../../components/charts';
-import { useTranslations } from 'next-intl';
 
 export default function DashboardHome() {
     const t = useTranslations('Admin.Dashboard');

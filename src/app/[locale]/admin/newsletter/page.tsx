@@ -1,10 +1,10 @@
 "use client";
 
+import { useState, useEffect } from 'react';
+import { useTranslations } from 'next-intl';
 import admstyles from '../../styles/admin/admin.module.scss';
 import NavbarAdmin from '../../components/admin/navbar';
 import SidebarAdmin from '../../components/admin/sidebar';
-import { useState, useEffect } from 'react';
-import { useTranslations } from 'next-intl';
 import DashboardLogin from '../dashboard/login';
 
 export default function AdminNewsletterPage() {
