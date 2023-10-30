@@ -11,5 +11,5 @@ module.exports = withNextIntl({
     },
     reactStrictMode: false,
     distDir: 'out',
-    output: undefined,
+    output: process.env.OUTPUTEXP == 0 ? undefined : process.env.OUTPUTEXP == 1 ? 'export' : 'standalone',
 });
