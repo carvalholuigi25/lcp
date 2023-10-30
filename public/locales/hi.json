@@ -1,0 +1,136 @@
+{
+  "Navbar": {
+    "listLinksOpt1": "Home",
+    "listLinksOpt2": "Nā hi'ohi'ona",
+    "listLinksOpt3": "Nā lawelawe",
+    "listLinksOpt4": "App",
+    "listLinksOpt5": "E pili ana",
+    "listLinksOpt6": "Hui",
+    "listLinksOpt7": "Ho'opili"
+  },
+  "Header": {
+    "desc": "'O Luis Carvalho Projects (LCP) kahi papahana o nā pūnaewele, nā polokalamu a me nā polokalamu.",
+    "btnSeeMore": "E 'ike hou aku ma lalo"
+  },
+  "Home": {
+    "featuresTitle": "Nā hi'ohi'ona",
+    "featuresRespTitle": "Pane",
+    "featuresRespDesc": "100% pane",
+    "featuresQSpeedTitle": "Ka Wikiwiki",
+    "featuresQSpeedDesc": "100% wikiwiki wikiwiki",
+    "featuresSupportTitle": "Kūkākūkā kōkua / Kāko'o no 24/7",
+    "featuresSupportDesc": "100% kama'ilio kōkua / kāko'o no 24/7",
+    "servicesTitle": "Nā lawelawe",
+    "servicesWebsitesAndSoftwaresTitle": "Nā Pūnaewele a me nā polokalamu",
+    "servicesWebsitesAndSoftwaresDesc": "Nā Pūnaewele a me nā polokalamu",
+    "servicesBlogTitle": "Blog",
+    "servicesBlogDesc": "Blog",
+    "servicesMobileAppTitle": "Mobile App",
+    "servicesMobileAppDesc": "'O ka polokalamu kelepona pa'alima (Android a me iPhone)",
+    "servicesSocialNetworkTitle": "Pūnaewele Pūnaewele",
+    "servicesSocialNetworkDesc": "Pūnaewele Pūnaewele",
+    "getourappTitle": "E ki'i i kā mākou papa hana cross-platform",
+    "getourappDesc": "Aia kā mākou papa hana cross-platform. ",
+    "getourappWin": "LCP App no ​​Windows",
+    "getourappLinux": "LCP App no ​​Linux",
+    "getourappMacOS": "LCP App no ​​MacOS",
+    "getourappAndroid": "LCP App no ​​Android",
+    "getourappiPhone": "LCP App no ​​iPhone",
+    "getourappGadgets": "Nā hāme'a",
+    "aboutTitle": "E pili ana",
+    "aboutDesc": "'O LCP (Luis Carvalho Projects) kahi papahana o nā pūnaewele, nā polokalamu a me nā polokalamu, 'o ka'u pahuhopu nui ka hō'ike'ike i ka'u mau papahana a pau no kēlā me kēia a me ka ho'ohana 'ana i ko'u mau mākau a me nā lawelawe e ho'okō ai nā moe'uhane āpau.",
+    "teamTitle": "Hui",
+    "teamMemberCareerDesc": "Mea polokalamu pūnaewele, mea polokalamu, 'enekinia, loea a me ka 'enehana IT mai 2015.",
+    "contactsTitle": "Ho'opili",
+    "contactsName": "Inoa",
+    "contactsNameInp": "E kakau i kou inoa maanei",
+    "contactsEmail": "leka uila",
+    "contactsEmailInp": "Kākau i kāu leka uila ma ane'i",
+    "contactsSubject": "Kumuhana",
+    "contactsSubjectInp": "E kakau i ke kumuhana maanei",
+    "contactsMessage": "'Ōlelo",
+    "contactsMessageInp": "Kākau i ka memo ma ane'i",
+    "contactsReset": "Ho'oponopono hou",
+    "contactsSubmit": "Waiho mai"
+  },
+  "Admin": {
+    "Login": {
+      "title": "Ho'okomo Luna Ho'okele",
+      "lblusername": "inoa mea ho'ohana",
+      "inpusername": "E hookomo i kou inoa inoa maanei",
+      "lbluserpass": "'ōlelo huna mea ho'ohana",
+      "inpuserpass": "E hookomo i kou password maanei",
+      "btnResLog": "Ho'omaka hou",
+      "btnSendLog": "E komo",
+      "msgLoggedIn": "Ua komo 'o {username}",
+      "btnSendLogout": "Lele",
+      "txtLoading": "Ke ho'ouka nei...",
+      "btnBack": "Ho'i"
+    },
+    "Dashboard": {
+      "title": "Pahina Papahana",
+      "welcome": "Welina {username}!",
+      "msgLoggedIn": "Loa'a 'o {username}",
+      "btnExit": "E hele i waho"
+    },
+    "Projects": {
+      "welcome": "Welina {username}!",
+      "title": "Nā papahana",
+      "btnBack": "Ho'i"
+    },
+    "Newsletter": {
+      "welcome": "Welina {username}!",
+      "title": "Nupepa",
+      "btnBack": "Ho'i"
+    },
+    "Subscriptions": {
+      "welcome": "Welina {username}!",
+      "title": "Kakau inoa",
+      "btnBack": "Ho'i"
+    },
+    "Settings": {
+      "welcome": "Welina {username}!",
+      "title": "Nā ho'onohonoho",
+      "btnBack": "Ho'i"
+    },
+    "Users": {
+      "welcome": "Welina {username}!",
+      "title": "Na mea ho'ohana",
+      "btnBack": "Ho'i"
+    },
+    "Navbar": {
+      "msgLoggedIn": "Loa'a 'o {username}",
+      "btnExit": "E hele i waho"
+    },
+    "Sidebar": {
+      "sbaropt1": "Nã papahana",
+      "sbaropt2": "Na mea ho'ohana",
+      "sbaropt3": "Nupepa",
+      "sbaropt4": "Kakau inoa",
+      "sbaropt5": "Nā ho'onohonoho"
+    }
+  },
+  "Footer": {
+    "linksTitle": "Nā loulou",
+    "listLinksOpt1": "Nā hi'ohi'ona",
+    "listLinksOpt2": "Nā lawelawe",
+    "listLinksOpt3": "E pili ana",
+    "listLinksOpt4": "Hui",
+    "listLinksOpt5": "Ho'opili",
+    "miscTitleTheme": "Ke 'ano kumuhana",
+    "miscDefSelTheme": "E koho i ke kumuhana",
+    "miscOptDynamicTheme": "{themeval}",
+    "miscOpt1Theme": "Default",
+    "miscOpt2Theme": "Po'ele'ele",
+    "miscOpt3Theme": "Māmā",
+    "miscTitleLang": "'Ōlelo",
+    "miscDefSelLang": "E koho i ka 'ōlelo",
+    "newsletterTitle": "E kau inoa i kā mākou nūpepa",
+    "newsletterPlaceholder": "leka uila@domain.com",
+    "socialNetworksTitle": "Pūnaehana Pūnaewele",
+    "copyrightTitle": "Hana 'ia e Luis Carvalho - © 2023 LCP"
+  },
+  "Currency": {
+      "symbol": "$"
+  }
+}

@@ -1,0 +1,136 @@
+{
+    "Navbar": {
+        "listLinksOpt1": "بيت",
+        "listLinksOpt2": "سمات",
+        "listLinksOpt3": "خدمات",
+        "listLinksOpt4": "برنامج",
+        "listLinksOpt5": "عن",
+        "listLinksOpt6": "فريق",
+        "listLinksOpt7": "جهات الاتصال"
+    },
+    "Header": {
+        "desc": "مشاريع لويس كارفاليو (LCP) هي مشروع لمواقع الويب والتطبيقات والبرامج.",
+        "btnSeeMore": "انظر المزيد أدناه"
+    },
+    "Home": {
+        "featuresTitle": "سمات",
+        "featuresRespTitle": "مستجيب",
+        "featuresRespDesc": "استجابة 100%",
+        "featuresQSpeedTitle": "السرعة السريعة",
+        "featuresQSpeedDesc": "سرعة سريعة 100%",
+        "featuresSupportTitle": "دردشة / دعم مفيد على مدار 24 ساعة طوال أيام الأسبوع",
+        "featuresSupportDesc": "دردشة / دعم مفيد بنسبة 100% على مدار 24 ساعة طوال أيام الأسبوع",
+        "servicesTitle": "خدمات",
+        "servicesWebsitesAndSoftwaresTitle": "المواقع والبرامج",
+        "servicesWebsitesAndSoftwaresDesc": "المواقع والبرامج",
+        "servicesBlogTitle": "مدونة",
+        "servicesBlogDesc": "مدونة",
+        "servicesMobileAppTitle": "تطبيق الجوال",
+        "servicesMobileAppDesc": "تطبيقات الهاتف المحمول عبر الأنظمة الأساسية (Android وiPhone)",
+        "servicesSocialNetworkTitle": "شبكة اجتماعية",
+        "servicesSocialNetworkDesc": "شبكة اجتماعية",
+        "getourappTitle": "احصل على تطبيقنا متعدد المنصات",
+        "getourappDesc": "تطبيقنا متعدد المنصات موجود هنا. ",
+        "getourappWin": "تطبيق LCP لنظام التشغيل Windows",
+        "getourappLinux": "تطبيق LCP لنظام التشغيل Linux",
+        "getourappMacOS": "تطبيق LCP لنظام التشغيل MacOS",
+        "getourappAndroid": "تطبيق LCP لنظام أندرويد",
+        "getourappiPhone": "تطبيق LCP للآيفون",
+        "getourappGadgets": "الأدوات",
+        "aboutTitle": "عن",
+        "aboutDesc": "LCP (مشاريع لويس كارفاليو) هو مشروع لمواقع الويب والتطبيقات والبرامج، وهدفي الرئيسي هو عرض جميع مشاريعي للجميع وأيضًا استخدام مهاراتي وخدماتي لتحقيق أحلام الجميع.",
+        "teamTitle": "فريق",
+        "teamMemberCareerDesc": "مبرمج ويب ومبرمج ومهندس ومتخصص وفني تكنولوجيا المعلومات منذ عام 2015.",
+        "contactsTitle": "جهات الاتصال",
+        "contactsName": "اسم",
+        "contactsNameInp": "اكتب اسمك هنا",
+        "contactsEmail": "بريد إلكتروني",
+        "contactsEmailInp": "اكتب بريدك الإلكتروني هنا",
+        "contactsSubject": "موضوع",
+        "contactsSubjectInp": "أكتب الموضوع هنا",
+        "contactsMessage": "رسالة",
+        "contactsMessageInp": "اكتب الرسالة هنا",
+        "contactsReset": "إعادة ضبط",
+        "contactsSubmit": "يُقدِّم"
+    },
+    "Admin": {
+        "Login": {
+            "title": "دخول المشرف",
+            "lblusername": "اسم المستخدم",
+            "inpusername": "أدخل اسم المستخدم الخاص بك هنا",
+            "lbluserpass": "كلمة مرور المستخدم",
+            "inpuserpass": "أدخل كلمة المرور الخاصة بك هنا",
+            "btnResLog": "إعادة تشغيل",
+            "btnSendLog": "تسجيل الدخول",
+            "msgLoggedIn": "تم تسجيل الدخول باسم {username}",
+            "btnSendLogout": "تسجيل خروج",
+            "txtLoading": "تحميل...",
+            "btnBack": "خلف"
+        },
+        "Dashboard": {
+            "title": "لوحة تحكم المشرف",
+            "welcome": "مرحباً {username}!",
+            "msgLoggedIn": "تم تسجيل الدخول باسم {username}",
+            "btnExit": "مخرج"
+        },
+        "Projects": {
+            "welcome": "مرحباً {username}!",
+            "title": "المشاريع",
+            "btnBack": "خلف"
+        },
+        "Newsletter": {
+            "welcome": "مرحباً {username}!",
+            "title": "النشرة الإخبارية",
+            "btnBack": "خلف"
+        },
+        "Subscriptions": {
+            "welcome": "مرحباً {username}!",
+            "title": "الاشتراكات",
+            "btnBack": "خلف"
+        },
+        "Settings": {
+            "welcome": "مرحباً {username}!",
+            "title": "إعدادات",
+            "btnBack": "خلف"
+        },
+        "Users": {
+            "welcome": "مرحباً {username}!",
+            "title": "المستخدمين",
+            "btnBack": "خلف"
+        },
+        "Navbar": {
+            "msgLoggedIn": "تم تسجيل الدخول باسم {username}",
+            "btnExit": "مخرج"
+        },
+        "Sidebar": {
+          "sbaropt1": "المشاريع",
+          "sbaropt2": "المستخدمين",
+          "sbaropt3": "النشرة الإخبارية",
+          "sbaropt4": "الاشتراكات",
+          "sbaropt5": "إعدادات"
+        }
+    },
+    "Footer": {
+        "linksTitle": "روابط",
+        "listLinksOpt1": "سمات",
+        "listLinksOpt2": "خدمات",
+        "listLinksOpt3": "عن",
+        "listLinksOpt4": "فريق",
+        "listLinksOpt5": "جهات الاتصال",
+        "miscTitleTheme": "وضع الموضوع",
+        "miscDefSelTheme": "حدد الموضوع",
+        "miscOptDynamicTheme": "{themeval}",
+        "miscOpt1Theme": "تقصير",
+        "miscOpt2Theme": "مظلم",
+        "miscOpt3Theme": "ضوء",
+        "miscTitleLang": "لغة",
+        "miscDefSelLang": "اختر اللغة",
+        "newsletterTitle": "اشترك في النشرة الإخبارية لدينا",
+        "newsletterPlaceholder": "email@domain.com",
+        "socialNetworksTitle": "الشبكات الاجتماعية",
+        "copyrightTitle": "م الإنشاء بواسطة لويس كارفاليو Luis Carvalho - LCP © 2023"
+    },
+    "Currency": {
+        "symbol": "د.إ"
+    }
+}

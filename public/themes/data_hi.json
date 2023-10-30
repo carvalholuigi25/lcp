@@ -1,0 +1,19 @@
+{
+    "themes": [
+        {
+            "id": 0,
+            "name": "Pa'amau",
+            "value": "default"
+        },
+        {
+            "id": 1,
+            "name": "Po'ele'ele",
+            "value": "dark"
+        },
+        {
+            "id": 2,
+            "name": "Malamalama",
+            "value": "light"
+        }
+    ]
+}

@@ -1,0 +1,136 @@
+{
+  "Navbar": {
+    "listLinksOpt1": "Home",
+    "listLinksOpt2": "Features",
+    "listLinksOpt3": "Services",
+    "listLinksOpt4": "App",
+    "listLinksOpt5": "About",
+    "listLinksOpt6": "Team",
+    "listLinksOpt7": "Contacts"
+  },
+  "Header": {
+    "desc": "Luis Carvalho Projects (LCP) is a project of websites, apps and softwares.",
+    "btnSeeMore": "See more in below"
+  },
+  "Home": {
+    "featuresTitle": "Features",
+    "featuresRespTitle": "Responsive",
+    "featuresRespDesc": "100% Responsive",
+    "featuresQSpeedTitle": "Quick Speed",
+    "featuresQSpeedDesc": "100% Quick Speed",
+    "featuresSupportTitle": "Helpful Chat / Support for 24/7",
+    "featuresSupportDesc": "100% helpful chat / support for 24/7",
+    "servicesTitle": "Services",
+    "servicesWebsitesAndSoftwaresTitle": "Websites and Softwares",
+    "servicesWebsitesAndSoftwaresDesc": "Websites and Softwares",
+    "servicesBlogTitle": "Blog",
+    "servicesBlogDesc": "Blog",
+    "servicesMobileAppTitle": "Mobile App",
+    "servicesMobileAppDesc": "Mobile app cross-platform (Android and iPhone)",
+    "servicesSocialNetworkTitle": "Social Network",
+    "servicesSocialNetworkDesc": "Social Network",
+    "getourappTitle": "Get our cross-platform app",
+    "getourappDesc": "Our cross-platform app is here. Download and install it.",
+    "getourappWin": "LCP App for Windows",
+    "getourappLinux": "LCP App for Linux",
+    "getourappMacOS": "LCP App for MacOS",
+    "getourappAndroid": "LCP App for Android",
+    "getourappiPhone": "LCP App for iPhone",
+    "getourappGadgets": "Gadgets",
+    "aboutTitle": "About",
+    "aboutDesc": "LCP (Luis Carvalho Projects) is a project of websites, apps and softwares, which my main goal is showcase to all my projects for everyone and also, using my skills and services to make everyone dreams comes true.",
+    "teamTitle": "Team",
+    "teamMemberCareerDesc": "Web programmer, programmer, engineer, specialist and technician of IT since 2015.",
+    "contactsTitle": "Contacts",
+    "contactsName": "Name",
+    "contactsNameInp": "Write your name here",
+    "contactsEmail": "Email",
+    "contactsEmailInp": "Write your email here",
+    "contactsSubject": "Subject",
+    "contactsSubjectInp": "Write the subject here",
+    "contactsMessage": "Message",
+    "contactsMessageInp": "Write the message here",
+    "contactsReset": "Reset",
+    "contactsSubmit": "Submit"
+  },
+  "Admin": {
+    "Login": {
+      "title": "Admin Login",
+      "lblusername": "User name",
+      "inpusername": "Enter your username here",
+      "lbluserpass": "User password",
+      "inpuserpass": "Enter your password here",
+      "btnResLog": "Restart",
+      "btnSendLog": "Log in",
+      "msgLoggedIn": "Logged in as {username}",
+      "btnSendLogout": "Logout",
+      "txtLoading": "Loading...",
+      "btnBack": "Back"
+    },
+    "Dashboard": {
+      "title": "Admin Dashboard",
+      "welcome": "Welcome {username}!",
+      "msgLoggedIn": "Logged in as {username}",
+      "btnExit": "Exit"
+    },
+    "Projects": {
+      "welcome": "Welcome {username}!",
+      "title": "Projects",
+      "btnBack": "Back"
+    },
+    "Newsletter": {
+      "welcome": "Welcome {username}!",
+      "title": "Newsletter",
+      "btnBack": "Back"
+    },
+    "Subscriptions": {
+      "welcome": "Welcome {username}!",
+      "title": "Subscriptions",
+      "btnBack": "Back"
+    },
+    "Settings": {
+      "welcome": "Welcome {username}!",
+      "title": "Settings",
+      "btnBack": "Back"
+    },
+    "Users": {
+      "welcome": "Welcome {username}!",
+      "title": "Users",
+      "btnBack": "Back"
+    },
+    "Navbar": {
+      "msgLoggedIn": "Logged in as {username}",
+      "btnExit": "Exit"
+    },
+    "Sidebar": {
+      "sbaropt1": "Projects",
+      "sbaropt2": "Users",
+      "sbaropt3": "Newsletter",
+      "sbaropt4": "Subscriptions",
+      "sbaropt5": "Settings"
+    }
+  },
+  "Footer": {
+    "linksTitle": "Links",
+    "listLinksOpt1": "Features",
+    "listLinksOpt2": "Services",
+    "listLinksOpt3": "About",
+    "listLinksOpt4": "Team",
+    "listLinksOpt5": "Contacts",
+    "miscTitleTheme": "Theme Mode",
+    "miscDefSelTheme": "Select the theme",
+    "miscOptDynamicTheme": "{themeval}", 
+    "miscOpt1Theme": "Default", 
+    "miscOpt2Theme": "Dark", 
+    "miscOpt3Theme": "Light", 
+    "miscTitleLang": "Language",
+    "miscDefSelLang": "Select the language",
+    "newsletterTitle": "Subscribe our newsletter",
+    "newsletterPlaceholder": "email@domain.com",
+    "socialNetworksTitle": "Social Networks",
+    "copyrightTitle": "Created by Luis Carvalho - © 2023 LCP"
+  },
+  "Currency": {
+      "symbol": "£"
+  }
+}

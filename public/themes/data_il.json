@@ -1,0 +1,19 @@
+{
+    "themes": [
+        {
+            "id": 0,
+            "name": "בְּרִירַת מֶחדָל",
+            "value": "default"
+        },
+        {
+            "id": 1,
+            "name": "אפל",
+            "value": "dark"
+        },
+        {
+            "id": 2,
+            "name": "אוֹר",
+            "value": "light"
+        }
+    ]
+}

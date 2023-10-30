@@ -1,0 +1,136 @@
+{
+  "Navbar": {
+    "listLinksOpt1": "Casa",
+    "listLinksOpt2": "Caratteristiche",
+    "listLinksOpt3": "Servizi",
+    "listLinksOpt4": "App",
+    "listLinksOpt5": "Informazioni",
+    "listLinksOpt6": "Squadra",
+    "listLinksOpt7": "Contatti"
+  },
+  "Header": {
+    "desc": "Luis Carvalho Projects (LCP) è un progetto di siti web, app e software.",
+    "btnSeeMore": "Vedi di più qui sotto"
+  },
+  "Home": {
+    "featuresTitle": "Funzioni",
+    "featuresRespTitle": "Reattivo",
+    "featuresRespDesc": "100% reattivo",
+    "featuresQSpeedTitle": "Velocità veloce",
+    "featuresQSpeedDesc": "Velocità veloce al 100%",
+    "featuresSupportTitle": "Chat utile/supporto 24 ore su 24, 7 giorni su 7",
+    "featuresSupportDesc": "Chat/supporto utile al 100% 24 ore su 24, 7 giorni su 7",
+    "servicesTitle": "Servizi",
+    "servicesWebsitesAndSoftwaresTitle": "Siti web e softwares",
+    "servicesWebsitesAndSoftwaresDesc": "Siti web e softwares",
+    "servicesBlogTitle": "Blog",
+    "servicesBlogDesc": "Blog",
+    "servicesMobileAppTitle": "Applicazione mobile",
+    "servicesMobileAppDesc": "Applicazione mobile multipiattaforma (Android e iPhone)",
+    "servicesSocialNetworkTitle": "Rete sociale",
+    "servicesSocialNetworkDesc": "Rete sociale",
+    "getourappTitle": "Scarica la nostra app multipiattaforma",
+    "getourappDesc": "La nostra app multipiattaforma è qui. Scaricala e installala.",
+    "getourappWin": "App LCP per Windows",
+    "getourappLinux": "App LCP per Linux",
+    "getourappMacOS": "App LCP per MacOS",
+    "getourappAndroid": "App LCP per Android",
+    "getourappiPhone": "App LCP per iPhone",
+    "getourappGadgets": "Gadget",
+    "aboutTitle": "Informazioni",
+    "aboutDesc": "LCP (Luis Carvalho Projects) è un progetto di siti web, app e software, il cui obiettivo principale è mostrare a tutti i miei progetti per tutti e anche, utilizzare le mie competenze e i miei servizi per far sì che i sogni di tutti diventino realtà.",
+    "teamTitle": "Squadra",
+    "teamMemberCareerDesc": "Programmatore web, programmatore, ingegnere, specialista e tecnico informatico dal 2015.",
+    "contactsTitle": "Contatti",
+    "contactsName": "Nome",
+    "contactsNameInp": "Scrivi qui il tuo nome",
+    "contactsEmail": "E-mail",
+    "contactsEmailInp": "Scrivi qui la tua email",
+    "contactsSubject": "Oggetto",
+    "contactsSubjectInp": "Scrivi qui l'oggetto",
+    "contactsMessage": "Messaggio",
+    "contactsMessageInp": "Scrivi il messaggio qui",
+    "contactsReset": "Reimposta",
+    "contactsSubmit": "Invia"
+  },
+  "Admin": {
+    "Login": {
+      "title": "Accesso amministratore",
+      "lblusername": "Nome utente",
+      "inpusername": "Inserisci qui il tuo nome utente",
+      "lbluserpass": "Password utente",
+      "inpuserpass": "Inserisci qui la tua password",
+      "btnResLog": "Riavvia",
+      "btnSendLog": "Accedi",
+      "msgLoggedIn": "Accesso effettuato come {username}",
+      "btnSendLogout": "Esci",
+      "txtLoading": "Caricamento in corso...",
+      "btnBack": "Indietro"
+    },
+    "Dashboard": {
+      "title": "Dashboard di amministrazione",
+      "welcome": "Benvenuto {username}!",
+      "msgLoggedIn": "Accesso effettuato come {username}",
+      "btnExit": "Uscire"
+    },
+    "Projects": {
+      "welcome": "Benvenuto {username}!",
+      "title": "Progetti",
+      "btnBack": "Indietro"
+    },
+    "Newsletter": {
+      "welcome": "Benvenuto {username}!",
+      "title": "Notiziario",
+      "btnBack": "Indietro"
+    },
+    "Subscriptions": {
+      "welcome": "Benvenuto {username}!",
+      "title": "Abbonamenti",
+      "btnBack": "Indietro"
+    },
+    "Settings": {
+      "welcome": "Benvenuto {username}!",
+      "title": "Impostazioni",
+      "btnBack": "Indietro"
+    },
+    "Users": {
+      "welcome": "Benvenuto {username}!",
+      "title": "Utenti",
+      "btnBack": "Indietro"
+    },
+    "Navbar": {
+      "msgLoggedIn": "Accesso effettuato come {username}",
+      "btnExit": "Uscire"
+    },
+    "Sidebar": {
+      "sbaropt1": "Progetti",
+      "sbaropt2": "Utenti",
+      "sbaropt3": "Notiziario",
+      "sbaropt4": "Abbonamenti",
+      "sbaropt5": "Impostazioni"
+    }
+  },
+  "Footer": {
+    "linksTitle": "Collegamenti",
+    "listLinksOpt1": "Caratteristiche",
+    "listLinksOpt2": "Servizi",
+    "listLinksOpt3": "Informazioni",
+    "listLinksOpt4": "Squadra",
+    "listLinksOpt5": "Contatti",
+    "miscTitleTheme": "Modalità tema",
+    "miscDefSelTheme": "Seleziona il tema",
+    "miscOptDynamicTheme": "{themeval}", 
+    "miscOpt1Theme": "Predefinito",
+    "miscOpt2Theme": "Scuro",
+    "miscOpt3Theme": "Luce",
+    "miscTitleLang": "Lingua",
+    "miscDefSelLang": "Seleziona la lingua",
+    "newsletterTitle": "Iscriviti alla nostra newsletter",
+    "newsletterPlaceholder": "email@dominio.com",
+    "socialNetworksTitle": "Social network",
+    "copyrightTitle": "Creato da Luis Carvalho - © 2023 LCP"
+  },
+  "Currency": {
+      "symbol": "€"
+  }
+}

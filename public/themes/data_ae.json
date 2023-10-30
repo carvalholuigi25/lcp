@@ -1,0 +1,19 @@
+{
+    "themes": [
+        {
+            "id": 0,
+            "name": "الإفتراضي",
+            "value": "default"
+        },
+        {
+            "id": 1,
+            "name": "مظلم",
+            "value": "dark"
+        },
+        {
+            "id": 2,
+            "name": "ضوء",
+            "value": "light"
+        }
+    ]
+}

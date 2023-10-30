@@ -1,0 +1,435 @@
+@use '../fonts.scss';
+
+.mainDashboard {
+  padding: 0px;
+  height: 100%;
+}
+
+.navbar, .header, .footer {
+  background-color: #08AEC5 !important;
+}
+
+.navbar-brand {
+  font-family: "ctinter";
+}
+
+.menuAdmDashLinks, #menuAdmDashLinks {
+  background-color: #08AEC5 !important;
+
+  .navAdmDashLinks {
+    li {
+      color: black;
+      padding: 5px;
+
+      a {
+        color: inherit;
+      }
+
+      &:hover {
+        color: black;
+        font-weight: bold;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.brandName {
+  font-size: 1.3rem;
+  color: white;
+}
+
+.header {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.headersideleft {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: stretch !important;
+  align-items: flex-start !important;
+  margin-top: 5rem !important;
+}
+
+.headersideright {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: flex-end;
+}
+
+.body {
+  display: inherit;
+  padding: 15px;
+}
+
+.footer {
+  position: relative;
+  display: inherit;
+  padding: 15px;
+}
+
+.mtitle, #mtitle {
+  font-size: 2rem;
+  font-family: "ctinter";
+  color: white;
+  display: inline-block;
+  margin: 15px auto;
+  width: auto;
+  max-width: 100%;
+  text-shadow: 3px 3px black;
+}
+
+.desc {
+  font-size: 1.5rem;
+  font-family: "ctroboto";
+  color: white;
+}
+
+.btn {
+  border: 1px solid;
+  border-radius: 25px;
+  color: black;
+}
+
+.image {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.imagecenter { vertical-align: middle !important; margin: auto auto !important; }
+
+.loginblk, #loginblk {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  color: black;
+  background: url('/images/bgtech.png');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.admdashblk, #admdashblk {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  color: black;
+}
+
+.admcontainer {
+  background: inherit;
+}
+
+.sfrm {
+  font-family: "ctroboto";
+  background-color: rgb(255, 255, 255, .7);
+  width: 50%;
+  text-align: center;
+  margin: auto;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.frmlogin, #frmlogin {
+  border-radius: 15px;
+  text-align: center;
+  padding: 15px;
+
+  label {
+    text-align: center !important;
+    margin: auto;
+  }
+
+  input {
+    text-align: center;
+    margin-top: 5px;
+    border-radius: 15px !important;
+  }
+
+  .mbtns {
+    margin: 15px auto 0px auto;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.subchart {
+  position: relative;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 100%;
+}
+
+.mcanvas {
+  position: relative;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+
+  .chartcontainer {
+    position: relative; 
+    width: 80vw;
+    height: 50vh; 
+  }
+
+  .mychart {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.admstatsinfo {
+  .cardwebs {
+    box-shadow: 3px 3px 5px red !important; 
+  }
+
+  .cardsofts {
+    box-shadow: 3px 3px 5px green !important; 
+  }
+
+  .cardapps {
+    box-shadow: 3px 3px 5px blue !important; 
+  }
+
+  .mycard {
+    border-radius: 15px;
+    border-color: transparent !important;
+    margin: 15px auto;
+    box-shadow: 3px 3px 5px;
+  }
+
+  .itemsinfo {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  
+    .txtitems {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      margin: auto 15px;
+    }
+
+    .numitems {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-end;
+      height: 4rem;
+      overflow: hidden;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    span {
+      font-size: 1.2rem;
+    }
+
+    p, i, span {
+      font-weight: bold;
+    }
+  }
+}
+
+.admactionbtns {
+  display: block;
+  width: auto;
+  margin: 15px auto;
+}
+
+.membershipblk, .compareplans {
+  .cardplan {
+    text-align: center;
+    box-shadow: 3px 3px 5px black;
+
+    .titleplan {
+      background: #08AEC5;
+      margin: -15px -15px 0 -15px;
+      padding: 15px;
+    }
+  }
+
+  .recommendedplan {
+    &::before {
+      content: "Recommended";
+      display: block;
+      background-color: gold;
+      padding: 15px;
+      font-size: 1.5rem;
+    }
+    border-color: gold !important;
+  }
+
+  .free { 
+    border-color: red !important;
+
+    .titleplan, .btnbuyplan {
+      background-color: red !important;
+      color: white;
+    }
+  }
+
+  .basic { 
+    border-color: green !important;
+
+    .titleplan, .btnbuyplan {
+      background-color: green !important;
+      color: white;
+    }
+  }
+
+  .pro { 
+    border-color: orange !important;
+
+    .titleplan, .btnbuyplan {
+      background-color: orange !important;
+      color: white;
+    }
+  }
+
+  .ultimate { 
+    border-color: blue !important;
+
+    .titleplan, .btnbuyplan {
+      background-color: blue !important;
+      color: white;
+    }
+  }
+
+  .titleplan {
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  .priceplan {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  .txtplan {
+    text-align: center;
+  }
+
+  .listplan {
+    text-align: center;
+    padding: 15px;
+
+    & > li {
+      list-style-position: inside;
+      list-style-type: none;
+    }
+  }
+
+  .icoplan {
+    font-size: 1.3rem;
+  }
+
+  .btnbuyplan {
+    display: block;
+    margin: auto auto;
+    text-align: center;
+    box-shadow: 3px 3px 5px black;
+  }
+
+  .btnactive {
+    background-color: yellow !important;
+    border-color: yellow !important;
+    color: black !important;
+  }
+
+  .btnrecommended {
+    background-color: gold !important;
+    border-color: gold !important;
+    color: black !important;
+  }
+
+  .mtblcomplans {
+    display: block;
+  }
+
+  .tblcomplans {
+    border: 3px solid #08AEC5 !important;
+    vertical-align: middle;
+    text-align: center;
+    box-shadow: 3px 3px 5px black !important;
+
+    .thead {
+      background-color: #08AEC5;
+    }
+
+    .tbody {
+      background-color: inherit;
+    }
+
+    .icoplan {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.uncheck { color: red !important; }
+.check { color: green !important; }
+
+.footerListLinks {
+  padding: 0;
+  list-style-position: inside;
+  color: black;
+  text-align: inherit;
+}
+
+@media all and (max-width: 992px) {
+  .footer * {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .sfrm {
+    width: 100%;
+  }
+
+  .itemsinfo, .txtitems, .numitems {
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  .numitems {
+    width: 100%;
+  }
+}

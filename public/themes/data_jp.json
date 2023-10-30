@@ -1,0 +1,19 @@
+{
+    "themes": [
+        {
+            "id": 0,
+            "name": "デフォルト",
+            "value": "default"
+        },
+        {
+            "id": 1,
+            "name": "暗い",
+            "value": "dark"
+        },
+        {
+            "id": 2,
+            "name": "ライト",
+            "value": "light"
+        }
+    ]
+}

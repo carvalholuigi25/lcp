@@ -1,0 +1,102 @@
+{
+    "langs": [
+        {
+            "id": 0,
+            "name": "English",
+            "value": "en",
+            "region": "en-GB",
+            "flagimg": null
+        },
+        {
+            "id": 1,
+            "name": "English (United Kingdom)",
+            "value": "en-GB",
+            "region": "en-GB",
+            "flagimg": null
+        },
+        {
+            "id": 2,
+            "name": "English (United States)",
+            "value": "en-US",
+            "region": "en-US",
+            "flagimg": null
+        },
+        {
+            "id": 3,
+            "name": "Português (Portugal)",
+            "value": "pt",
+            "region": "pt-PT",
+            "flagimg": null
+        },
+        {
+            "id": 4,
+            "name": "Español (España)",
+            "value": "es",
+            "region": "es-ES",
+            "flagimg": null
+        },
+        {
+            "id": 5,
+            "name": "Français (France)",
+            "value": "fr",
+            "region": "fr-FR",
+            "flagimg": null
+        },
+        {
+            "id": 6,
+            "name": "Italiano (Italia)",
+            "value": "it",
+            "region": "it-IT",
+            "flagimg": null
+        },
+        {
+            "id": 7,
+            "name": "Deutsch (Deutschland)",
+            "value": "de",
+            "region": "de-DE",
+            "flagimg": null
+        },
+        {
+            "id": 8,
+            "name": "українська (Україна)",
+            "value": "ua",
+            "region": "ua-UA",
+            "flagimg": null
+        },
+        {
+            "id": 9,
+            "name": "日本語 (日本)",
+            "value": "jp",
+            "region": "jp-JP",
+            "flagimg": null
+        },
+        {
+            "id": 10,
+            "name": "'ōlelo Hawai'i (Hawaii)",
+            "value": "hi",
+            "region": "us-HI",
+            "flagimg": "/images/flags/us_hawaii.svg"
+        },
+        {
+            "id": 11,
+            "name": "हिंदी (भारत)",
+            "value": "in",
+            "region": "in-IN",
+            "flagimg": null
+        },
+        {
+            "id": 12,
+            "name": "עִברִית (ישראל)",
+            "value": "il",
+            "region": "il-IL",
+            "flagimg": null
+        },
+        {
+            "id": 13,
+            "name": "عربي (الإمارات العربية المتحدة)",
+            "value": "ae",
+            "region": "ae-AE",
+            "flagimg": null
+        }
+    ]
+}

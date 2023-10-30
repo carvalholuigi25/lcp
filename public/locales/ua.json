@@ -1,0 +1,136 @@
+{
+  "Navbar": {
+    "listLinksOpt1": "додому",
+    "listLinksOpt2": "особливості",
+    "listLinksOpt3": "Послуги",
+    "listLinksOpt4": "додаток",
+    "listLinksOpt5": "про",
+    "listLinksOpt6": "Команда",
+    "listLinksOpt7": "Контакти"
+  },
+  "Header": {
+    "desc": "Luis Carvalho Projects (LCP) – це проект веб-сайтів, програм і програмного забезпечення.",
+    "btnSeeMore": "Дивіться більше нижче"
+  },
+  "Home": {
+    "featuresTitle": "особливості",
+    "featuresRespTitle": "Чуйний",
+    "featuresRespDesc": "100% чуйний",
+    "featuresQSpeedTitle": "Швидка швидкість",
+    "featuresQSpeedDesc": "100% швидка швидкість",
+    "featuresSupportTitle": "Корисний чат / Підтримка 24/7",
+    "featuresSupportDesc": "100% корисний чат / підтримка 24/7",
+    "servicesTitle": "Послуги",
+    "servicesWebsitesAndSoftwaresTitle": "Веб-сайти та програмне забезпечення",
+    "servicesWebsitesAndSoftwaresDesc": "Веб-сайти та програмне забезпечення",
+    "servicesBlogTitle": "Блог",
+    "servicesBlogDesc": "Блог",
+    "servicesMobileAppTitle": "Мобільний додаток",
+    "servicesMobileAppDesc": "Кросплатформенний мобільний додаток (Android та iPhone)",
+    "servicesSocialNetworkTitle": "Соціальна мережа",
+    "servicesSocialNetworkDesc": "Соціальна мережа",
+    "getourappTitle": "Отримайте наш кросплатформний додаток",
+    "getourappDesc": "Наш кросплатформний додаток тут. Завантажте та встановіть його.",
+    "getourappWin": "Програма LCP для Windows",
+    "getourappLinux": "Програма LCP для Linux",
+    "getourappMacOS": "Програма LCP для MacOS",
+    "getourappAndroid": "Додаток LCP для Android",
+    "getourappiPhone": "Програма LCP для iPhone",
+    "getourappGadgets": "гаджети",
+    "aboutTitle": "про",
+    "aboutDesc": "LCP (Luis Carvalho Projects) — це проект веб-сайтів, програм і програмного забезпечення, головною метою якого є продемонструвати всі мої проекти для всіх, а також, використовуючи свої навички та послуги, щоб втілити мрії кожного.",
+    "teamTitle": "Команда",
+    "teamMemberCareerDesc": "Веб-програміст, програміст, інженер, спеціаліст та технік ІТ з 2015 року.",
+    "contactsTitle": "Контакти",
+    "contactsName": "Ім'я",
+    "contactsNameInp": "Напишіть тут своє ім'я",
+    "contactsEmail": "Електронна пошта",
+    "contactsEmailInp": "Напишіть свою електронну адресу тут",
+    "contactsSubject": "Тема",
+    "contactsSubjectInp": "Напишіть тут тему",
+    "contactsMessage": "повідомлення",
+    "contactsMessageInp": "Напишіть повідомлення тут",
+    "contactsReset": "Скинути",
+    "contactsSubmit": "Надіслати"
+  },
+  "Admin": {
+    "Login": {
+      "title": "Вхід адміністратора",
+      "lblusername": "Ім'я користувача",
+      "inpusername": "Введіть своє ім'я користувача тут",
+      "lbluserpass": "Пароль користувача",
+      "inpuserpass": "Введіть свій пароль тут",
+      "btnResLog": "Перезапустити",
+      "btnSendLog": "Увійти",
+      "msgLoggedIn": "Увійшли як {username}",
+      "btnSendLogout": "Вийти",
+      "txtLoading": "Завантаження...",
+      "btnBack": "Назад"
+    },
+    "Dashboard": {
+      "title": "Інформаційна панель адміністратора",
+      "welcome": "Ласкаво просимо, {username}!",
+      "msgLoggedIn": "Увійшли як {username}",
+      "btnExit": "Вийти"
+    },
+    "Projects": {
+      "welcome": "Ласкаво просимо, {username}!",
+      "title": "Проекти",
+      "btnBack": "Назад"
+    },
+    "Newsletter": {
+      "welcome": "Ласкаво просимо, {username}!",
+      "title": "Інформаційний бюлетень",
+      "btnBack": "Назад"
+    },
+    "Subscriptions": {
+      "welcome": "Ласкаво просимо, {username}!",
+      "title": "Підписки",
+      "btnBack": "Назад"
+    },
+    "Settings": {
+      "welcome": "Ласкаво просимо, {username}!",
+      "title": "Налаштування",
+      "btnBack": "Назад"
+    },
+    "Users": {
+      "welcome": "Ласкаво просимо, {username}!",
+      "title": "Користувачі",
+      "btnBack": "Назад"
+    },
+    "Navbar": {
+      "msgLoggedIn": "Увійшли як {username}",
+      "btnExit": "Вийти"
+    },
+    "Sidebar": {
+      "sbaropt1": "Проекти",
+      "sbaropt2": "Користувачі",
+      "sbaropt3": "Інформаційний бюлетень",
+      "sbaropt4": "Підписки",
+      "sbaropt5": "Налаштування"
+    }
+  },
+  "Footer": {
+    "linksTitle": "Посилання",
+    "listLinksOpt1": "особливості",
+    "listLinksOpt2": "Послуги",
+    "listLinksOpt3": "про",
+    "listLinksOpt4": "Команда",
+    "listLinksOpt5": "Контакти",
+    "miscTitleTheme": "Тематичний режим",
+    "miscDefSelTheme": "Виберіть тему",
+    "miscOptDynamicTheme": "{themeval}",
+    "miscOpt1Theme": "За замовчуванням",
+    "miscOpt2Theme": "Темний",
+    "miscOpt3Theme": "світло",
+    "miscTitleLang": "Мова",
+    "miscDefSelLang": "Виберіть мову",
+    "newsletterTitle": "Підпишіться на нашу розсилку",
+    "newsletterPlaceholder": "email@domain.com",
+    "socialNetworksTitle": "Соціальні мережі",
+    "copyrightTitle": "Створено Luis Carvalho - © 2023 LCP"
+  },
+  "Currency": {
+      "symbol": "₴"
+  }
+}

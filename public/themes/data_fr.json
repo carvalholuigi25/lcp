@@ -1,0 +1,19 @@
+{
+    "themes": [
+        {
+            "id": 0,
+            "name": "Par défaut",
+            "value": "default"
+        },
+        {
+            "id": 1,
+            "name": "Sombre",
+            "value": "dark"
+        },
+        {
+            "id": 2,
+            "name": "Lumière",
+            "value": "light"
+        }
+    ]
+}

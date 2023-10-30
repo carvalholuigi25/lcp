@@ -1,0 +1,19 @@
+{
+    "themes": [
+        {
+            "id": 0,
+            "name": "За замовчуванням",
+            "value": "default"
+        },
+        {
+            "id": 1,
+            "name": "Ескуро",
+            "value": "dark"
+        },
+        {
+            "id": 2,
+            "name": "Луз",
+            "value": "light"
+        }
+    ]
+}

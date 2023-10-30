@@ -1,0 +1,19 @@
+{
+    "themes": [
+        {
+            "id": 0,
+            "name": "Predefinido",
+            "value": "default"
+        },
+        {
+            "id": 1,
+            "name": "Escuro",
+            "value": "dark"
+        },
+        {
+            "id": 2,
+            "name": "Luz",
+            "value": "light"
+        }
+    ]
+}

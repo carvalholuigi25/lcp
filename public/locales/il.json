@@ -1,0 +1,136 @@
+{
+  "Navbar": {
+    "listLinksOpt1": "בית",
+    "listLinksOpt2": "מאפיינים",
+    "listLinksOpt3": "שירותים",
+    "listLinksOpt4": "אפליקציה",
+    "listLinksOpt5": "על אודות",
+    "listLinksOpt6": "קְבוּצָה",
+    "listLinksOpt7": "אנשי קשר"
+  },
+  "Header": {
+    "desc": "Luis Carvalho Projects (LCP) הוא פרויקט של אתרי אינטרנט, אפליקציות ותוכנות.",
+    "btnSeeMore": "ראה עוד למטה"
+  },
+  "Home": {
+    "featuresTitle": "מאפיינים",
+    "featuresRespTitle": "תגובה",
+    "featuresRespDesc": "100% תגובה",
+    "featuresQSpeedTitle": "מהירות מהירה",
+    "featuresQSpeedDesc": "100% מהירות מהירה",
+    "featuresSupportTitle": "צ'אט מועיל / תמיכה 24/7",
+    "featuresSupportDesc": "100% צ'אט מועיל / תמיכה 24/7",
+    "servicesTitle": "שירותים",
+    "servicesWebsitesAndSoftwaresTitle": "אתרי אינטרנט ותוכנות",
+    "servicesWebsitesAndSoftwaresDesc": "אתרי אינטרנט ותוכנות",
+    "servicesBlogTitle": "בלוג",
+    "servicesBlogDesc": "בלוג",
+    "servicesMobileAppTitle": "אפליקציה לנייד",
+    "servicesMobileAppDesc": "אפליקציה לנייד חוצת פלטפורמות (אנדרואיד ואייפון)",
+    "servicesSocialNetworkTitle": "רשת חברתית",
+    "servicesSocialNetworkDesc": "רשת חברתית",
+    "getourappTitle": "קבל את האפליקציה חוצת הפלטפורמות שלנו",
+    "getourappDesc": "האפליקציה חוצת הפלטפורמות שלנו נמצאת כאן. ",
+    "getourappWin": "אפליקציית LCP עבור Windows",
+    "getourappLinux": "אפליקציית LCP עבור לינוקס",
+    "getourappMacOS": "אפליקציית LCP עבור MacOS",
+    "getourappAndroid": "אפליקציית LCP לאנדרואיד",
+    "getourappiPhone": "אפליקציית LCP לאייפון",
+    "getourappGadgets": "גאדג'טים",
+    "aboutTitle": "על אודות",
+    "aboutDesc": "LCP (Luis Carvalho Projects) הוא פרויקט של אתרי אינטרנט, אפליקציות ותוכנות, שהמטרה העיקרית שלי היא להציג בפני כל הפרויקטים שלי עבור כולם וגם, להשתמש בכישורים ובשירותים שלי כדי להגשים לכולם חלומות.",
+    "teamTitle": "קְבוּצָה",
+    "teamMemberCareerDesc": "מתכנת אינטרנט, מתכנת, מהנדס, מומחה וטכנאי IT משנת 2015.",
+    "contactsTitle": "אנשי קשר",
+    "contactsName": "שֵׁם",
+    "contactsNameInp": "כתוב את שמך כאן",
+    "contactsEmail": "אימייל",
+    "contactsEmailInp": "כתוב את המייל שלך כאן",
+    "contactsSubject": "נושא",
+    "contactsSubjectInp": "כתבו את הנושא כאן",
+    "contactsMessage": "הוֹדָעָה",
+    "contactsMessageInp": "כתבו את ההודעה כאן",
+    "contactsReset": "אִתחוּל",
+    "contactsSubmit": "שלח"
+  },
+  "Admin": {
+    "Login": {
+      "title": "כניסה למנהל מערכת",
+      "lblusername": "שם משתמש",
+      "inpusername": "הזן את שם המשתמש שלך כאן",
+      "lbluserpass": "סיסמת משתמש",
+      "inpuserpass": "הזן את הסיסמה שלך כאן",
+      "btnResLog": "איתחול",
+      "btnSendLog": "התחברות",
+      "msgLoggedIn": "מחובר בתור {username}",
+      "btnSendLogout": "להתנתק",
+      "txtLoading": "טוען...",
+      "btnBack": "חזור"
+    },
+    "Dashboard": {
+      "title": "לוח המחוונים לניהול",
+      "welcome": "ברוך הבא {username}!",
+      "msgLoggedIn": "מחובר בתור {username}",
+      "btnExit": "יְצִיאָה"
+    },
+    "Projects": {
+      "welcome": "ברוך הבא {username}!",
+      "title": "פרויקטים",
+      "btnBack": "חזרה"
+    },
+    "Newsletter": {
+      "welcome": "ברוך הבא {username}!",
+      "title": "ניוזלטר",
+      "btnBack": "חזרה"
+    },
+    "Subscriptions": {
+      "welcome": "ברוך הבא {username}!",
+      "title": "מנויים",
+      "btnBack": "חזרה"
+    },
+    "Settings": {
+      "welcome": "ברוך הבא {username}!",
+      "title": "הגדרות",
+      "btnBack": "חזרה"
+    },
+    "Users": {
+      "welcome": "ברוך הבא {username}!",
+      "title": "משתמשים",
+      "btnBack": "חזרה"
+    },
+    "Navbar": {
+      "msgLoggedIn": "מחובר בתור {username}",
+      "btnExit": "יְצִיאָה"
+    },
+    "Sidebar": {
+      "sbaropt1": "פרויקטים",
+      "sbaropt2": "משתמשים",
+      "sbaropt3": "ניוזלטר",
+      "sbaropt4": "מנויים",
+      "sbaropt5": "הגדרות"
+    }
+  },
+  "Footer": {
+    "linksTitle": "קישורים",
+    "listLinksOpt1": "מאפיינים",
+    "listLinksOpt2": "שירותים",
+    "listLinksOpt3": "על אודות",
+    "listLinksOpt4": "קְבוּצָה",
+    "listLinksOpt5": "אנשי קשר",
+    "miscTitleTheme": "מצב ערכת נושא",
+    "miscDefSelTheme": "בחר את הנושא",
+    "miscOptDynamicTheme": "{themeval}",
+    "miscOpt1Theme": "בְּרִירַת מֶחדָל",
+    "miscOpt2Theme": "אפל",
+    "miscOpt3Theme": "אוֹר",
+    "miscTitleLang": "שפה",
+    "miscDefSelLang": "בחר את השפה",
+    "newsletterTitle": "הירשם לניוזלטר שלנו",
+    "newsletterPlaceholder": "email@domain.com",
+    "socialNetworksTitle": "רשתות חברתיות",
+    "copyrightTitle": "מיוצר ע'י Luis Carvalho - LCP © 2023"
+  },
+  "Currency": {
+      "symbol": "₪"
+  }
+}

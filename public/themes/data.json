@@ -1,0 +1,19 @@
+{
+    "themes": [
+        {
+            "id": 0,
+            "name": "Default",
+            "value": "default"
+        },
+        {
+            "id": 1,
+            "name": "Dark",
+            "value": "dark"
+        },
+        {
+            "id": 2,
+            "name": "Light",
+            "value": "light"
+        }
+    ]
+}

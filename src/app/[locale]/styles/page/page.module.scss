@@ -1,0 +1,255 @@
+@use '../fonts.scss';
+
+.main {
+  padding: 0px;
+}
+
+.navbar, .header, .footer {
+  background-color: #08AEC5 !important;
+}
+
+.navbar-brand {
+  font-family: "ctinter";
+}
+
+.brandName {
+  font-size: 1.3rem;
+  color: white;
+}
+
+.header {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.wave1 { background-image: url('/images/wave1.svg'); }
+.wave2 { background-image: url('/images/wave2.svg'); }
+.wave3 { background-image: url('/images/wave3.svg'); }
+
+.wave1, .wave2, .wave3 {
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  background-size: cover;
+}
+
+.waveabs {
+  position: absolute;
+  object-fit: cover;
+  object-position: center center;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.headersideleft {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: stretch !important;
+  align-items: flex-start !important;
+  margin-top: 5rem !important;
+}
+
+.headersideright {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: flex-end;
+}
+
+.body {
+  display: inherit;
+  padding: 15px;
+}
+
+.features {
+  position: relative;
+  display: inherit;
+}
+
+.services {
+  position: relative;
+  display: inherit;
+}
+
+.getourapp {
+  position: relative;
+  display: inherit;
+  padding: inherit;
+  background-image: url('/images/bgtech.png');
+  background-color: #08AEC5;
+  color: white;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-blend-mode: soft-light;
+}
+
+.contentfront {
+  position: relative;
+  z-index: 1;
+}
+
+.getourappContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
+}
+
+.getourappLinks li {
+  list-style-position: inside;
+  list-style-type: none;
+  display: inline-block;
+}
+
+.getourappLinks a, .footer li {
+  color: white;
+}
+
+.getourappSideLeft {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.getourappSideRight {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.about {
+  position: relative;
+  display: inherit;
+}
+
+.team {
+  position: relative;
+  display: inherit;
+}
+
+.contacts {
+  position: relative;
+  display: inherit;
+}
+
+.features, .services, .getourapp, 
+.about, .team, .contacts {
+  padding: 15rem 15px;
+}
+
+.features, .services, .about, 
+.team, .contacts {
+  background-color: white;
+}
+
+.featuresContainer, .servicesContainer, 
+.getourappContainer, .aboutContainer,
+.teamContainer, .contactsContainer {
+  padding: 15px;
+}
+
+.featuresTitle, .servicesTitle, 
+.aboutTitle, .teamTitle, 
+.contactsTitle {
+  display: block;
+  font-size: 2rem !important;
+  color: #08AEC5;
+}
+
+.contacts label {
+  color: #08AEC5;
+}
+
+.featuresTitle, .servicesTitle,
+.aboutTitle, .teamTitle, 
+.contactsTitle {
+  text-align: center;
+}
+
+.aboutDesc {
+  font-size: 1rem;
+  text-align: justify !important;
+  line-height: 2.5rem;
+  color: black;
+}
+
+.careerdesc {
+  text-align: justify;
+  line-height: 2.5rem;
+}
+
+.featuresDesc, .servicesDesc, 
+.getourappDesc, .teamDesc, 
+.contactsDesc {
+  font-size: 14px;
+  text-align: justify;
+  line-height: 2rem;
+  color: black;
+}
+
+.footer {
+  position: relative;
+  display: inherit;
+  padding: 15px;
+}
+
+.mtitle, #mtitle {
+  font-size: 2rem;
+  font-family: "ctinter";
+  color: white;
+  display: inline-block;
+  margin: 15px auto;
+  width: auto;
+  max-width: 100%;
+  text-shadow: 3px 3px black;
+}
+
+.desc {
+  font-size: 1.5rem;
+  font-family: "ctroboto";
+  color: white;
+}
+
+.btn {
+  border: 1px solid;
+  border-radius: 25px;
+  color: black;
+}
+
+.image {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.imagecenter { vertical-align: middle !important; margin: auto auto !important; }
+
+.label {
+  color: #08AEC5 !important;
+}
+
+.footerListLinks {
+  padding: 0;
+  list-style-position: inside;
+  color: black;
+  text-align: inherit;
+}
+
+@media all and (max-width: 992px) {
+  .getourapp *, .footer * {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

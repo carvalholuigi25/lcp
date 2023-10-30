@@ -1,0 +1,133 @@
+@mixin setTheme($theme) {
+    .theme-#{$theme} {
+        $bgColorPrimary: white;
+        $bgColorSecondary: rgb(210, 210, 210);
+        $fgColor: black;
+
+        @if $theme == "dark" {
+            $bgColorPrimary: black;
+            $bgColorSecondary: rgb(40, 40, 40);
+            $fgColor: white;
+        } @else {
+            $bgColorPrimary: white;
+            $bgColorSecondary: rgb(210, 210, 210);
+            $fgColor: black;
+        }
+    
+        body {
+            background-color: $bgColorPrimary !important;
+            color: $fgColor !important;
+        }
+    
+        p:not(.card-text) {
+            color: $fgColor !important;
+        }
+    
+        .navbar {
+            color: $fgColor !important;
+        }
+
+        .header, .footer {
+            background-color: $bgColorSecondary !important;
+            color: $fgColor !important;
+        }
+    
+        .navbar .navbar-brand, .navbar .nav-link {
+            color: $fgColor !important;
+        }
+    
+        .card {
+            border-color: $fgColor !important;
+        }
+        
+        form input:not([type="submit"]):not([type="reset"]):not([type="button"]), 
+        form textarea {
+            border-color: $fgColor !important;
+        }
+        
+        .brandName {
+            color: $fgColor !important;
+        }
+        
+        .getourapp {
+            background-color: $bgColorPrimary !important;
+            color: $fgColor !important;
+        }
+        
+        .getourappLinks a, 
+        .footer li {
+            color: $fgColor !important;
+        }
+        
+        #features, #services, #about, 
+        #team, #contacts {
+            background-color: $bgColorSecondary !important;
+            color: $fgColor !important;
+        }
+        
+        .featuresTitle, .servicesTitle, 
+        .aboutTitle, .teamTitle, 
+        .contactsTitle {
+            color: $fgColor !important;
+        }
+        
+        .contacts label {
+            color: $fgColor !important;
+        }
+        
+        .aboutDesc {
+            color: $fgColor !important;
+        }
+        
+        .featuresDesc, .servicesDesc, 
+        .getourappDesc, .teamDesc, 
+        .contactsDesc {
+            color: $fgColor !important;
+        }
+        
+        .mtitle, #mtitle {
+            text-shadow: none;
+            text-shadow: 3px 3px $fgColor !important;
+            color: $bgColorPrimary !important;
+        }
+          
+        .desc {
+            color: $fgColor !important;
+        }
+          
+        .btn {
+            color: $fgColor !important;
+        }
+        
+        .label {
+            color: $fgColor !important;
+        }
+
+        .navbar-toggler {
+            color: $fgColor !important;
+            border-color: $fgColor !important;
+        }
+          
+        .footerListLinks {
+            color: $fgColor !important;
+        }
+
+        .mica {
+            color: white !important;
+            background-color: #232734db !important;
+            border-color: #2d2d2d1a !important;
+        }
+  
+        .acrylic {
+            color: white !important;
+            background-color: #181818a8 !important;
+            border-color: #1a1a1a1a !important;
+        }
+    }
+}
+
+$themesary: "dark", "light";
+
+@each $thval in $themesary {
+    @include setTheme($thval); 
+}

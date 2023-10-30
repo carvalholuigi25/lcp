@@ -1,0 +1,136 @@
+{
+  "Navbar": {
+    "listLinksOpt1": "Accueil",
+    "listLinksOpt2": "Fonctionnalités",
+    "listLinksOpt3": "Services",
+    "listLinksOpt4": "Application",
+    "listLinksOpt5": "À propos",
+    "listLinksOpt6": "Équipe",
+    "listLinksOpt7": "Contacts"
+  },
+  "Header": {
+    "desc": "Luis Carvalho Projects (LCP) est un projet de sites Web, d'applications et de logiciels.",
+    "btnSeeMore": "Voir plus ci-dessous"
+  },
+  "Home": {
+    "featuresTitle": "Fonctionnalités",
+    "featuresRespTitle": "Réactif",
+    "featuresRespDesc": "100% réactif",
+    "featuresQSpeedTitle": "Vitesse rapide",
+    "featuresQSpeedDesc": "Vitesse rapide à 100%",
+    "featuresSupportTitle": "Chat utile/assistance 24h/24 et 7j/7",
+    "featuresSupportDesc": "Chat/assistance 100% utile 24h/24 et 7j/7",
+    "servicesTitle": "Services",
+    "servicesWebsitesAndSoftwaresTitle": "Sites Web et logiciels",
+    "servicesWebsitesAndSoftwaresDesc": "Sites Web et logiciels",
+    "servicesBlogTitle": "Blog",
+    "servicesBlogDesc": "Blog",
+    "servicesMobileAppTitle": "Application mobile",
+    "servicesMobileAppDesc": "Application mobile multiplateforme (Android et iPhone)",
+    "servicesSocialNetworkTitle": "Réseau social",
+    "servicesSocialNetworkDesc": "Réseau social",
+    "getourappTitle": "Obtenez notre application multiplateforme",
+    "getourappDesc": "Notre application multiplateforme est ici. Téléchargez-la et installez-la.",
+    "getourappWin": "Application LCP pour Windows",
+    "getourappLinux": "Application LCP pour Linux",
+    "getourappMacOS": "Application LCP pour MacOS",
+    "getourappAndroid": "Application LCP pour Android",
+    "getourappiPhone": "Application LCP pour iPhone",
+    "getourappGadgets": "Gadgets",
+    "aboutTitle": "À propos",
+    "aboutDesc": "LCP (Luis Carvalho Projects) est un projet de sites Web, d'applications et de logiciels, dont mon objectif principal est de présenter tous mes projets pour tout le monde et aussi d'utiliser mes compétences et mes services pour que les rêves de chacun deviennent réalité.",
+    "teamTitle": "Équipe",
+    "teamMemberCareerDesc": "Programmeur web, programmeur, ingénieur, spécialiste et technicien informatique depuis 2015.",
+    "contactsTitle": "Contacts",
+    "contactsName": "Nom",
+    "contactsNameInp": "Écrivez votre nom ici",
+    "contactsEmail": "E-mail",
+    "contactsEmailInp": "Écrivez votre email ici",
+    "contactsSubject": "Sujet",
+    "contactsSubjectInp": "Écrivez le sujet ici",
+    "contactsMessage": "Message",
+    "contactsMessageInp": "Écrivez le message ici",
+    "contactsReset": "Réinitialiser",
+    "contactsSubmit": "Soumettre"
+  },
+  "Admin": {
+    "Login": {
+      "title": "Connexion administrateur",
+      "lblusername": "Nom d'utilisateur",
+      "inpusername": "Entrez votre nom d'utilisateur ici",
+      "lbluserpass": "Mot de passe utilisateur",
+      "inpuserpass": "Entrez votre mot de passe ici",
+      "btnResLog": "Redémarrer",
+      "btnSendLog": "Connexion",
+      "msgLoggedIn": "Connecté en tant que {username}",
+      "btnSendLogout": "Déconnexion",
+      "txtLoading": "Chargement en cours...",
+      "btnBack": "Retour"
+    },
+    "Dashboard": {
+      "title": "Tableau de bord administrateur",
+      "welcome": "Bienvenue {username}!",
+      "msgLoggedIn": "Connecté en tant que {username}",
+      "btnExit": "Sortir"
+    },
+    "Projects": {
+      "welcome": "Bienvenue {username}!",
+      "title": "Projets",
+      "btnBack": "Retour"
+    },
+    "Newsletter": {
+      "welcome": "Bienvenue {username}!",
+      "title": "Newsletter",
+      "btnBack": "Retour"
+    },
+    "Subscriptions": {
+      "welcome": "Bienvenue {username}!",
+      "title": "Abonnements",
+      "btnBack": "Retour"
+    },
+    "Settings": {
+      "welcome": "Bienvenue {username}!",
+      "title": "Paramètres",
+      "btnBack": "Retour"
+    },
+    "Users": {
+      "welcome": "Bienvenue {username}!",
+      "title": "Utilisateurs",
+      "btnBack": "Retour"
+    },
+    "Navbar": {
+      "msgLoggedIn": "Connecté en tant que {username}",
+      "btnExit": "Sortir"
+    },
+    "Sidebar": {
+      "sbaropt1": "Projets",
+      "sbaropt2": "Utilisateurs",
+      "sbaropt3": "Boletín",
+      "sbaropt4": "Abonnements",
+      "sbaropt5": "Paramètres"
+    }
+  },
+  "Footer": {
+    "linksTitle": "Liens",
+    "listLinksOpt1": "Fonctionnalités",
+    "listLinksOpt2": "Services",
+    "listLinksOpt3": "À propos",
+    "listLinksOpt4": "Équipe",
+    "listLinksOpt5": "Contacts",
+    "miscTitleTheme": "Mode Thème",
+    "miscDefSelTheme": "Sélectionnez le thème",
+    "miscOptDynamicTheme": "{themeval}", 
+    "miscOpt1Theme": "Par défaut",
+    "miscOpt2Theme": "Sombre",
+    "miscOpt3Theme": "Lumière",
+    "miscTitleLang": "Langue",
+    "miscDefSelLang": "Sélectionnez la langue",
+    "newsletterTitle": "Abonnez-vous à notre newsletter",
+    "newsletterPlaceholder": "email@domain.com",
+    "socialNetworksTitle": "Réseaux sociaux",
+    "copyrightTitle": "Créé par Luis Carvalho - © 2023 LCP"
+  },
+  "Currency": {
+      "symbol": "€"
+  }
+}

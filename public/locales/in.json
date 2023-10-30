@@ -1,0 +1,136 @@
+{
+  "Navbar": {
+    "listLinksOpt1": "घर",
+    "listLinksOpt2": "विशेषताएँ",
+    "listLinksOpt3": "सेवाएं",
+    "listLinksOpt4": "अनुप्रयोग",
+    "listLinksOpt5": "के बारे में",
+    "listLinksOpt6": "टीम",
+    "listLinksOpt7": "संपर्क"
+  },
+  "Header": {
+    "desc": "लुइस कार्वाल्हो प्रोजेक्ट्स (एलसीपी) वेबसाइटों, ऐप्स और सॉफ्टवेयर्स का एक प्रोजेक्ट है।",
+    "btnSeeMore": "नीचे और देखें"
+  },
+  "Home": {
+    "featuresTitle": "विशेषताएँ",
+    "featuresRespTitle": "उत्तरदायी",
+    "featuresRespDesc": "100% उत्तरदायी",
+    "featuresQSpeedTitle": "त्वरित गति",
+    "featuresQSpeedDesc": "100% त्वरित गति",
+    "featuresSupportTitle": "24/7 के लिए उपयोगी चैट/समर्थन",
+    "featuresSupportDesc": "24/7 के लिए 100% उपयोगी चैट/समर्थन",
+    "servicesTitle": "सेवाएं",
+    "servicesWebsitesAndSoftwaresTitle": "वेबसाइटें और सॉफ्टवेयर",
+    "servicesWebsitesAndSoftwaresDesc": "वेबसाइटें और सॉफ्टवेयर",
+    "servicesBlogTitle": "ब्लॉग",
+    "servicesBlogDesc": "ब्लॉग",
+    "servicesMobileAppTitle": "मोबाइल एप्लिकेशन",
+    "servicesMobileAppDesc": "मोबाइल ऐप क्रॉस-प्लेटफ़ॉर्म (एंड्रॉइड और आईफोन)",
+    "servicesSocialNetworkTitle": "सामाजिक नेटवर्क",
+    "servicesSocialNetworkDesc": "सामाजिक नेटवर्क",
+    "getourappTitle": "हमारा क्रॉस-प्लेटफ़ॉर्म ऐप प्राप्त करें",
+    "getourappDesc": "हमारा क्रॉस-प्लेटफ़ॉर्म ऐप यहां है। ",
+    "getourappWin": "विंडोज़ के लिए एलसीपी ऐप",
+    "getourappLinux": "लिनक्स के लिए एलसीपी ऐप",
+    "getourappMacOS": "MacOS के लिए LCP ऐप",
+    "getourappAndroid": "एंड्रॉइड के लिए एलसीपी ऐप",
+    "getourappiPhone": "आईफोन के लिए एलसीपी ऐप",
+    "getourappGadgets": "गैजेट",
+    "aboutTitle": "के बारे में",
+    "aboutDesc": "एलसीपी (लुइस कार्वाल्हो प्रोजेक्ट्स) वेबसाइटों, ऐप्स और सॉफ्टवेयर्स की एक परियोजना है, जिसे मेरा मुख्य लक्ष्य सभी के लिए अपनी सभी परियोजनाओं को प्रदर्शित करना है और साथ ही, अपने कौशल और सेवाओं का उपयोग करके सभी के सपनों को साकार करना है।",
+    "teamTitle": "टीम",
+    "teamMemberCareerDesc": "2015 से आईटी के वेब प्रोग्रामर, प्रोग्रामर, इंजीनियर, विशेषज्ञ और तकनीशियन।",
+    "contactsTitle": "संपर्क",
+    "contactsName": "नाम",
+    "contactsNameInp": "अपना नाम यहाँ लिखें",
+    "contactsEmail": "ईमेल",
+    "contactsEmailInp": "अपना ईमेल यहां लिखें",
+    "contactsSubject": "विषय",
+    "contactsSubjectInp": "विषय यहाँ लिखें",
+    "contactsMessage": "संदेश",
+    "contactsMessageInp": "संदेश यहां लिखें",
+    "contactsReset": "रीसेट",
+    "contactsSubmit": "जमा करना"
+  },
+  "Admin": {
+    "Login": {
+      "title": "व्यवस्थापक लॉगिन",
+      "lblusername": "उपयोगकर्ता नाम",
+      "inpusername": "यहाँ अपना यूजर नाम दर्ज करें",
+      "lbluserpass": "उपयोगकर्ता पासवर्ड",
+      "inpuserpass": "यहां अपना पासवर्ड डालें",
+      "btnResLog": "पुनः आरंभ करें",
+      "btnSendLog": "लॉग इन करें",
+      "msgLoggedIn": "के रूप में लॉग इन किया गया {username}",
+      "btnSendLogout": "लॉग आउट",
+      "txtLoading": "लोड हो रहा है...",
+      "btnBack": "वापस"
+    },
+    "Dashboard": {
+      "title": "व्यवस्थापक डैशबोर्ड",
+      "welcome": "स्वागत है {username}!",
+      "msgLoggedIn": "के रूप में लॉग इन किया गया {username}",
+      "btnExit": "बाहर जाने के लिए"
+    },
+    "Projects": {
+      "welcome": "स्वागत है {username}!",
+      "title": "परियोजनाएँ",
+      "btnBack": "वापस"
+    },
+    "Newsletter": {
+      "welcome": "स्वागत है {username}!",
+      "title": "न्यूज़लेटर",
+      "btnBack": "वापस"
+    },
+    "Subscriptions": {
+      "welcome": "स्वागत है {username}!",
+      "title": "सदस्यता",
+      "btnBack": "वापस"
+    },
+    "Settings": {
+      "welcome": "स्वागत है {username}!",
+      "title": "सेटिंग्स",
+      "btnBack": "वापस"
+    },
+    "Users": {
+      "welcome": "स्वागत है {username}!",
+      "title": "उपयोगकर्ता",
+      "btnBack": "वापस"
+    },
+    "Navbar": {
+      "msgLoggedIn": "के रूप में लॉग इन किया गया {username}",
+      "btnExit": "बाहर जाने के लिए"
+    },
+    "Sidebar": {
+      "sbaropt1": "परियोजनाएँ",
+      "sbaropt2": "उपयोगकर्ता",
+      "sbaropt3": "न्यूज़लेटर",
+      "sbaropt4": "सदस्यता",
+      "sbaropt5": "सेटिंग्स"
+    }
+  },
+  "Footer": {
+    "linksTitle": "लिंक",
+    "listLinksOpt1": "विशेषताएँ",
+    "listLinksOpt2": "सेवाएं",
+    "listLinksOpt3": "के बारे में",
+    "listLinksOpt4": "टीम",
+    "listLinksOpt5": "संपर्क",
+    "miscTitleTheme": "थीम मोड",
+    "miscDefSelTheme": "थीम चुनें",
+    "miscOptDynamicTheme": "{themeval}",
+    "miscOpt1Theme": "गलती करना",
+    "miscOpt2Theme": "अँधेरा",
+    "miscOpt3Theme": "रोशनी",
+    "miscTitleLang": "भाषा",
+    "miscDefSelLang": "भाषा चुनें",
+    "newsletterTitle": "हमारे न्यूज़लेटर की सदस्यता लें",
+    "newsletterPlaceholder": "email@domain.com",
+    "socialNetworksTitle": "सोशल नेटवर्क",
+    "copyrightTitle": "द्वारा निर्मित Luis Carvalho - © 2023 एलसीपी"
+  },
+  "Currency": {
+      "symbol": "₹"
+  }
+}

@@ -1,0 +1,19 @@
+{
+    "themes": [
+        {
+            "id": 0,
+            "name": "डिफ़ॉल्ट",
+            "value": "default"
+        },
+        {
+            "id": 1,
+            "name": "डिफ़ॉल्ट",
+            "value": "dark"
+        },
+        {
+            "id": 2,
+            "name": "रोशनी",
+            "value": "light"
+        }
+    ]
+}
