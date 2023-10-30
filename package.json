@@ -9,8 +9,9 @@
     "start": "next start",
     "lint": "next lint",
     "clear": "npm cache verify --force",
-    "clearnbuild": "rmdir /s /q out & npm run clear && npm run build",
-    "clearnbuild2": "rmdir /s /q .next & rmdir /s /q out & npm run clear && npx --no-install next build",
+    "remgendirs": "rmdir /s /q .next & rmdir /s /q out",
+    "clearnbuild": "npm run remgendirs & npm run clear && npm run build",
+    "clearnbuild2": "npm run remgendirs & npm run clear && npx --no-install next build",
     "updpkg": "npx ncu -u",
     "updnodejs": "npm install -g npm@latest"
   },

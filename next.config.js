@@ -11,5 +11,5 @@ module.exports = withNextIntl({
     },
     reactStrictMode: true,
     distDir: 'out',
-    output: 'export'
+    output: undefined
 });
