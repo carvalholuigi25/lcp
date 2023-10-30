@@ -9,7 +9,7 @@ module.exports = withNextIntl({
     experimental: {
         webpackBuildWorker: true
     },
-    reactStrictMode: true,
+    reactStrictMode: false,
     distDir: 'out',
-    output: undefined
+    output: undefined,
 });
