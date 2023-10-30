@@ -11,7 +11,7 @@ module.exports = withNextIntl({
     },
     reactStrictMode: false,
     distDir: 'out',
-    basePath: process.env.NODE_ENV == 'production' ? '/carvalholuigi25.github.io' : '',
-    assetPrefix: process.env.NODE_ENV == 'production' ? '/carvalholuigi25.github.io/' : '/',
+    basePath: process.env.TYPEENV == 'production' ? '/carvalholuigi25.github.io' : '',
+    assetPrefix: process.env.TYPEENV == 'production' ? '/carvalholuigi25.github.io/' : '/',
     output: process.env.OUTPUTEXP == 0 ? undefined : process.env.OUTPUTEXP == 1 ? 'export' : 'standalone',
 });
