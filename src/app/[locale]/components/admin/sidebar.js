@@ -5,15 +5,16 @@ import { usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 
 export default function SidebarAdmin() {
+    const lang = localStorage.getItem("lang");
     const t = useTranslations('Admin.Sidebar');
 
     const pthname = usePathname();
     const aryLinks = [
-        { id: 1, name: t('sbaropt1'), href: "/admin/projects", icon: "bi-kanban" },
-        { id: 2, name: t('sbaropt2'), href: "/admin/users", icon: "bi-people" },
-        { id: 3, name: t('sbaropt3'), href: "/admin/newsletter", icon: "bi-newspaper" },
-        { id: 4, name: t('sbaropt4'), href: "/admin/subscriptions", icon: "bi-inbox" },
-        { id: 5, name: t('sbaropt5'), href: "/admin/settings", icon: "bi-gear" }
+        { id: 1, name: t('sbaropt1'), href: `/${lang}/admin/projects`, icon: "bi-kanban" },
+        { id: 2, name: t('sbaropt2'), href: `/${lang}/admin/users`, icon: "bi-people" },
+        { id: 3, name: t('sbaropt3'), href: `/${lang}/admin/newsletter`, icon: "bi-newspaper" },
+        { id: 4, name: t('sbaropt4'), href: `/${lang}/admin/subscriptions`, icon: "bi-inbox" },
+        { id: 5, name: t('sbaropt5'), href: `/${lang}/admin/settings`, icon: "bi-gear" }
     ];
 
     const [isCollapsed, setIsCollapsed] = useState(false);
