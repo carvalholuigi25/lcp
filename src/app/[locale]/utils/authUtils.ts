@@ -4,13 +4,13 @@ const controller = new AbortController();
 const signal = controller.signal;
 
 export function getHeaders() {
-    return {
+    return new Headers({
         'Accept': 'application/json, text/plain, */*',
         'Content-Type': 'application/json; charset=utf-8',
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Methods': 'GET, POST, PUT, PATCH, DELETE, OPTIONS',
         'Access-Control-Allow-Headers': 'Content-Type, Accept, Authorization'
-    };
+    });
 }
 
 export async function doLogin(e: any, username: string, userpass: string) {
