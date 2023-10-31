@@ -4,6 +4,7 @@
 // module.exports = nextConfig
 
 const withNextIntl = require('next-intl/plugin')('./i18n.ts');
+const defLocale = (typeof window !== 'undefined') ? localStorage.getItem("lang") : "en";
 
 module.exports = withNextIntl({
     experimental: {
@@ -15,42 +16,42 @@ module.exports = withNextIntl({
         return [
           {
             source: '/',
-            destination: '/en',
+            destination: '/'+defLocale,
             permanent: true,
           },
           {
             source: '/admin',
-            destination: '/en/admin/dashboard',
+            destination: '/'+defLocale+'/admin/dashboard',
             permanent: true,
           },
           {
             source: '/admin/dashboard',
-            destination: '/en/admin/dashboard',
+            destination: '/'+defLocale+'/admin/dashboard',
             permanent: true,
           },
           {
             source: '/admin/projects',
-            destination: '/en/admin/projects',
+            destination: '/'+defLocale+'/admin/projects',
             permanent: true,
           },
           {
             source: '/admin/users',
-            destination: '/en/admin/users',
+            destination: '/'+defLocale+'/admin/users',
             permanent: true,
           },
           {
             source: '/admin/newsletter',
-            destination: '/en/admin/newsletter',
+            destination: '/'+defLocale+'/admin/newsletter',
             permanent: true,
           },
           {
             source: '/admin/subscriptions',
-            destination: '/en/admin/subscriptions',
+            destination: '/'+defLocale+'/admin/subscriptions',
             permanent: true,
           },
           {
             source: '/admin/settings',
-            destination: '/en/admin/settings',
+            destination: '/'+defLocale+'/admin/settings',
             permanent: true,
           },
         ]
