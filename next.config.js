@@ -11,4 +11,13 @@ module.exports = withNextIntl({
     },
     reactStrictMode: false,
     output: process.env.OUTPUTEXP == 0 ? undefined : process.env.OUTPUTEXP == 1 ? 'export' : 'standalone',
+    async redirects() {
+        return [
+          {
+            source: '/',
+            destination: '/en',
+            permanent: true,
+          },
+        ]
+    },
 });
