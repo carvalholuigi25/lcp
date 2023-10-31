@@ -18,42 +18,7 @@ module.exports = withNextIntl({
             source: '/',
             destination: '/'+defLocale,
             permanent: true,
-          },
-          {
-            source: '/admin',
-            destination: '/'+defLocale+'/admin/dashboard',
-            permanent: true,
-          },
-          {
-            source: '/admin/dashboard',
-            destination: '/'+defLocale+'/admin/dashboard',
-            permanent: true,
-          },
-          {
-            source: '/admin/projects',
-            destination: '/'+defLocale+'/admin/projects',
-            permanent: true,
-          },
-          {
-            source: '/admin/users',
-            destination: '/'+defLocale+'/admin/users',
-            permanent: true,
-          },
-          {
-            source: '/admin/newsletter',
-            destination: '/'+defLocale+'/admin/newsletter',
-            permanent: true,
-          },
-          {
-            source: '/admin/subscriptions',
-            destination: '/'+defLocale+'/admin/subscriptions',
-            permanent: true,
-          },
-          {
-            source: '/admin/settings',
-            destination: '/'+defLocale+'/admin/settings',
-            permanent: true,
-          },
+          }
         ]
     },
 });

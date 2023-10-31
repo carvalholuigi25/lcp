@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import Link from 'next/link';
 import admstyles from '../../styles/admin/admin.module.scss';
 import { doLogin } from '../../utils/authUtils';
@@ -45,7 +45,7 @@ export default function DashboardLogin() {
                 setIsLoggedIn(true);
                 setIsLoading(false);
 
-                location.href = "/admin/dashboard";
+                location.href = `/${localStorage.getItem("lang")}/admin/dashboard`;
             }
         }).catch((error) => console.error(error)) 
     }
@@ -86,7 +86,7 @@ export default function DashboardLogin() {
                                 </>
                             )}
 
-                            <Link className='btn btn-primary btnBack' id='btnBack' dir="auto" href={"/"}>{t('btnBack')}</Link>
+                            <Link className='btn btn-primary btnBack' id='btnBack' dir="auto" href={"/"+useLocale()}>{t('btnBack')}</Link>
                         </div>
                     </div>
                 </div>

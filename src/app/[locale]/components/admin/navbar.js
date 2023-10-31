@@ -33,7 +33,7 @@ export default function NavbarAdmin() {
             setUserName("");
             setIsLoggedIn(false);
 
-            location.href = "/admin";
+            location.href = `/${localStorage.getItem("lang")}/admin`;
         }).catch((error) => console.error(error));
     };
 

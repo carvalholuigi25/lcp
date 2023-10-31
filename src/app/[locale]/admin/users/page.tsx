@@ -39,7 +39,7 @@ export default function AdminUsersPage() {
                   <p className="hidden">{t('welcome', { 'username': username })}</p>
                   <h1 className='mt-3'><i className="bi bi-people me-2"></i>{t('title')}</h1>
                   <p className='mt-3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae dolorem quas, distinctio asperiores mollitia ratione dignissimos cumque omnis reiciendis quos veritatis veniam ipsa. Velit illo adipisci, amet corrupti voluptatem laudantium.</p>
-                  <a href='/admin/dashboard' className='btn btn-primary btnback mt-3'>{t('btnBack')}</a>
+                  <a href={`/${localStorage.getItem("lang")}/admin/dashboard`} className='btn btn-primary btnback mt-3'>{t('btnBack')}</a>
                 </div>
               </div>
             </div>

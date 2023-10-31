@@ -194,7 +194,7 @@ export default function AdminSubscriptionsPage() {
 
                   <div className="container mx-auto text-center mt-3">
                     <div className="col-12">
-                      <a href='/admin/dashboard' className='btn btn-primary btnback'>{t('btnBack')}</a>
+                      <a href={`/${localStorage.getItem("lang")}/admin/dashboard`} className='btn btn-primary btnback'>{t('btnBack')}</a>
                     </div>
                   </div>
                 </div>
