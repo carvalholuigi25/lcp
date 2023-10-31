@@ -35,11 +35,6 @@ export default function Footer() {
                                         <LanguageWithFlagsComponent />
                                     </div>
                                 </div>
-                                <div className="row">
-                                    <div className="col-12 mt-3">
-                                        <SubscribeComponent />
-                                    </div>
-                                </div>
                             </div>
                         </div>
                         <div className="footerSocialNetworks col-12 col-md-6 col-lg-4 colright mt-3">

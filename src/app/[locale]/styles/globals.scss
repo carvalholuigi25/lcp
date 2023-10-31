@@ -49,7 +49,7 @@ button, #lang .dropdown-toggle {
 }
 
 a:not(.dropdown-item):not(.navbar-brand):not(.contactmsgblk) {
-  color: white !important;
+  color: inherit !important;
   text-decoration: none !important;
 
   &:hover {
@@ -159,6 +159,10 @@ ul, ol, dl {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+
+  a {
+    color: black;
+  }
 }
 
 @media all and (max-width: 1199px) {
