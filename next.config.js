@@ -23,6 +23,11 @@ module.exports = withNextIntl({
             destination: '/en/admin/dashboard',
             permanent: true,
           },
+          {
+            source: '/admin/dashboard',
+            destination: '/en/admin/dashboard',
+            permanent: true,
+          },
         ]
     },
 });
