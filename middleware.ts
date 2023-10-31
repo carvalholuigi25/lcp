@@ -3,7 +3,7 @@ import { NextRequest } from 'next/server';
 
 export default async function middleware(request: NextRequest) {
   const localesary = require('/public/locales/langs.json').langs.map((x: any) => x.value);
-  const defaultLocale = request.headers.get('x-default-locale') || 'en';
+  const defaultLocale = request.headers.get('x-default-locale') ?? 'en';
 
   const handleI18nRouting = createIntlMiddleware({
     locales: localesary,
