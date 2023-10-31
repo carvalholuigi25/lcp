@@ -28,6 +28,31 @@ module.exports = withNextIntl({
             destination: '/en/admin/dashboard',
             permanent: true,
           },
+          {
+            source: '/admin/projects',
+            destination: '/en/admin/projects',
+            permanent: true,
+          },
+          {
+            source: '/admin/users',
+            destination: '/en/admin/users',
+            permanent: true,
+          },
+          {
+            source: '/admin/newsletter',
+            destination: '/en/admin/newsletter',
+            permanent: true,
+          },
+          {
+            source: '/admin/subscriptions',
+            destination: '/en/admin/subscriptions',
+            permanent: true,
+          },
+          {
+            source: '/admin/settings',
+            destination: '/en/admin/settings',
+            permanent: true,
+          },
         ]
     },
 });
