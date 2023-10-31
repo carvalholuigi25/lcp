@@ -49,7 +49,6 @@ export default function ContactComponent() {
                 'Access-Control-Allow-Headers': 'Content-Type, Authorization'
             })
         })
-        .then((res) => res.json())
         .then((res) => {
             console.log(res);
             console.log('Response received');
