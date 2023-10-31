@@ -53,15 +53,12 @@ export default function ContactComponent() {
         .then((res) => {
             console.log(res);
             console.log('Response received');
-            
-            if (res.status === 200) {
-                console.log('Response succeeded!');
-                setSubmitted(true);
-                setName('');
-                setEmail('');
-                setSubject('');
-                setMessage('');
-            }
+            console.log('Response succeeded!');
+            setSubmitted(true);
+            setName('');
+            setEmail('');
+            setSubject('');
+            setMessage('');
         });
     }
 
