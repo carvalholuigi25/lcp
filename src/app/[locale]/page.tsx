@@ -34,9 +34,6 @@ export default function Home({ params: {locale} }: { params: any }) {
                   />
                   <div className="card-body text-center">
                     <h3 className="card-title lngtxt">{t('featuresRespTitle')}</h3>
-                    <p className="card-text lngtxt">
-                      {t('featuresRespDesc')}
-                    </p>
                   </div>
                 </div>
               </div>
@@ -51,9 +48,6 @@ export default function Home({ params: {locale} }: { params: any }) {
                   />
                   <div className="card-body text-center">
                     <h3 className="card-title lngtxt">{t('featuresQSpeedTitle')}</h3>
-                    <p className="card-text lngtxt">
-                      {t('featuresQSpeedDesc')}
-                    </p>
                   </div>
                 </div>
               </div>
@@ -68,9 +62,6 @@ export default function Home({ params: {locale} }: { params: any }) {
                   />
                   <div className="card-body text-center">
                     <h3 className="card-title lngtxt">{t('featuresSupportTitle')}</h3>
-                    <p className="card-text lngtxt">
-                      {t('featuresSupportDesc')}
-                    </p>
                   </div>
                 </div>
               </div>

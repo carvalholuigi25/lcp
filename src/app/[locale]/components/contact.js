@@ -49,6 +49,7 @@ export default function ContactComponent() {
                 'Access-Control-Allow-Headers': 'Content-Type, Authorization'
             }
         }).then((res) => {
+            console.log(res);
             console.log('Response received');
             
             if (res.status === 200) {
@@ -94,6 +95,7 @@ export default function ContactComponent() {
                         </div>
                     </div>
                 </form>
+                <p className='mt-3'>Cannot contact to me? <a href="mailto:luiscarvalho239@gmail.com">Click here to send email to me!</a></p>
             </div>
         </>
     );
