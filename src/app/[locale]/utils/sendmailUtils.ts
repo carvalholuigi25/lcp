@@ -18,11 +18,22 @@ export async function sendMailUtil(mailData: any) {
   
   const transporter = nodemailer.createTransport(confopt);
 
-  await transporter.sendMail(mailData, (err: any, info: any) => {
-    if(err)
-      console.log(err)
-    else
-      console.log(info)
+  // await transporter.sendMail(mailData, (err: any, info: any) => {
+  //   if(err)
+  //     console.log(err)
+  //   else
+  //     console.log(info)
+  // });
+
+  await new Promise((resolve, reject) => {
+    transporter.sendMail(mailData, (err: any, info: any) => {
+      if (err) {
+        console.error(err);
+        reject(err);
+      } else {
+        resolve(info);
+      }
+    });
   });
 
   return mailData;
