@@ -95,7 +95,9 @@ export default function ContactComponent() {
                         </div>
                     </div>
                 </form>
-                <p className='mt-3'>Cannot contact to me? <a href="mailto:luiscarvalho239@gmail.com">Click here to send email to me!</a></p>
+                <div className={"mt-3 mx-auto " + styles.contactmsgblk}>
+                    <p>Cannot contact to me? <a href="mailto:luiscarvalho239@gmail.com">Click here to send email to me!</a></p>
+                </div>
             </div>
         </>
     );
