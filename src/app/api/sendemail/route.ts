@@ -11,6 +11,8 @@ export async function POST(req: any) {
     html: `<!doctype html><html><head><title>Hello</title></head><body><b>${body.message}</b><p>Sent by: ${body.email} (${body.name})</p></body></html>`
   };
 
+  console.log(dataobj);
+
   sendMailUtil(dataobj);
 
   return NextResponse.json({ dataobj });
