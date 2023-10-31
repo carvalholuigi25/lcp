@@ -18,6 +18,11 @@ module.exports = withNextIntl({
             destination: '/en',
             permanent: true,
           },
+          {
+            source: '/admin',
+            destination: '/admin/en',
+            permanent: true,
+          },
         ]
     },
 });
