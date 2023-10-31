@@ -48,7 +48,7 @@ button, #lang .dropdown-toggle {
   word-wrap: break-word;
 }
 
-a:not(.dropdown-item):not(.navbar-brand) {
+a:not(.dropdown-item):not(.navbar-brand):not(.contactmsgblk) {
   color: white !important;
   text-decoration: none !important;
 
