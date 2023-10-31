@@ -4,7 +4,7 @@
 // module.exports = nextConfig
 
 const withNextIntl = require('next-intl/plugin')('./i18n.ts');
-const defLocale = (typeof window !== 'undefined') ? localStorage.getItem("lang") : "en";
+const defLocale = "en";
 
 module.exports = withNextIntl({
     experimental: {
