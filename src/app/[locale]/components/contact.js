@@ -41,13 +41,13 @@ export default function ContactComponent() {
         fetch('/api/sendemail', {
             method: "post",
             body: formData,
-            headers: {
+            headers: new Headers({
                 'Accept': 'application/json, text/plain, */*',
                 'Content-Type': 'application/json; charset=utf-8',
                 'Access-Control-Allow-Origin': '*',
                 'Access-Control-Allow-Methods': 'GET, POST, PUT, PATCH, DELETE, OPTIONS',
                 'Access-Control-Allow-Headers': 'Content-Type, Authorization'
-            }
+            })
         }).then((res) => {
             console.log(res);
             console.log('Response received');
