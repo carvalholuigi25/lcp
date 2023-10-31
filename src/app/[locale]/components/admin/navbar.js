@@ -44,7 +44,7 @@ export default function NavbarAdmin() {
                     <button className="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuAdmDashLinks" aria-controls="menuAdmDashLinks">
                         <i className="bi bi-list"></i>
                     </button>
-                    <a className="navbar-brand ms-3" href="/" dir="auto">LCP</a>
+                    <a className="navbar-brand ms-3" href={`/${localStorage.getItem("lang")}`} dir="auto">LCP</a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarAdmDash" aria-controls="navbarAdmDash" aria-expanded="false" aria-label="Toggle navigation" onClick={clickNav}>
                         <i className={`bi bi-${isCollapsed ? "x" : "three-dots"}`}></i>
                     </button>

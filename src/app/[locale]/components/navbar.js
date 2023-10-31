@@ -15,7 +15,7 @@ export default function Navbar() {
         <>
             <nav className="navbar fixed-top navbar-expand-lg bg-body-tertiary mnavbar" id="mnavbar">
                 <div className="container-fluid">
-                    <a className="navbar-brand" href="/">LCP</a>
+                    <a className="navbar-brand" href={`/${localStorage.getItem("lang")}`}>LCP</a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarLinks" aria-controls="navbarLinks" aria-expanded="false" aria-label="Toggle navigation" onClick={clickNav}>
                         <i className={`bi bi-${isCollapsed ? "x" : "three-dots"}`}></i>
                     </button>

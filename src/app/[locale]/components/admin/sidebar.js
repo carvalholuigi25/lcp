@@ -28,7 +28,7 @@ export default function SidebarAdmin() {
         <>
             <div className={`offcanvas offcanvas-start ${!!isCollapsed ? "show sidebarCol" : "hiding"} ${admstyles.menuAdmDashLinks}`} tabIndex={-1} id="menuAdmDashLinks" aria-labelledby="menuAdmDashLinksLabel">
                 <div className="offcanvas-header">
-                    <h5 className="offcanvas-title" id="menuAdmDashLinksLabel" dir="auto"><a href="/admin/dashboard">LCP</a></h5>
+                    <h5 className="offcanvas-title" id="menuAdmDashLinksLabel" dir="auto"><a href={`${lang}/admin/dashboard`}>LCP</a></h5>
                     <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div className="offcanvas-body">
