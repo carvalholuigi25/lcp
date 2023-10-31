@@ -13,7 +13,7 @@ export async function POST(req: any) {
 
   console.log(dataobj);
 
-  sendMailUtil(dataobj);
+  await sendMailUtil(dataobj);
 
   return NextResponse.json({ dataobj });
 }
