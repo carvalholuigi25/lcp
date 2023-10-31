@@ -120,7 +120,7 @@ ul, ol, dl {
 }
 
 .hide, .hidden { display: none !important; }
-.show, .shown { display: inherit !important; }
+.show, .shown { display: initial !important; }
 
 .sidebarCol {
   width: 8rem !important;
