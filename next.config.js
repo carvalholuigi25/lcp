@@ -20,7 +20,7 @@ module.exports = withNextIntl({
           },
           {
             source: '/admin',
-            destination: '/admin/en',
+            destination: '/admin/dashboard/en',
             permanent: true,
           },
         ]
