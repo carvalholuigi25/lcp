@@ -1,7 +1,7 @@
 @mixin setTheme($theme) {
     .theme-#{$theme} {
         $bgColorPrimary: white;
-        $bgColorSecondary: rgb(210, 210, 210);
+        $bgColorSecondary: rgb(240, 240, 240);
         $fgColor: black;
 
         @if $theme == "dark" {
@@ -10,7 +10,7 @@
             $fgColor: white;
         } @else {
             $bgColorPrimary: white;
-            $bgColorSecondary: rgb(210, 210, 210);
+            $bgColorSecondary: rgb(240, 240, 240);
             $fgColor: black;
         }
     
@@ -19,7 +19,7 @@
             color: $fgColor !important;
         }
     
-        p:not(.card-text) {
+        p:not(.card-text):not(.cwhite):not(#mdesc) {
             color: $fgColor !important;
         }
     
@@ -29,10 +29,6 @@
 
         .header, .footer {
             background-color: $bgColorSecondary !important;
-            color: $fgColor !important;
-        }
-    
-        .navbar .navbar-brand, .navbar .nav-link {
             color: $fgColor !important;
         }
     
@@ -85,7 +81,8 @@
             color: $fgColor !important;
         }
         
-        .mtitle, #mtitle {
+        .mtitle, #mtitle,
+        .navbar-brand {
             text-shadow: none;
             text-shadow: 3px 3px $fgColor !important;
             color: $bgColorPrimary !important;
@@ -95,7 +92,7 @@
             color: $fgColor !important;
         }
           
-        .btn {
+        .btn:not(.btnlanglist):not(#btnSeeMore):not(.btnreset):not(.btnsubmit) {
             color: $fgColor !important;
         }
         
@@ -131,6 +128,8 @@
                 color: $fgColor !important;
             }
         }
+
+        .cblack { color: $fgColor !important; }
     }
 }
 

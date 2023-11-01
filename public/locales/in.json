@@ -51,7 +51,9 @@
     "contactsMessage": "संदेश",
     "contactsMessageInp": "संदेश यहां लिखें",
     "contactsReset": "रीसेट",
-    "contactsSubmit": "जमा करना"
+    "contactsSubmit": "जमा करना",
+    "contactsSendEmail": "मुझसे संपर्क करने में परेशानी हो रही है?",
+    "contactsSendEmail2": "मुझे ईमेल भेजने के लिए यहां क्लिक करें!"
   },
   "Admin": {
     "Login": {

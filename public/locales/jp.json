@@ -51,7 +51,9 @@
     "contactsMessage": "メッセージ",
     "contactsMessageInp": "ここにメッセージを書いてください",
     "contactsReset": "リセット",
-    "contactsSubmit": "提出する"
+    "contactsSubmit": "提出する",
+    "contactsSendEmail": "私との連絡に問題がありますか?",
+    "contactsSendEmail2": "ここをクリックしてメールを送信してください。"
   },
   "Admin": {
     "Login": {

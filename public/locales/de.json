@@ -51,7 +51,9 @@
     "contactsMessage": "Nachricht",
     "contactsMessageInp": "Schreiben Sie die Nachricht hier",
     "contactsReset": "Zurücksetzen",
-    "contactsSubmit": "Senden"
+    "contactsSubmit": "Senden",
+    "contactsSendEmail": "Haben Sie Schwierigkeiten, mit mir in Kontakt zu treten?",
+    "contactsSendEmail2": "Klicken Sie hier, um mir eine E-Mail zu senden!"
   },
   "Admin": {
     "Login": {

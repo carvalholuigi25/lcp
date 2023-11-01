@@ -51,7 +51,9 @@
     "contactsMessage": "'Ōlelo",
     "contactsMessageInp": "Kākau i ka memo ma ane'i",
     "contactsReset": "Ho'oponopono hou",
-    "contactsSubmit": "Waiho mai"
+    "contactsSubmit": "Waiho mai",
+    "contactsSendEmail": "Loa'a ka pilikia e launa pū me a'u?",
+    "contactsSendEmail2": "Kaomi ma ane'i e ho'ouna i ka leka uila ia'u!"
   },
   "Admin": {
     "Login": {

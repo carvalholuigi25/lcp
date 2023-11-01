@@ -51,7 +51,9 @@
     "contactsMessage": "повідомлення",
     "contactsMessageInp": "Напишіть повідомлення тут",
     "contactsReset": "Скинути",
-    "contactsSubmit": "Надіслати"
+    "contactsSubmit": "Надіслати",
+    "contactsSendEmail": "Виникли проблеми зі мною зв'язатися?",
+    "contactsSendEmail2": "Натисніть тут, щоб надіслати мені електронний лист!"
   },
   "Admin": {
     "Login": {

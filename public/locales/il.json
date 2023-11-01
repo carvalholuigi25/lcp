@@ -51,7 +51,9 @@
     "contactsMessage": "הוֹדָעָה",
     "contactsMessageInp": "כתבו את ההודעה כאן",
     "contactsReset": "אִתחוּל",
-    "contactsSubmit": "שלח"
+    "contactsSubmit": "שלח",
+    "contactsSendEmail": "מתקשה ליצור איתי קשר?",
+    "contactsSendEmail2": "לחץ כאן כדי לשלוח לי מייל!"
   },
   "Admin": {
     "Login": {

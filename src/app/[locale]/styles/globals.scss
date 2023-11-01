@@ -48,8 +48,13 @@ button, #lang .dropdown-toggle {
   word-wrap: break-word;
 }
 
+.navbar-toggler {
+  color: white;
+  border-color: inherit;
+}
+
 a:not(.dropdown-item):not(.navbar-brand):not(.contactmsgblk) {
-  color: inherit !important;
+  color: white;
   text-decoration: none !important;
 
   &:hover {
@@ -165,6 +170,26 @@ ul, ol, dl {
   }
 }
 
+#getourapp, .footerSocialNetworks {
+  a > img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+#team {
+  .card-text {
+    margin-bottom: 0;
+  }
+}
+
+.imggadgets {
+  margin-top: 0;
+}
+
+.cwhite { color: white !important; }
+.cblack { color: black !important; }
+
 @media all and (max-width: 1199px) {
   .navbaradm {
     .dropdown {
@@ -189,7 +214,8 @@ ul, ol, dl {
   }
 }
 
-@media all and (min-width: 100px) and (max-width: 991px) {
+
+@media all and (min-width: 768px) and (max-width: 991px) {
   .navbaradm {
     .dropdown {
       .dropdown-menu {
@@ -197,5 +223,31 @@ ul, ol, dl {
         left: 0;
       }
     }
+  }
+}
+
+@media all and (min-width: 100px) and (max-width: 767px) {
+  .headersideleft {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+
+    p {
+      font-size: 1.2rem;
+    }
+  }
+
+  .navbaradm {
+    .dropdown {
+      .dropdown-menu {
+        right: auto;
+        left: 0;
+      }
+    }
+  }
+
+  .imggadgets {
+    margin-top: 15px;
   }
 }

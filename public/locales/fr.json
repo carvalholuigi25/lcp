@@ -51,7 +51,9 @@
     "contactsMessage": "Message",
     "contactsMessageInp": "Écrivez le message ici",
     "contactsReset": "Réinitialiser",
-    "contactsSubmit": "Soumettre"
+    "contactsSubmit": "Soumettre",
+    "contactsSendEmail": "Vous rencontrez des difficultés pour me contacter?",
+    "contactsSendEmail2": "Cliquez ici pour m'envoyer un e-mail!"
   },
   "Admin": {
     "Login": {

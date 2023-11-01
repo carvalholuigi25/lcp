@@ -152,10 +152,10 @@ export default function Home({ params: {locale} }: { params: any }) {
             </h2>
             <div className="row">
               <div className="col-12 col-md-6">
-                <p className={styles.getourappDesc}>
+                <p className={styles.getourappDesc + " cwhite"}>
                   {t('getourappDesc')}
                 </p>
-                <ul className={styles.getourappLinks + " p-0  animate__animated animate__fadeInUp"}>
+                <ul className={styles.getourappLinks + " p-0 animate__animated animate__fadeInUp"}>
                   <li>
                     <a href="#lcpwindows">
                       <Image className="image" src="/icons/crossplatform/icoWindows.svg" alt={t('getourappWin')} width={50} height={50} />
@@ -184,7 +184,7 @@ export default function Home({ params: {locale} }: { params: any }) {
                 </ul>
               </div>
               <div className="col-12 col-md-6">
-                <Image className="image w-100" src="/icons/crossplatform/gadgets.svg" alt={t('getourappGadgets')} width={350} height={350} />
+                <Image className="image w-100 imggadgets" src="/icons/crossplatform/gadgets.svg" alt={t('getourappGadgets')} width={350} height={350} />
               </div>
             </div>
           </div>

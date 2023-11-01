@@ -67,11 +67,11 @@ export default function ContactComponent() {
                 <form action="" method="post" className="container frmcontactus" id="frmcontactus" onSubmit={sendMail}>
                     <h1 className={styles.contactsTitle} dir="auto">{t('contactsTitle')}</h1>
                     <div className="row mt-3">
-                        <div className="col-12 col-md-6">
+                        <div className="col-12 col-md-6 mt-3">
                             <label htmlFor="name" dir="auto">{t('contactsName')}</label>
                             <input type="text" name="name" id="name" dir="auto" value={name} placeholder={t('contactsNameInp')} className="form-control name mt-1" required onChange={handleNameChange} />
                         </div>
-                        <div className="col-12 col-md-6">
+                        <div className="col-12 col-md-6 mt-3">
                             <label htmlFor="email" dir="auto">{t('contactsEmail')}</label>
                             <input type="email" name="email" id="email" dir="auto" value={email} placeholder={t('contactsEmailInp')} className="form-control email mt-1" required onChange={handleEmailChange} />
                         </div>
@@ -94,7 +94,7 @@ export default function ContactComponent() {
                     </div>
                 </form>
                 <div className={"mt-3 mx-auto " + styles.contactmsgblk}>
-                    <p>Cannot contact to me? <a href="mailto:luiscarvalho239@gmail.com">Click here to send email to me!</a></p>
+                    <p>{t('contactsSendEmail')} <a href="mailto:luiscarvalho239@gmail.com" className="cblack">{t('contactsSendEmail2')}</a></p>
                 </div>
             </div>
         </>

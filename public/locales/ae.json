@@ -51,7 +51,9 @@
         "contactsMessage": "رسالة",
         "contactsMessageInp": "اكتب الرسالة هنا",
         "contactsReset": "إعادة ضبط",
-        "contactsSubmit": "يُقدِّم"
+        "contactsSubmit": "يُقدِّم",
+        "contactsSendEmail": "هل تواجه مشكلة في التواصل معي؟",
+        "contactsSendEmail2": "انقر هنا لإرسال البريد الإلكتروني لي!"
     },
     "Admin": {
         "Login": {

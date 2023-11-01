@@ -51,7 +51,9 @@
     "contactsMessage": "Mensagem",
     "contactsMessageInp": "Escreva a mensagem aqui",
     "contactsReset": "Reiniciar",
-    "contactsSubmit": "Enviar"
+    "contactsSubmit": "Enviar",
+    "contactsSendEmail": "Está tendo problemas para entrar em contato comigo?",
+    "contactsSendEmail2": "Clique aqui para me enviar um e-mail!"
   },
   "Admin": {
     "Login": {

@@ -12,10 +12,10 @@ export default function Header() {
                     <div className="row">
                         <div className="col-12 col-md-6 headersideleft mt-3 animate__animated animate__fadeInUp">
                             <h1 className={styles.mtitle} id="mtitle" dir="auto">LCP</h1>
-                            <p className={styles.desc} dir="auto">
+                            <p className={styles.desc} id="mdesc" dir="auto">
                                 {t('desc')}
                             </p>
-                            <a href="#features" className="btn btn-primary btnSeeMore" dir="auto">
+                            <a href="#features" className="btn btn-primary btnSeeMore" id="btnSeeMore" dir="auto">
                                 {t('btnSeeMore')}
                             </a>
                         </div>
