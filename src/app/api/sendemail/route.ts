@@ -12,7 +12,7 @@ export async function POST(req: any) {
     html: EmailTemplate(body),
     attachments: [{
       filename: 'logo_compact.png',
-      path: "./public/images/logos/logo_compact.png",
+      path: process.env.TYPEENV === 'production' ? "https://lcp-pi.vercel.app/images/logos/logo_compact.png" : "./public/images/logos/logo_compact.png",
       cid: 'uniquelogo'
     }]
   };
