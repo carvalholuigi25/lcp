@@ -194,6 +194,23 @@ ul, ol, dl {
   margin-top: 0;
 }
 
+.logosmall {
+  width: 100px;
+  height: 30px;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.logofull {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
 .cwhite { color: white !important; }
 .cblack { color: black !important; }
 

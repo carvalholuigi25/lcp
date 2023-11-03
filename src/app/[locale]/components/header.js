@@ -10,22 +10,21 @@ export default function Header() {
             <div className={styles.header + " " + styles.wave1 + " p-5"}>
                 <div className="container">
                     <div className="row">
-                        <div className="col-12 col-md-6 headersideleft mt-3 animate__animated animate__fadeInUp">
-                            <h1 className={styles.mtitle} id="mtitle" dir="auto">LCP</h1>
-                            <p className={styles.desc} id="mdesc" dir="auto">
+                        <div className="col-12 col-md-6 order-1 order-md-0 headersideleft mt-3 animate__animated animate__fadeInUp">
+                            <p className={styles.desc + " mt-3"} id="mdesc" dir="auto">
                                 {t('desc')}
                             </p>
                             <a href="#features" className="btn btn-primary btnSeeMore" id="btnSeeMore" dir="auto">
                                 {t('btnSeeMore')}
                             </a>
                         </div>
-                        <div className="col-12 col-md-6 headersideright animate__animated animate__fadeInUp">
+                        <div className="col-12 col-md-6 order-0 order-md-1 headersideright animate__animated animate__fadeInUp">
                             <Image
-                                className="image mx-auto"
-                                src="/images/setup.svg"
+                                className="image mx-auto logofull"
+                                src="/images/logos/logo.svg"
                                 alt="LCP"
-                                width={530}
-                                height={530}
+                                width={200}
+                                height={200}
                                 priority
                             />
                         </div>

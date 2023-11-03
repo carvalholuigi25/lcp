@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
 
 export default function Navbar() {
@@ -15,7 +16,16 @@ export default function Navbar() {
         <>
             <nav className="navbar fixed-top navbar-expand-lg bg-body-tertiary mnavbar" id="mnavbar">
                 <div className="container-fluid">
-                    <a className="navbar-brand" href={`/${useLocale()}`}>LCP</a>
+                    <a className="navbar-brand" href={`/${useLocale()}`}>
+                        <Image
+                            className="image mx-auto logosmall"
+                            src="/images/logos/logo_compact.svg"
+                            alt="LCP"
+                            width={100}
+                            height={30}
+                            priority
+                        />
+                    </a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarLinks" aria-controls="navbarLinks" aria-expanded="false" aria-label="Toggle navigation" onClick={clickNav}>
                         <i className={`bi bi-${isCollapsed ? "x" : "three-dots"}`}></i>
                     </button>
