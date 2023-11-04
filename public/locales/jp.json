@@ -134,5 +134,18 @@
   },
   "Currency": {
       "symbol": "¥"
+  },
+  "Templates": {
+    "Email": {
+      "lang": "jp",
+      "thankyoumsg": "「ご連絡いただきありがとうございます。メッセージは次のとおりです。」",
+      "emaildate": "日付：",
+      "emailto": "に：",
+      "emailfrom": "から：",
+      "emailname": "名前：",
+      "emailsubject": "主題：",
+      "emailbody": "メッセージ：",
+      "copyright": "によって作成された"
+    }
   }
 }

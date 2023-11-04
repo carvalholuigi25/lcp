@@ -134,5 +134,18 @@
   },
   "Currency": {
       "symbol": "$"
+  },
+  "Templates": {
+    "Email": {
+      "lang": "hi",
+      "thankyoumsg": "Mahalo no kou ho'oka'a'ike mai iā mākou! Eia ka memo:",
+      "emaildate": "La:",
+      "emailto": "I:",
+      "emailfrom": "Mai:",
+      "emailname": "Inoa:",
+      "emailsubject": "Ke kumuhana:",
+      "emailbody": "Memo:",
+      "copyright": "Hana 'ia e"
+    }
   }
 }

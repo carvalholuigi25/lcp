@@ -134,5 +134,18 @@
   },
   "Currency": {
       "symbol": "₪"
+  },
+  "Templates": {
+    "Email": {
+      "lang": "il",
+      "thankyoumsg": "תודה שפנית אלינו! הנה ההודעה:",
+      "emaildate": "תַאֲרִיך:",
+      "emailto": "ל:",
+      "emailfrom": "מ:",
+      "emailname": "שֵׁם:",
+      "emailsubject": "נושא:",
+      "emailbody": "הוֹדָעָה:",
+      "copyright": "מיוצר ע'י"
+    }
   }
 }

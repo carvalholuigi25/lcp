@@ -134,5 +134,18 @@
   },
   "Currency": {
       "symbol": "$"
+  },
+  "Templates": {
+    "Email": {
+      "lang": "en-US",
+      "thankyoumsg": "Thank you for contact us! Here's the message:",
+      "emaildate": "Date:",
+      "emailto": "To:",
+      "emailfrom": "From:",
+      "emailname": "Name:",
+      "emailsubject": "Subject:",
+      "emailbody": "Body:",
+      "copyright": "Created by"
+    }
   }
 }

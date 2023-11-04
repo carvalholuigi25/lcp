@@ -134,5 +134,18 @@
   },
   "Currency": {
       "symbol": "₴"
+  },
+  "Templates": {
+    "Email": {
+      "lang": "ua",
+      "thankyoumsg": "Дякуємо за звернення до нас! Ось повідомлення:",
+      "emaildate": "Дата:",
+      "emailto": "Кому:",
+      "emailfrom": "Від:",
+      "emailname": "Ім'я:",
+      "emailsubject": "Тема:",
+      "emailbody": "Тіло:",
+      "copyright": "Створено"
+    }
   }
 }

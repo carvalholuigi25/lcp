@@ -134,5 +134,18 @@
   },
   "Currency": {
       "symbol": "₹"
+  },
+  "Templates": {
+    "Email": {
+      "lang": "in",
+      "thankyoumsg": "हमसे संपर्क करने के लिए धन्यवाद! संदेश यह है:",
+      "emaildate": "तारीख:",
+      "emailto": "को:",
+      "emailfrom": "से:",
+      "emailname": "नाम:",
+      "emailsubject": "विषय:",
+      "emailbody": "संदेश:",
+      "copyright": "द्वारा निर्मित"
+    }
   }
 }

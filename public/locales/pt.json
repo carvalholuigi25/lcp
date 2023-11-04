@@ -134,5 +134,18 @@
   },
   "Currency": {
       "symbol": "€"
+  },
+  "Templates": {
+    "Email": {
+      "lang": "pt",
+      "thankyoumsg": "Obrigado por entrar em contato conosco! Aqui está a mensagem:",
+      "emaildate": "Data:",
+      "emailto": "Para:",
+      "emailfrom": "De:",
+      "emailname": "Nome:",
+      "emailsubject": "Assunto:",
+      "emailbody": "Mensagem:",
+      "copyright": "Criado por"
+    }
   }
 }

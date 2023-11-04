@@ -134,5 +134,18 @@
     },
     "Currency": {
         "symbol": "د.إ"
+    },
+    "Templates": {
+      "Email": {
+        "lang": "ae",
+        "thankyoumsg": "شكرًا لاتصالك بنا! إليك الرسالة:",
+        "emaildate": "تاريخ:",
+        "emailto": "ل:",
+        "emailfrom": "من:",
+        "emailname": "اسم:",
+        "emailsubject": "المادة:",
+        "emailbody": "رسالة:",
+        "copyright": "م الإنشاء بواسطة لويس كارفاليو "
+      }
     }
 }

@@ -2,10 +2,12 @@
 
 import React, { useState } from 'react';
 import styles from '../styles/page/page.module.scss';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
 export default function ContactComponent() {
     const t = useTranslations('Home');
+    const temailtrans = useTranslations('Templates.Email');
+    const locale = useLocale();
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -35,10 +37,21 @@ export default function ContactComponent() {
             name: name,
             email: email,
             subject: subject,
-            message: message
+            message: message,
+            translationmsgs: {
+                lang: temailtrans('lang'),
+                thankyoumsg: temailtrans('thankyoumsg'),
+                emaildate: temailtrans('emaildate'),
+                emailto: temailtrans('emailto'),
+                emailfrom: temailtrans('emailfrom'),
+                emailname: temailtrans('emailname'),
+                emailsubject: temailtrans('emailsubject'),
+                emailbody: temailtrans('emailbody'),
+                copyright: temailtrans('copyright')
+            }
         });
 
-        fetch('/api/sendemail', {
+        fetch('/api/'+ locale +'/sendemail', {
             method: "post",
             body: formData,
             headers: new Headers({
