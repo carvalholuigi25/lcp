@@ -20,9 +20,6 @@ export async function POST(req: any) {
     attachments: attachmentsobj
   };
 
-  console.log(dataobj);
-
   await sendMailUtil(dataobj);
-
   return NextResponse.json({ dataobj });
 }
