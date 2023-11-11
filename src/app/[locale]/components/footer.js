@@ -39,6 +39,9 @@ export default function Footer() {
                         </div>
                         <div className="footerSocialNetworks col-12 col-md-6 col-lg-4 colright mt-3">
                             <h3 className={styles.footerSocialNetworksTitle} dir="auto">{t('socialNetworksTitle')}</h3>
+                            <a href="https://www.facebook.com/lcp2267" className="ms-2" target='_blank'>
+                                <Image className="image" src="/icons/socialnetworks/facebook.svg" alt="LCP Facebook" width={40} height={40} />
+                            </a>
                             <a href="https://github.com/carvalholuigi25" className="ms-2" target='_blank'>
                                 <Image className="image" src="/icons/socialnetworks/github.svg" alt="LCP Github" width={40} height={40} />
                             </a>
