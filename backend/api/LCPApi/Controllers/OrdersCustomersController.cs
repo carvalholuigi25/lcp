@@ -1,12 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using LCPApi.Context;
 using LCPApi.Models;
+using LCPApi.Interfaces;
 
 namespace LCPApi.Controllers
 {
@@ -14,111 +8,41 @@ namespace LCPApi.Controllers
     [ApiController]
     public class OrdersCustomersController : ControllerBase
     {
-        private readonly DBContext _context;
+        private readonly IOrdersCustomers _orderscustomersRepo;
 
-        public OrdersCustomersController(DBContext context)
+        public OrdersCustomersController(IOrdersCustomers orderscustomersRepo)
         {
-            _context = context;
+            _orderscustomersRepo = orderscustomersRepo;
         }
 
-        // GET: api/OrdersCustomers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<OrdersCustomers>>> GetOrdersCustomers()
         {
-          if (_context.OrdersCustomers == null)
-          {
-              return NotFound();
-          }
-            return await _context.OrdersCustomers.ToListAsync();
+           return await _orderscustomersRepo.GetOrdersCustomers();
         }
 
-        // GET: api/OrdersCustomers/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<OrdersCustomers>> GetOrdersCustomers(int id)
+        public async Task<ActionResult<OrdersCustomers>> GetOrdersCustomersById(int id)
         {
-          if (_context.OrdersCustomers == null)
-          {
-              return NotFound();
-          }
-            var ordersCustomers = await _context.OrdersCustomers.FindAsync(id);
-
-            if (ordersCustomers == null)
-            {
-                return NotFound();
-            }
-
-            return ordersCustomers;
+           return await _orderscustomersRepo.GetOrdersCustomersById(id);
         }
 
-        // PUT: api/OrdersCustomers/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutOrdersCustomers(int id, OrdersCustomers ordersCustomers)
+        public async Task<IActionResult> PutOrdersCustomers(int id, OrdersCustomers OrdersCustomers)
         {
-            if (id != ordersCustomers.OrdersId)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(ordersCustomers).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!OrdersCustomersExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
+            return await _orderscustomersRepo.PutOrdersCustomers(id, OrdersCustomers);
         }
 
-        // POST: api/OrdersCustomers
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<OrdersCustomers>> PostOrdersCustomers(OrdersCustomers ordersCustomers)
+        public async Task<ActionResult<OrdersCustomers>> PostOrdersCustomers(OrdersCustomers OrdersCustomers)
         {
-          if (_context.OrdersCustomers == null)
-          {
-              return Problem("Entity set 'DBContext.OrdersCustomers'  is null.");
-          }
-            _context.OrdersCustomers.Add(ordersCustomers);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetOrdersCustomers", new { id = ordersCustomers.OrdersId }, ordersCustomers);
+            return await _orderscustomersRepo.PostOrdersCustomers(OrdersCustomers);
         }
 
-        // DELETE: api/OrdersCustomers/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteOrdersCustomers(int id)
         {
-            if (_context.OrdersCustomers == null)
-            {
-                return NotFound();
-            }
-            var ordersCustomers = await _context.OrdersCustomers.FindAsync(id);
-            if (ordersCustomers == null)
-            {
-                return NotFound();
-            }
-
-            _context.OrdersCustomers.Remove(ordersCustomers);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
-        }
-
-        private bool OrdersCustomersExists(int id)
-        {
-            return (_context.OrdersCustomers?.Any(e => e.OrdersId == id)).GetValueOrDefault();
+            return await _orderscustomersRepo.DeleteOrdersCustomers(id);
         }
     }
 }

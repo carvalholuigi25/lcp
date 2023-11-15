@@ -1,12 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using LCPApi.Context;
 using LCPApi.Models;
+using LCPApi.Interfaces;
 
 namespace LCPApi.Controllers
 {
@@ -14,111 +8,41 @@ namespace LCPApi.Controllers
     [ApiController]
     public class DepartmentsController : ControllerBase
     {
-        private readonly DBContext _context;
+        private readonly IDepartments _departmentsRepo;
 
-        public DepartmentsController(DBContext context)
+        public DepartmentsController(IDepartments departmentsRepo)
         {
-            _context = context;
+            _departmentsRepo = departmentsRepo;
         }
 
-        // GET: api/Departments
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Departments>>> GetDepartments()
         {
-          if (_context.Departments == null)
-          {
-              return NotFound();
-          }
-            return await _context.Departments.ToListAsync();
+           return await _departmentsRepo.GetDepartments();
         }
 
-        // GET: api/Departments/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Departments>> GetDepartments(int id)
+        public async Task<ActionResult<Departments>> GetDepartmentsById(int id)
         {
-          if (_context.Departments == null)
-          {
-              return NotFound();
-          }
-            var departments = await _context.Departments.FindAsync(id);
-
-            if (departments == null)
-            {
-                return NotFound();
-            }
-
-            return departments;
+           return await _departmentsRepo.GetDepartmentsById(id);
         }
 
-        // PUT: api/Departments/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutDepartments(int id, Departments departments)
+        public async Task<IActionResult> PutDepartments(int id, Departments Departments)
         {
-            if (id != departments.DepartmentsId)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(departments).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!DepartmentsExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
+            return await _departmentsRepo.PutDepartments(id, Departments);
         }
 
-        // POST: api/Departments
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Departments>> PostDepartments(Departments departments)
+        public async Task<ActionResult<Departments>> PostDepartments(Departments Departments)
         {
-          if (_context.Departments == null)
-          {
-              return Problem("Entity set 'DBContext.Departments'  is null.");
-          }
-            _context.Departments.Add(departments);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetDepartments", new { id = departments.DepartmentsId }, departments);
+            return await _departmentsRepo.PostDepartments(Departments);
         }
 
-        // DELETE: api/Departments/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteDepartments(int id)
         {
-            if (_context.Departments == null)
-            {
-                return NotFound();
-            }
-            var departments = await _context.Departments.FindAsync(id);
-            if (departments == null)
-            {
-                return NotFound();
-            }
-
-            _context.Departments.Remove(departments);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
-        }
-
-        private bool DepartmentsExists(int id)
-        {
-            return (_context.Departments?.Any(e => e.DepartmentsId == id)).GetValueOrDefault();
+            return await _departmentsRepo.DeleteDepartments(id);
         }
     }
 }
