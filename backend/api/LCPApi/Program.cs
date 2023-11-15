@@ -61,7 +61,7 @@ builder.Services.AddSwaggerGen(options =>
     options.SwaggerDoc("v1", new OpenApiInfo { 
         Version = "v1",
         Title = "LCPApi", 
-        Description = "LCP Api",
+        Description = "LCP (Luis Carvalho Projects) Api",
         TermsOfService = new Uri("https://lcp-pi.vercel.app/pt"),
         Contact = new OpenApiContact {
             Name = "Luis Carvalho Projects",
@@ -113,7 +113,7 @@ app.UseHttpsRedirection();
 
 app.UseRouting();
 
-app.MapPost("/security/createToken", [AllowAnonymous] (Employees employee) => AuthFunctions.GenToken(builder, employee));
+app.MapPost("/api/auth/login", [AllowAnonymous] (UserAuth userauth) => AuthFunctions.GenToken(builder, userauth));
 
 app.UseAuthentication();
 app.UseAuthorization();

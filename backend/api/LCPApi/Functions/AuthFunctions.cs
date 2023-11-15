@@ -7,9 +7,9 @@ using LCPApi.Models;
 namespace LCPApi.Functions;
 public static class AuthFunctions
 {
-    public static IResult GenToken(WebApplicationBuilder builder, Employees employee)
+    public static IResult GenToken(WebApplicationBuilder builder, UserAuth userauth)
     {
-        if (employee.EmployeesName == builder.Configuration["userAuth:username"] && employee.EmployeesPassword == builder.Configuration["userAuth:userpass"])
+        if (userauth.UserAuthName == builder.Configuration["userAuth:username"] && userauth.UserAuthPassword == builder.Configuration["userAuth:userpass"])
         {
             var issuer = builder.Configuration["Jwt:Issuer"];
             var audience = builder.Configuration["Jwt:Audience"];
@@ -19,9 +19,8 @@ public static class AuthFunctions
                 Subject = new ClaimsIdentity(new[]
                 {
                     new Claim("Id", Guid.NewGuid().ToString()),
-                    new Claim("Role", ""+employee.EmployeesRole),
-                    new Claim(JwtRegisteredClaimNames.Name, ""+employee.EmployeesName),
-                    new Claim(JwtRegisteredClaimNames.Email, ""+employee.EmployeesEmail),
+                    new Claim("Role", "admin"),
+                    new Claim(JwtRegisteredClaimNames.Name, ""+userauth.UserAuthName),
                     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
                 }),
                 Expires = DateTime.UtcNow.AddMonths(1),
