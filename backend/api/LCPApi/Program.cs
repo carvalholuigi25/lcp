@@ -1,37 +1,45 @@
 using System.Text;
+using System.Text.Json.Serialization;
 using LCPApi.Context;
 using LCPApi.Interfaces;
 using LCPApi.Models;
 using LCPApi.Repositories;
 using LCPApi.Functions;
+using LCPApi.Enums;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Serilog;
+using Swashbuckle.AspNetCore.Annotations;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<DBContext>(optionsBuilder => optionsBuilder.UseSqlServer(builder.Configuration.GetConnectionString("LCPDBSqlServer")));
-builder.Services.AddControllers();
+var logger =  new LoggerConfiguration()
+    .ReadFrom.Configuration(builder.Configuration)
+    .Enrich.FromLogContext()
+    .CreateLogger();
 
-builder.Services.AddScoped<ICustomers, RCustomers>();
-builder.Services.AddScoped<ICategories, RCategories>();
-builder.Services.AddScoped<IDepartments, RDepartments>();
-builder.Services.AddScoped<IEmployees, REmployees>();
-builder.Services.AddScoped<IFeedbacks, RFeedbacks>();
-builder.Services.AddScoped<IFeedbacksComments, RFeedbacksComments>();
-builder.Services.AddScoped<IOrders, ROrders>();
-builder.Services.AddScoped<IOrdersCustomers, ROrdersCustomers>();
-builder.Services.AddScoped<IProducts, RProducts>();
-builder.Services.AddScoped<IProductsProjects, RProductsProjects>();
-builder.Services.AddScoped<IProductsSubscriptions, RProductsSubscriptions>();
-builder.Services.AddScoped<IProjects, RProjects>();
-builder.Services.AddScoped<IProjectsPhases, RProjectsPhases>();
-builder.Services.AddScoped<ISubscriptions, RSubscriptions>();
-builder.Services.AddScoped<ISubscriptionsKeys, RSubscriptionsKeys>();
-builder.Services.AddScoped<ITasks, RTasks>();
-builder.Services.AddScoped<ITasksTypes, RTasksTypes>();
+builder.Logging.ClearProviders();
+builder.Logging.AddSerilog(logger);
+
+builder.Services.AddDbContext<DBContext>();
+builder.Services.AddCors();
+builder.Services.AddControllers().AddJsonOptions(x =>
+{
+    x.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+    x.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
+});
+
+builder.Services.AddScoped<ICustomer, RCustomer>();
+builder.Services.AddScoped<ICategory, RCategory>();
+builder.Services.AddScoped<IDepartment, RDepartment>();
+builder.Services.AddScoped<IEmployee, REmployee>();
+builder.Services.AddScoped<IFeedback, RFeedback>();
+builder.Services.AddScoped<IOrder, ROrder>();
+builder.Services.AddScoped<IProduct, RProduct>();
+builder.Services.AddScoped<IProject, RProject>();
+builder.Services.AddScoped<ISubscription, RSubscription>();
 
 builder.Services.AddEndpointsApiExplorer();
 
@@ -49,15 +57,28 @@ builder.Services.AddAuthentication(options =>
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]!)),
         ValidateIssuer = true,
         ValidateAudience = true,
-        ValidateLifetime = false,
-        ValidateIssuerSigningKey = true
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        RequireExpirationTime = true,
+        ClockSkew = TimeSpan.Zero,
     };
 });
 
-builder.Services.AddAuthorization();
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("GuestsOnly", policy => policy.RequireRole(ENRoles.Guest.ToString()));
+    options.AddPolicy("UsersOnly", policy => policy.RequireRole(ENRoles.User.ToString()));
+    options.AddPolicy("CustomersOnly", policy => policy.RequireRole(ENRoles.Customer.ToString()));
+    options.AddPolicy("EmployeesOnly", policy => policy.RequireRole(ENRoles.Employee.ToString()));
+    options.AddPolicy("EditorsOnly", policy => policy.RequireRole(ENRoles.Editor.ToString()));
+    options.AddPolicy("ModeratorsOnly", policy => policy.RequireRole(ENRoles.Moderator.ToString()));
+    options.AddPolicy("AdminsOnly", policy => policy.RequireRole(ENRoles.Administrator.ToString()));
+    options.AddPolicy("AllRights", policy => policy.RequireRole(ENRoles.Guest.ToString(), ENRoles.User.ToString(), ENRoles.Customer.ToString(), ENRoles.Employee.ToString(), ENRoles.Editor.ToString(), ENRoles.Moderator.ToString(), ENRoles.Administrator.ToString()));
+});
 
 builder.Services.AddSwaggerGen(options =>
 {
+    options.EnableAnnotations();
     options.SwaggerDoc("v1", new OpenApiInfo { 
         Version = "v1",
         Title = "LCPApi", 
@@ -103,17 +124,23 @@ builder.Services.Configure<RouteOptions>(options => options.LowercaseUrls = true
 
 var app = builder.Build();
 
+app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+        c.EnablePersistAuthorization();
+    });
 }
 
 app.UseHttpsRedirection();
 
 app.UseRouting();
 
-app.MapPost("/api/auth/login", [AllowAnonymous] (UserAuth userauth) => AuthFunctions.GenToken(builder, userauth));
+app.MapPost("/api/auth/login", [AllowAnonymous] (UserAuth userauth) => AuthFunctions.GenToken(builder, userauth)).WithTags("Auth").WithMetadata(new SwaggerOperationAttribute("Login", "Login"));
 
 app.UseAuthentication();
 app.UseAuthorization();

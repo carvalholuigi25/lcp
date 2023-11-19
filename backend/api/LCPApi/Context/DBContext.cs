@@ -4,26 +4,52 @@ using LCPApi.Models;
 namespace LCPApi.Context;
 
 public class DBContext : DbContext {
-    public DbSet<Customers> Customers { get; set; }
-    public DbSet<Employees> Employees { get; set; }
-    public DbSet<Products> Products { get; set; }
-    public DbSet<Orders> Orders { get; set; }
-    public DbSet<OrdersCustomers> OrdersCustomers { get; set; }
-    public DbSet<Subscriptions> Subscriptions { get; set; }
-    public DbSet<ProductsSubscriptions> ProductsSubscriptions { get; set; }
-    public DbSet<SubscriptionsKeys> SubscriptionsKeys { get; set; }
-    public DbSet<Projects> Projects { get; set; }
-    public DbSet<Categories> Categories { get; set; }
-    public DbSet<Tasks> Tasks { get; set; }
-    public DbSet<TasksTypes> TasksTypes { get; set; }
-    public DbSet<ProjectsPhases> ProjectsPhases { get; set; }
-    public DbSet<ProductsProjects> ProductsProjects { get; set; }
-    public DbSet<Feedbacks> Feedbacks { get; set; }
-    public DbSet<FeedbacksComments> FeedbacksComments { get; set; }
-    public DbSet<Departments> Departments { get; set; }
+    protected readonly IConfiguration Configuration;
+    public DbSet<Customer> Customers { get; set; }
+    public DbSet<Employee> Employees { get; set; }
+    public DbSet<Product> Products { get; set; }
+    public DbSet<Order> Orders { get; set; }
+    public DbSet<OrderCustomer> OrdersCustomers { get; set; }
+    public DbSet<Subscription> Subscriptions { get; set; }
+    public DbSet<ProductSubscription> ProductsSubscriptions { get; set; }
+    public DbSet<SubscriptionKey> SubscriptionsKeys { get; set; }
+    public DbSet<Project> Projects { get; set; }
+    public DbSet<Category> Categories { get; set; }
+    public DbSet<ProjectTask> ProjectTasks { get; set; }
+    public DbSet<ProjectTaskType> ProjectTasksTypes { get; set; }
+    public DbSet<ProjectPhase> ProjectsPhases { get; set; }
+    public DbSet<ProductProject> ProductsProjects { get; set; }
+    public DbSet<Feedback> Feedbacks { get; set; }
+    public DbSet<FeedbackComment> FeedbacksComments { get; set; }
+    public DbSet<Department> Departments { get; set; }
 
-    public DBContext(DbContextOptions<DBContext> options) : base(options)
+    public DBContext(DbContextOptions<DBContext> options, IConfiguration configuration) : base(options) 
+    { 
+        Configuration = configuration;
+    }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder options)
     {
-        
+        var defdbmode = Configuration["defaultDBMode"]!.ToString() ?? "SQL Server";
+        var dbconstrsqlsrv = Configuration.GetConnectionString("LCPDBSqlServer");
+        var dbconstrmysql = Configuration.GetConnectionString("LCPDBMySQL");
+        var dbconstrsqllite = Configuration.GetConnectionString("LCPDBSqlLite");
+
+        if (defdbmode.Contains("SQL Server", StringComparison.OrdinalIgnoreCase)) {
+            options.UseSqlServer(dbconstrsqlsrv);
+        } else if (defdbmode.Contains("MySQL", StringComparison.OrdinalIgnoreCase)) {
+            options.UseMySql(dbconstrmysql, ServerVersion.AutoDetect(dbconstrmysql));
+        } else if (defdbmode.Contains("SQLite", StringComparison.OrdinalIgnoreCase)) {
+            options.UseSqlite(dbconstrsqllite);
+        } else {
+            options.UseSqlServer(dbconstrsqlsrv);
+        }
+    }
+
+    protected override void OnModelCreating(ModelBuilder mb)
+    {
+        base.OnModelCreating(mb);
+        new DBOpData(mb).SetupForeignKeys(false);
+        new DBOpData(mb).Seed(false);
     }
 }

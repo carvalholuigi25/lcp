@@ -1,0 +1,18 @@
+2023-11-19 13:54:30.759 +00:00  INF  User profile is available. Using 'C:\Users\luisc\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-11-19 13:54:30.937 +00:00  INF  Now listening on: https://localhost:5000
+2023-11-19 13:54:30.938 +00:00  INF  Now listening on: http://localhost:5001
+2023-11-19 13:54:30.940 +00:00  INF  Application started. Press Ctrl+C to shut down.
+2023-11-19 13:54:30.940 +00:00  INF  Hosting environment: Development
+2023-11-19 13:54:30.941 +00:00  INF  Content root path: C:\users\luisc\documents\projects\personal\lcp\backend\api\lcpapi
+2023-11-19 13:54:36.300 +00:00  INF  Request starting HTTP/2 GET https://localhost:5000/ - null null
+2023-11-19 13:54:37.068 +00:00  INF  Executing endpoint 'LCPApi.Controllers.HomeController.Get (LCPApi)'
+2023-11-19 13:54:37.078 +00:00  INF  Route matched with {action = "Get", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller LCPApi.Controllers.HomeController (LCPApi).
+2023-11-19 13:54:37.080 +00:00  INF  Executing RedirectResult, redirecting to /swagger.
+2023-11-19 13:54:37.083 +00:00  INF  Executed action LCPApi.Controllers.HomeController.Get (LCPApi) in 2.1287ms
+2023-11-19 13:54:37.085 +00:00  INF  Executed endpoint 'LCPApi.Controllers.HomeController.Get (LCPApi)'
+2023-11-19 13:54:37.087 +00:00  INF  Request finished HTTP/2 GET https://localhost:5000/ - 302 0 null 788.1196ms
+2023-11-19 13:54:37.100 +00:00  INF  Request starting HTTP/2 GET https://localhost:5000/swagger/index.html - null null
+2023-11-19 13:54:37.149 +00:00  INF  Request finished HTTP/2 GET https://localhost:5000/swagger/index.html - 200 null text/html;charset=utf-8 48.4534ms
+2023-11-19 13:54:37.343 +00:00  INF  Request starting HTTP/2 GET https://localhost:5000/swagger/v1/swagger.json - null null
+2023-11-19 13:54:37.521 +00:00  INF  Request finished HTTP/2 GET https://localhost:5000/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 177.9144ms
+2023-11-19 13:54:47.751 +00:00  INF  Application is shutting down...

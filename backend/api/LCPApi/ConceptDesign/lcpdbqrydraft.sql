@@ -5,7 +5,7 @@ use lcpdb;
 create table Customers (
    customersid int PRIMARY KEY auto_increment,
    customersname varchar(255) not null,
-   customerspass varchar(255) not null,
+   customerspass longtext not null,
    customersrole varchar(255) null default 'user',
    email varchar(255) not null,
    pin int null,
@@ -25,7 +25,7 @@ create table Customers (
 create table Employees (
    employeesid int primary key auto_increment,
    employeesname varchar(255) not null,
-   employeespass varchar(255) not null,
+   employeespass longtext not null,
    employeesrole varchar(255) null default 'vendor',
    email varchar(255) not null,
    pin int null,
@@ -56,15 +56,15 @@ create table Products (
    customersid int null,
    employeesid int null,
    CONSTRAINT UC_Products UNIQUE (productsid, customersid, employeesid),
-   FOREIGN KEY (customersid) REFERENCES Customers(customersid),
-   FOREIGN KEY (employeesid) REFERENCES employees(employeesid)
+   FOREIGN KEY (customersid) REFERENCES Customers(customersid) ON UPDATE CASCADE ON DELETE CASCADE,
+   FOREIGN KEY (employeesid) REFERENCES employees(employeesid) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 create table OrdersCustomers (
     ordersid int primary key auto_increment,
     customersid int null,
     CONSTRAINT UC_Orders UNIQUE (ordersid, customersid),
-    FOREIGN KEY (customersid) REFERENCES Customers(customersid)
+    FOREIGN KEY (customersid) REFERENCES Customers(customersid) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 create table Orders (
@@ -76,8 +76,8 @@ create table Orders (
     itemdiscount int null,
     itemstock int null,
     CONSTRAINT UC_Orders UNIQUE (ordersid, productsid),
-    FOREIGN KEY (ordersid) REFERENCES OrdersCustomers(ordersid),
-    FOREIGN KEY (productsid) REFERENCES Products(productsid)
+    FOREIGN KEY (ordersid) REFERENCES OrdersCustomers(ordersid) ON UPDATE CASCADE ON DELETE CASCADE,
+    FOREIGN KEY (productsid) REFERENCES Products(productsid) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 create table Subscriptions (
@@ -93,16 +93,16 @@ create table Subscriptions (
     employeesid int null,
     productsid int null,
     CONSTRAINT UC_Subscriptions UNIQUE (subsid, customersid, employeesid, productsid),
-    FOREIGN KEY (customersid) REFERENCES Customers(customersid),
-    FOREIGN KEY (employeesid) REFERENCES employees(employeesid),
-    FOREIGN KEY (productsid) REFERENCES Products(productsid)
+    FOREIGN KEY (customersid) REFERENCES Customers(customersid) ON UPDATE CASCADE ON DELETE CASCADE,
+    FOREIGN KEY (employeesid) REFERENCES employees(employeesid) ON UPDATE CASCADE ON DELETE CASCADE,
+    FOREIGN KEY (productsid) REFERENCES Products(productsid) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 create table ProductsSubscriptions (
    productsid int primary key auto_increment,
    subsid int null,
    CONSTRAINT UC_ProductsSubscriptions UNIQUE (productsid, subsid),
-   FOREIGN KEY (productsid) REFERENCES Products(productsid)
+   FOREIGN KEY (productsid) REFERENCES Products(productsid) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 create table SubscriptionsKeys (
@@ -114,7 +114,7 @@ create table SubscriptionsKeys (
     keysstatus enum('pending', 'granted', 'expired', 'revoked', 'unknown') null default 'pending',
     subsid int null,
     CONSTRAINT UC_SubscriptionsKeys UNIQUE (keysid, subsid),
-    FOREIGN KEY (subsid) REFERENCES Subscriptions(subsid)
+    FOREIGN KEY (subsid) REFERENCES Subscriptions(subsid) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 create table Projects (
@@ -132,7 +132,9 @@ create table Projects (
     projbudgetdays int null,
     projbudgetcost double null,
     projrecords varchar(255) null,
-    CONSTRAINT UC_Projects UNIQUE (projectsid)
+    employeesid int null,
+    CONSTRAINT UC_Projects UNIQUE (projectsid),
+    FOREIGN KEY (employeesid) REFERENCES Employees(employeesid) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 create table Category (
@@ -140,7 +142,7 @@ create table Category (
     catdesc varchar(255) null,
     projectsid int null,
     CONSTRAINT UC_Category UNIQUE (categoryid, projectsid),
-    FOREIGN KEY (projectsid) REFERENCES Projects(projectsid)
+    FOREIGN KEY (projectsid) REFERENCES Projects(projectsid) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 create table Tasks (
@@ -163,8 +165,8 @@ create table Tasks (
     projectsid int null,
     categoryid int null,
     CONSTRAINT UC_Tasks UNIQUE (tasksid, projectsid, categoryid),
-	FOREIGN KEY (projectsid) REFERENCES Projects(projectsid),
-	FOREIGN KEY (categoryid) REFERENCES Category(categoryid)
+	FOREIGN KEY (projectsid) REFERENCES Projects(projectsid) ON UPDATE CASCADE ON DELETE CASCADE,
+	FOREIGN KEY (categoryid) REFERENCES Category(categoryid) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 create table TaskTypes (
@@ -172,7 +174,7 @@ create table TaskTypes (
     taskstypedesc varchar(255) null,
     tasksid int null,
     CONSTRAINT UC_TaskTypes UNIQUE (taskstypeid, tasksid),
-    FOREIGN KEY (tasksid) REFERENCES Tasks(tasksid)
+    FOREIGN KEY (tasksid) REFERENCES Tasks(tasksid) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 create table ProjectPhases (
@@ -187,15 +189,15 @@ create table ProjectPhases (
     tasksid int null,
     categoryid int null,
     CONSTRAINT UC_ProjectPhases UNIQUE (phasesid),
-    FOREIGN KEY (tasksid) REFERENCES Tasks(tasksid),
-	FOREIGN KEY (categoryid) REFERENCES Category(categoryid)
+    FOREIGN KEY (tasksid) REFERENCES Tasks(tasksid) ON UPDATE CASCADE ON DELETE CASCADE,
+	FOREIGN KEY (categoryid) REFERENCES Category(categoryid) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 create table ProductsProjects (
 	productsid int primary key auto_increment,
     projectsid int null,
     CONSTRAINT UC_ProductsProjects UNIQUE (productsid, projectsid),
-    FOREIGN KEY (projectsid) REFERENCES Projects(projectsid)
+    FOREIGN KEY (projectsid) REFERENCES Projects(projectsid) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 create table Feedback (
@@ -212,8 +214,8 @@ create table Feedback (
     projectsid int null,
     commentsid int null,
     CONSTRAINT UC_Feedback UNIQUE (customersid, projectsid, commentsid),
-    FOREIGN KEY (customersid) REFERENCES Customers(customersid),
-    FOREIGN KEY (projectsid) REFERENCES Projects(projectsid)
+    FOREIGN KEY (customersid) REFERENCES Customers(customersid) ON UPDATE CASCADE ON DELETE CASCADE,
+    FOREIGN KEY (projectsid) REFERENCES Projects(projectsid) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 create table FeedbackComments (
@@ -228,9 +230,9 @@ create table FeedbackComments (
     customersid int null,
     employeesid int null,
     CONSTRAINT UC_FeedbackComments UNIQUE (commentsid, feedbackid, customersid),
-    FOREIGN KEY (feedbackid) REFERENCES Feedback(feedbackid),
-    FOREIGN KEY (customersid) REFERENCES Customers(customersid),
-    FOREIGN KEY (employeesid) REFERENCES employees(employeesid)
+    FOREIGN KEY (feedbackid) REFERENCES Feedback(feedbackid) ON UPDATE CASCADE ON DELETE CASCADE,
+    FOREIGN KEY (customersid) REFERENCES Customers(customersid) ON UPDATE CASCADE ON DELETE CASCADE,
+    FOREIGN KEY (employeesid) REFERENCES employees(employeesid) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 create table Departament (
@@ -241,6 +243,35 @@ create table Departament (
     projectsid int null,
     employeesid int null,
     CONSTRAINT UC_Departament UNIQUE (departamentid, projectsid, employeesid),
-    FOREIGN KEY (projectsid) REFERENCES Projects(projectsid),
-    FOREIGN KEY (employeesid) REFERENCES employees(employeesid)
+    FOREIGN KEY (projectsid) REFERENCES Projects(projectsid) ON UPDATE CASCADE ON DELETE CASCADE,
+    FOREIGN KEY (employeesid) REFERENCES employees(employeesid) ON UPDATE CASCADE ON DELETE CASCADE
 );
+
+INSERT INTO Customers (customersname, customerspass, email, customersrole) VALUES ('timmy', sha("timmy1234"), 'timmy2023@localhost.loc', 'user');
+INSERT INTO Employees (employeesname, employeespass, email, employeesrole) VALUES ('admin', sha('admin1234'), 'luiscarvalho239@gmail.com', 'admin');
+INSERT INTO OrdersCustomers (customersid) VALUES (1);
+INSERT INTO Products (prodtitle, prodtype, customersid, employeesid) VALUES ('LCP Website', 'Website', 1, 1);
+INSERT INTO Orders (productsid, quantity, orderdate, itemprice, itemdiscount, itemstock) VALUES (1, 1, '2023-11-16', 20, 0, 1);
+INSERT INTO Subscriptions (substitle, customersid, employeesid, productsid) VALUES ('Ultimate', 1, 1, 1);
+INSERT INTO SubscriptionsKeys (keysvalue, keysstatus, subsid) VALUES ('A1B2C3-D4E5G6-H7I8J9', 'granted', 1);
+INSERT INTO ProductsSubscriptions (subsid) VALUES (1);
+INSERT INTO Projects (projname, projdesc, projowner, projcompany, employeesid) VALUES ('Websites', 'LCP', 'admin', 'LCP', 1);
+INSERT INTO Category (catdesc, projectsid) VALUES ("Websites", 1);
+INSERT INTO Category (catdesc) VALUES ("Apps");
+INSERT INTO Category (catdesc) VALUES ("Softwares");
+INSERT INTO Tasks (taskname, taskdesc, taskproject, phasename, taskstatus, projectsid, categoryid) VALUES ("Finished the website", "website for LCP", "LCP Website", "Add the website", "accepted", 1, 1);
+INSERT INTO TaskTypes (taskstypedesc, tasksid) VALUES ("Added the website for LCP", 1);
+INSERT INTO ProjectPhases (phasename, projname, tasksid, categoryid) VALUES ('Add the website', 'LCP Website', 1, 1);
+INSERT INTO ProductsProjects (projectsid) VALUES (1);
+INSERT INTO Feedback (feedbacktitle, feedbackmsg, feedbackstatus, customersid, projectsid, commentsid) VALUES ('LCP Website', 'Add the website', 'accepted', 1, 1, 1);
+INSERT INTO FeedbackComments (commentsmsg, feedbackid, customersid, employeesid) VALUES ('Ok, added!', 1, 1, 1);
+INSERT INTO Departament (departamentname, projectsid, employeesid) VALUES ('Web development', 1, 1);
+
+SELECT Employees.*, Projects.*, Products.*, Orders.*, Subscriptions.*, Feedback.*, Departament.*, Customers.* FROM Employees 
+INNER JOIN Projects ON Employees.employeesid = Projects.employeesid 
+INNER JOIN Products ON Employees.employeesid = Products.employeesid
+INNER JOIN Orders ON Products.productsid = Orders.ordersid
+INNER JOIN Subscriptions ON Employees.employeesid = Subscriptions.employeesid
+INNER JOIN Feedback ON Projects.projectsid = Feedback.projectsid
+INNER JOIN Departament ON Employees.employeesid = Departament.employeesid
+INNER JOIN Customers ON Employees.employeesid = Customers.customersid;

@@ -2,6 +2,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using LCPApi.Enums;
 using LCPApi.Models;
 
 namespace LCPApi.Functions;
@@ -19,7 +20,7 @@ public static class AuthFunctions
                 Subject = new ClaimsIdentity(new[]
                 {
                     new Claim("Id", Guid.NewGuid().ToString()),
-                    new Claim("Role", "admin"),
+                    new Claim("Role", ENRoles.Administrator.ToString()),
                     new Claim(JwtRegisteredClaimNames.Name, ""+userauth.UserAuthName),
                     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
                 }),
