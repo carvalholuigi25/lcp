@@ -28,7 +28,7 @@ public class DBOpData
             int seedval = 1000;
 
             List<Employee> listEmp = [
-                new Employee { EmployeeId = 1001, EmployeeFirstName = "Luis", EmployeeLastName = "Carvalho", EmployeeCity = "Braga", EmployeeCountry = "Portugal", EmployeeStateProvince = "", EmployeeName = "luigicardev96", EmployeeEmail = "luiscarvalho239@gmail.com", EmployeeDateBirthday = DateTime.Parse("1996-06-04T00:00:00"), EmployeeDateRegistered = DateTime.Now, EmployeePassword = BC.HashPassword("luigi1234"), EmployeePin = 1234, EmployeeJob = "Programmer", EmployeePhoneNumber = "0123456789", EmployeePostalAddress = "1234-567", EmployeeZipCode = "1234-567", EmployeeRole = ENRoles.Administrator.ToString(), Products = null }
+                new Employee { EmployeeId = 1001, EmployeeFirstName = "Luis", EmployeeLastName = "Carvalho", EmployeeCity = "Braga", EmployeeCountry = "Portugal", EmployeeStateProvince = "", EmployeeName = "admin", EmployeeEmail = "luiscarvalho239@gmail.com", EmployeeDateBirthday = DateTime.Parse("1996-06-04T00:00:00"), EmployeeDateRegistered = DateTime.Now, EmployeePassword = BC.HashPassword("Kw@?7t3z704M6-6B92XG"), EmployeePin = BC.HashPassword("1234"), EmployeeJob = "Programmer", EmployeePhoneNumber = "0123456789", EmployeePostalAddress = "1234-567", EmployeeZipCode = "1234-567", EmployeeRole = ENRoles.Administrator.ToString(), Products = null }
             ];
 
             _mb.Entity<Employee>(b => {

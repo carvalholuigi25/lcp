@@ -1,11 +1,13 @@
 using Microsoft.AspNetCore.Mvc;
 using LCPApi.Models;
 using LCPApi.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LCPApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [AllowAnonymous]
     public class ProductController : ControllerBase
     {
         private readonly IProduct _productRepo;

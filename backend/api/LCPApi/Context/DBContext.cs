@@ -50,6 +50,6 @@ public class DBContext : DbContext {
     {
         base.OnModelCreating(mb);
         new DBOpData(mb).SetupForeignKeys(false);
-        new DBOpData(mb).Seed(false);
+        new DBOpData(mb).Seed(true);
     }
 }

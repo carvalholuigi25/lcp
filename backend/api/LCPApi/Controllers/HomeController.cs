@@ -2,8 +2,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace LCPApi.Controllers;
 
-// [ApiController]
-// [NonController]
 [ApiExplorerSettings(IgnoreApi = true)]
 [Route("")]
 [Route("[controller]")]

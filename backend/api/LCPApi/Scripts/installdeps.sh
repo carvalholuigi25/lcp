@@ -15,5 +15,6 @@ dotnet add package Serilog
 dotnet add package Serilog.Sinks.Console
 dotnet add package Serilog.Sinks.File
 dotnet add package Serilog.AspNetCore
+libman install @microsoft/signalr@latest -p unpkg -d wwwroot/js/signalr --files dist/browser/signalr.js
 
 exit

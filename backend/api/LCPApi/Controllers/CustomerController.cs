@@ -1,12 +1,13 @@
 using Microsoft.AspNetCore.Mvc;
 using LCPApi.Models;
-using LCPApi.Repositories;
 using LCPApi.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LCPApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Policy = "StaffOnly")]
     public class CustomerController : ControllerBase
     {
         private readonly ICustomer _customerRepo;

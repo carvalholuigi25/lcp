@@ -1,11 +1,14 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using LCPApi.Models;
 using LCPApi.Interfaces;
+using LCPApi.Functions;
 
 namespace LCPApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Policy = "StaffOnly")]
     public class SubscriptionController : ControllerBase
     {
         private readonly ISubscription _subscriptionRepo;
@@ -43,6 +46,12 @@ namespace LCPApi.Controllers
         public async Task<IActionResult> DeleteSubscription(int id)
         {
             return await _subscriptionRepo.DeleteSubscription(id);
+        }
+
+        [HttpGet("genpkey")]
+        public async Task<ActionResult<IEnumerable<ProductKeyClass>>> GenerateProdKey()
+        {
+           return await ProductKeyFunctions.GetProductKey();
         }
 
         [HttpGet("key")]

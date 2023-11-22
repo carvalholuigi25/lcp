@@ -1,13 +1,13 @@
-// using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using LCPApi.Models;
 using LCPApi.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LCPApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    // [Authorize(Policy = "AllRights")]
+    [Authorize(Policy = "StaffOnly")]
     public class EmployeeController : ControllerBase
     {
         private readonly IEmployee _employeeRepo;

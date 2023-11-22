@@ -8,10 +8,14 @@ public class Customer {
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int CustomerId { get; set; }
     public string CustomerName { get; set; } = null!;
+    [Column(TypeName = "varchar(MAX)")]
     public string CustomerPassword { get; set; } = null!;
     public string? CustomerRole { get; set; }
     public string? CustomerEmail { get; set; }
-    public int? CustomerPin { get; set; }
+    [RegularExpression(@"^[0-9]+$", ErrorMessage = "Please enter a valid number.")]
+    [MaxLength(4, ErrorMessage = "The pin has been reached at max of 4 numbers!")]
+    [Column(TypeName = "varchar(MAX)")]
+    public string? CustomerPin { get; set; }
     public string? CustomerFirstName { get; set; }
     public string? CustomerLastName { get; set; }
     public string? CustomerJob { get; set; }

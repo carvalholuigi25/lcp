@@ -8,19 +8,19 @@ using LCPApi.Models;
 namespace LCPApi.Functions;
 public static class AuthFunctions
 {
-    public static IResult GenToken(WebApplicationBuilder builder, UserAuth userauth)
+    public static string GenToken(IConfiguration config, UserAuth userauth)
     {
-        if (userauth.UserAuthName == builder.Configuration["userAuth:username"] && userauth.UserAuthPassword == builder.Configuration["userAuth:userpass"])
+        if (userauth.UserAuthName == config["userAuth:username"] && userauth.UserAuthPassword == config["userAuth:userpass"])
         {
-            var issuer = builder.Configuration["Jwt:Issuer"];
-            var audience = builder.Configuration["Jwt:Audience"];
-            var key = Encoding.ASCII.GetBytes(builder.Configuration["Jwt:Key"]!);
+            var issuer = config["Jwt:Issuer"];
+            var audience = config["Jwt:Audience"];
+            var key = Encoding.ASCII.GetBytes(config["Jwt:Key"]!);
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new[]
                 {
                     new Claim("Id", Guid.NewGuid().ToString()),
-                    new Claim("Role", ENRoles.Administrator.ToString()),
+                    new Claim(ClaimTypes.Role, ENRoles.Administrator.ToString()),
                     new Claim(JwtRegisteredClaimNames.Name, ""+userauth.UserAuthName),
                     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
                 }),
@@ -32,8 +32,8 @@ public static class AuthFunctions
             var tokenHandler = new JwtSecurityTokenHandler();
             var token = tokenHandler.CreateToken(tokenDescriptor);
             var stringToken = tokenHandler.WriteToken(token);
-            return Results.Ok(stringToken);
+            return stringToken;
         }
-        return Results.Unauthorized();
+        return "Unauthorized";
     }
 }

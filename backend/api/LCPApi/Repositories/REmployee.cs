@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using LCPApi.Context;
 using LCPApi.Models;
 using LCPApi.Interfaces;
+using BC = BCrypt.Net.BCrypt;
 
 namespace LCPApi.Repositories;
 
@@ -47,6 +48,14 @@ public class REmployee : ControllerBase, IEmployee
             return BadRequest();
         }
 
+        if(!string.IsNullOrEmpty(Employee.EmployeePassword)) {
+            Employee.EmployeePassword = BC.HashPassword(Employee.EmployeePassword);
+        }
+
+        if(!string.IsNullOrEmpty(Employee.EmployeePin)) {
+            Employee.EmployeePin = BC.HashPassword(Employee.EmployeePin);
+        }
+
         _context.Entry(Employee).State = EntityState.Modified;
 
         try
@@ -74,6 +83,10 @@ public class REmployee : ControllerBase, IEmployee
         {
             return Problem("Entity set 'DBContext.Employees'  is null.");
         }
+
+        Employee.EmployeePassword = BC.HashPassword(Employee.EmployeePassword);
+        Employee.EmployeePin = BC.HashPassword(Employee.EmployeePin);
+
         _context.Employees.Add(Employee);
         await _context.SaveChangesAsync();
 

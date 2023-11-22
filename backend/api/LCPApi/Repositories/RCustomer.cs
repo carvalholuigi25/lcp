@@ -3,6 +3,7 @@ using LCPApi.Interfaces;
 using LCPApi.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using BC = BCrypt.Net.BCrypt;
 
 namespace LCPApi.Repositories;
 
@@ -47,6 +48,14 @@ public class RCustomer : ControllerBase, ICustomer
             return BadRequest();
         }
 
+        if(!string.IsNullOrEmpty(Customer.CustomerPassword)) {
+            Customer.CustomerPassword = BC.HashPassword(Customer.CustomerPassword);
+        }
+
+        if(!string.IsNullOrEmpty(Customer.CustomerPin)) {
+            Customer.CustomerPin = BC.HashPassword(Customer.CustomerPin);
+        }
+
         _context.Entry(Customer).State = EntityState.Modified;
 
         try
@@ -69,11 +78,15 @@ public class RCustomer : ControllerBase, ICustomer
     }
 
     public async Task<ActionResult<Customer>> PostCustomer(Customer Customer)
-    {
+    {        
         if (_context.Customers == null)
         {
             return Problem("Entity set 'DBContext.Customers'  is null.");
         }
+
+        Customer.CustomerPassword = BC.HashPassword(Customer.CustomerPassword);
+        Customer.CustomerPin = BC.HashPassword(Customer.CustomerPin);
+
         _context.Customers.Add(Customer);
         await _context.SaveChangesAsync();
 

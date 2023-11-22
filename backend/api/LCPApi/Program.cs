@@ -2,16 +2,13 @@ using System.Text;
 using System.Text.Json.Serialization;
 using LCPApi.Context;
 using LCPApi.Interfaces;
-using LCPApi.Models;
 using LCPApi.Repositories;
-using LCPApi.Functions;
 using LCPApi.Enums;
-using Microsoft.AspNetCore.Authorization;
+using LCPApi.Hubs;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Serilog;
-using Swashbuckle.AspNetCore.Annotations;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -73,6 +70,7 @@ builder.Services.AddAuthorization(options =>
     options.AddPolicy("EditorsOnly", policy => policy.RequireRole(ENRoles.Editor.ToString()));
     options.AddPolicy("ModeratorsOnly", policy => policy.RequireRole(ENRoles.Moderator.ToString()));
     options.AddPolicy("AdminsOnly", policy => policy.RequireRole(ENRoles.Administrator.ToString()));
+    options.AddPolicy("StaffOnly", policy => policy.RequireRole(ENRoles.Administrator.ToString(), ENRoles.Moderator.ToString()));
     options.AddPolicy("AllRights", policy => policy.RequireRole(ENRoles.Guest.ToString(), ENRoles.User.ToString(), ENRoles.Customer.ToString(), ENRoles.Employee.ToString(), ENRoles.Editor.ToString(), ENRoles.Moderator.ToString(), ENRoles.Administrator.ToString()));
 });
 
@@ -121,6 +119,7 @@ builder.Services.AddSwaggerGen(options =>
 });
 
 builder.Services.Configure<RouteOptions>(options => options.LowercaseUrls = true);
+builder.Services.AddSignalR();
 
 var app = builder.Build();
 
@@ -137,14 +136,12 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 app.UseRouting();
-
-app.MapPost("/api/auth/login", [AllowAnonymous] (UserAuth userauth) => AuthFunctions.GenToken(builder, userauth)).WithTags("Auth").WithMetadata(new SwaggerOperationAttribute("Login", "Login"));
-
+app.UseStaticFiles();
 app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+app.MapHub<DataHub>("/dataHub");
 
 app.Run();
