@@ -48,6 +48,9 @@ export default function Footer() {
                             <a href="https://www.instagram.com/lcp2267/" className="ms-2" target='_blank'>
                                 <Image className="image" src="/icons/socialnetworks/instagram.svg" alt="LCP Instagram" width={40} height={40} />
                             </a>
+                            <a href="https://www.linkedin.com/company/lcp2023" className="ms-2" target='_blank'>
+                                <Image className="image" src="/icons/socialnetworks/linkedin.svg" alt="LCP Linkedin" width={40} height={40} />
+                            </a>
                         </div>
                     </div>
                     <div className="row mt-3">
