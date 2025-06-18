@@ -1,9 +1,13 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 "use client";
-
 import React, { useEffect, useState } from 'react';
 
+export const getThemes = (mylocale) => {
+    return require('@assets/themes/data_'+mylocale+'.json').themes;
+}
+
 export function ThemeComponent({mylocale, seldeftheme}) {
-    const aryThemes = require('/public/themes/data_'+mylocale+'.json').themes;
+    const themes = getThemes(mylocale);
     const [theme, setTheme] = useState("default");
 
     useEffect(() => {
@@ -12,13 +16,13 @@ export function ThemeComponent({mylocale, seldeftheme}) {
         defThemeByClass(deftheme);
     }, []);
 
-    function changeTheme(e) {
+    const changeTheme = (e) => {
         localStorage.setItem("theme", e.target.value);
         setTheme(e.target.value);
         defThemeByClass(e.target.value);
     }
 
-    function defThemeByClass(clname) {
+    const defThemeByClass = (clname) => {
         if(document.querySelector('.theme')) {
             document.querySelector('.theme').classList.remove("theme-default");
             document.querySelector('.theme').classList.remove("theme-dark");
@@ -27,8 +31,8 @@ export function ThemeComponent({mylocale, seldeftheme}) {
         }
     }
 
-    const listThemeOpts = aryThemes.map((xt, i) => {
-        return ( <option value={xt.value} key={xt.id} dir="auto">{xt.name}</option> );
+    const listThemeOpts = themes && themes.map((xt) => {
+        return (<option value={xt.value} key={xt.id} dir="auto">{xt.name}</option>);
     });
 
     return (

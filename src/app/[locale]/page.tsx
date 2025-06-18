@@ -1,5 +1,5 @@
-import { useTranslations } from 'next-intl';
-import { unstable_setRequestLocale } from 'next-intl/server';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Image from 'next/image';
 import styles from './styles/page/page.module.scss';
 import Navbar from "./components/navbar";
@@ -7,10 +7,12 @@ import Header from './components/header';
 import Footer from './components/footer';
 import ContactComponent from './components/contact';
 
-export default function Home({ params: {locale} }: { params: any }) {
-  unstable_setRequestLocale(locale);
+export default async function Home({ params }: { params: any }) {
+  const { locale } = await params;
 
-  const t = useTranslations('Home');
+  setRequestLocale(locale);
+
+  const t = await getTranslations('Home');
 
   return (
     <>

@@ -1,9 +1,14 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 "use client";
 
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
-export function LanguageComponent() {
-    const aryLangs = require('/public/locales/langs.json').langs;
+export default function LanguageComponent() {
+    const getLang = () => {
+        return require('@assets/locales/langs.json').languages;
+    }
+    
+    const aryLangs = getLang(mylocale);
     const [lang, setLang] = useState("");
 
     useEffect(() => {
@@ -20,7 +25,7 @@ export function LanguageComponent() {
         location.href = "/" + e.target.value;
     }
 
-    const listLangOpts = aryLangs.map((xa, i) => {
+    const listLangOpts = aryLangs && aryLangs.map((xa) => {
         return ( <option value={xa.value} key={xa.id}>{xa.name}</option> );
     });
 

@@ -13,7 +13,6 @@ export default function ContactComponent() {
     const [email, setEmail] = useState("");
     const [subject, setSubject] = useState("");
     const [message, setMessage] = useState("");
-    const [submitted, setSubmitted] = useState(false);
 
     const handleNameChange = (e) => {
         setName(e.target.value);

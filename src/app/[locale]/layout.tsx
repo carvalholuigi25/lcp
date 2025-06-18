@@ -1,16 +1,20 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import './styles/globals.scss';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-icons/font/bootstrap-icons.min.css';
 import 'animate.css';
-import ImportMyPlugins from "./plugins/impMyPlugins";
+import ImportMyPlugins from "@applocale/plugins/impMyPlugins";
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { notFound } from 'next/navigation';
-import { NextIntlClientProvider, useMessages, useNow } from 'next-intl';
-import { unstable_setRequestLocale } from 'next-intl/server';
+import { getLocale, getMessages } from 'next-intl/server';
+import { NextIntlClientProvider } from 'next-intl';
+import { getValueLocales, getValueLocalesWithOnlyLocale } from '../i18n/routing';
+import { Suspense } from 'react';
+import { getDefLocale } from './helpers/defLocale';
 
 const inter = Inter({ subsets: ['latin'] })
-const locales = require('/public/locales/langs.json').langs.map((x: any) => x.value);
+const locales = getValueLocales();
 
 export const metadata: Metadata = {
   title: 'LCP',
@@ -18,33 +22,36 @@ export const metadata: Metadata = {
 }
 
 export async function generateStaticParams() {
-  return require('/public/locales/langs.json').langs.map((x: any) => ({locale: x.value}));
+  return getValueLocalesWithOnlyLocale();
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
-  params: { locale, theme }
-}: {
-  children: React.ReactNode,
-  params: any
-}) {
-  const timeZone = 'Europe/Lisbon';
-  const isValidLocale = locales.some((cur: any) => cur === locale);
+  params
+}: Readonly<{
+  children: React.ReactNode;
+  params: Promise<{ locale: string, theme: string }>;
+}>) {
+  const alocale = (await params).locale ?? await getLocale() ?? getDefLocale();
+  const mytheme = (await params).theme ?? 'default';
+  const messages = await getMessages({ locale: alocale });
+
+  const isValidLocale = locales.some((cur: any) => cur === alocale);
   if (!isValidLocale) notFound();
 
-  unstable_setRequestLocale(locale);
-
   return (
-    <html lang={locale}>
+    <html lang={alocale} suppressHydrationWarning>
       <head>
         <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png" />
         <link rel="manifest" href="/images/favicon/site.webmanifest" />
       </head>
-      <body className={inter.className + " " + `theme theme-${theme ?? 'default'}`} suppressHydrationWarning={true}>
-        <NextIntlClientProvider locale={locale} messages={useMessages()} timeZone={timeZone} now={useNow()}>
-          {children}
+      <body className={inter.className + " " + `theme theme-${mytheme}`} suppressHydrationWarning={true}>
+        <NextIntlClientProvider locale={alocale} messages={messages}>
+          <Suspense fallback={<div><p>Loading...</p></div>}>
+            {children}
+          </Suspense>
           <ImportMyPlugins />
         </NextIntlClientProvider>
       </body>

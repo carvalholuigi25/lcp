@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 const controller = new AbortController();
@@ -26,7 +27,7 @@ export async function doLogin(e: any, username: string, userpass: string) {
         body: formData,
         headers: getHeaders(),
         signal: signal
-    }).then((res: any) => res.json());
+    }).then((res: Response) => res.json());
 }
 
 export async function doLogout(e: any, username: string) {
@@ -42,7 +43,7 @@ export async function doLogout(e: any, username: string) {
         headers: getHeaders(),
         signal: signal
     })
-    .then((res: any) => res.json());
+    .then((res: Response) => res.json());
 }
 
 export function abortReq() {

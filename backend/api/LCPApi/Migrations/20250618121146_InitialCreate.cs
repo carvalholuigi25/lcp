@@ -32,10 +32,10 @@ namespace LCPApi.Migrations
                     CustomerId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CustomerName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CustomerPassword = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CustomerPassword = table.Column<string>(type: "varchar(MAX)", nullable: false),
                     CustomerRole = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CustomerEmail = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CustomerPin = table.Column<int>(type: "int", nullable: true),
+                    CustomerPin = table.Column<string>(type: "varchar(MAX)", maxLength: 4, nullable: true),
                     CustomerFirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CustomerLastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CustomerJob = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -75,12 +75,12 @@ namespace LCPApi.Migrations
                 columns: table => new
                 {
                     EmployeeId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                        .Annotation("SqlServer:Identity", "1000, 1"),
                     EmployeeName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    EmployeePassword = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    EmployeePassword = table.Column<string>(type: "varchar(MAX)", nullable: false),
                     EmployeeRole = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     EmployeeEmail = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    EmployeePin = table.Column<int>(type: "int", nullable: true),
+                    EmployeePin = table.Column<string>(type: "varchar(MAX)", maxLength: 4, nullable: true),
                     EmployeeFirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     EmployeeLastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     EmployeeJob = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -361,6 +361,11 @@ namespace LCPApi.Migrations
                         principalTable: "Employees",
                         principalColumn: "EmployeeId");
                 });
+
+            migrationBuilder.InsertData(
+                table: "Employees",
+                columns: new[] { "EmployeeId", "EmployeeCity", "EmployeeCountry", "EmployeeDateBirthday", "EmployeeDateRegistered", "EmployeeEmail", "EmployeeFirstName", "EmployeeJob", "EmployeeLastName", "EmployeeName", "EmployeePassword", "EmployeePhoneNumber", "EmployeePin", "EmployeePostalAddress", "EmployeeRole", "EmployeeStateProvince", "EmployeeZipCode" },
+                values: new object[] { 1001, "Braga", "Portugal", new DateTime(1996, 6, 4, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2025, 6, 18, 13, 11, 43, 976, DateTimeKind.Local).AddTicks(4064), "luiscarvalho239@gmail.com", "Luis", "Programmer", "Carvalho", "admin", "$2a$11$hrkSd.uLWh.VIrmDyuz2yubJyQ4hIWiLjtpN2XuyCcwKIB8xHKlY6", "0123456789", "$2a$11$KNBKeXiWsMAgqmg4XLTDo.l6Jarcwx05FshUKPivDPDkH7w/q90JC", "1234-567", "Administrator", "", "1234-567" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Products_CustomerId",

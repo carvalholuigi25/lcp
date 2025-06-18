@@ -1,6 +1,9 @@
+// import dotenv from 'dotenv';
+import nodemailer from 'nodemailer';
+
+
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export async function sendMailUtil(mailData: any) {
-  require('dotenv').config();
-  let nodemailer = require('nodemailer');
   const debugOpt = true;
   const confopt = {
     host: process.env.EMAIL_HOST,

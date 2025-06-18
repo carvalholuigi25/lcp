@@ -1,9 +1,9 @@
 import styles from '../styles/page/page.module.scss';
 import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
-import { ThemeComponent } from '../features/theme';
-import { LanguageWithFlagsComponent } from '../features/langWithFlags';
-import SubscribeComponent from '../components/subscribe';
+import { ThemeComponent } from '@applocale/components/theme';
+import { FlagsLang } from '@applocale/components/flagslang';
+import { getDefLocale } from '@applocale/helpers/defLocale';
 
 export default function Footer() {
     const t = useTranslations('Footer');
@@ -28,11 +28,11 @@ export default function Footer() {
                                 <div className="row">
                                     <div className="col-12 col-md-6 col-lg-6 mb-3">
                                         <h4 className={styles.footerMiscTitle} dir="auto">{t('miscTitleTheme')}</h4>
-                                        <ThemeComponent mylocale={t('miscOptDynamicTheme', { themeval: useLocale() })} seldeftheme={t('miscDefSelTheme')} />
+                                        <ThemeComponent mylocale={t('miscOptDynamicTheme', { themeval: useLocale() ?? getDefLocale() })} seldeftheme={t('miscDefSelTheme')} />
                                     </div>
                                     <div className="col-12 col-md-6 col-lg-6 mb-3">
                                         <h4 className={styles.footerMiscTitle} dir="auto">{t('miscTitleLang')}</h4>
-                                        <LanguageWithFlagsComponent />
+                                        <FlagsLang />
                                     </div>
                                 </div>
                             </div>

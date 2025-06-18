@@ -1,8 +1,9 @@
-import createIntlMiddleware from 'next-intl/middleware';
+import { getValueLocales } from '@/app/i18n/routing';
 import { NextRequest } from 'next/server';
+import createIntlMiddleware from 'next-intl/middleware';
 
 export default async function middleware(request: NextRequest) {
-  const localesary = require('/public/locales/langs.json').langs.map((x: any) => x.value);
+  const localesary = getValueLocales();
   const defaultLocale = request.headers.get('x-default-locale') ?? 'en';
 
   const handleI18nRouting = createIntlMiddleware({

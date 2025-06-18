@@ -3,7 +3,8 @@
 
 // module.exports = nextConfig
 
-const withNextIntl = require('next-intl/plugin')('./i18n.ts');
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const withNextIntl = require('next-intl/plugin')('./src/app/i18n/request.ts');
 const defLocale = "en";
 
 module.exports = withNextIntl({

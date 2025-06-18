@@ -1,32 +1,43 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 "use client";
-
+import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import { useLocale } from 'next-intl';
-import Image from 'next/image';
+import { getFromStorage, saveToStorage } from '@applocale/hooks/localstorage';
 
-export function LanguageWithFlagsComponent() {
-    const aryLangs = require('/public/locales/langs.json').langs;
+export function FlagsLang() {
+    const getLangs = () => {
+        return require('@assets/locales/langs.json').langs;
+    }
+
     const [lang, setLang] = useState("");
     const locale = useLocale();
 
-    // aryLangs.sort((a, b) => -1 * a.region.localeCompare(b.region)); // it will sort list by descending
-    aryLangs.sort((a, b) => a.region.localeCompare(b.region)); // it will sort list by ascending
+    if(getLangs()) {
+        // langs.sort((a, b) => -1 * a.region.localeCompare(b.region)); // it will sort list by descending
+        getLangs().sort((a, b) => a.region.localeCompare(b.region)); // it will sort list by ascending
+    }
 
     useEffect(() => {
-        localStorage.setItem("lang", locale);
+        if(!getFromStorage("lang")) {
+            saveToStorage("lang", locale);
+        }
 
-        var deflang = localStorage.getItem("lang") ?? locale ?? "en";
-        var curlang = aryLangs.filter(x => x.region == deflang).value ?? deflang;
-        setLang(curlang);
+        var deflang = getFromStorage("lang") ?? locale ?? "en";
+
+        if(getLangs()) {
+            var curlang = getLangs().filter(x => x.region == deflang).value ?? deflang;
+            setLang(curlang);
+        }
 
         if(document.querySelector('#btnlanglist')) {
             if(document.querySelector('#lang .dropdown-menu .dropdown-item[data-value="'+curlang+'"]')) {
                 document.querySelector('#btnlanglist').innerHTML = document.querySelector('#lang .dropdown-menu .dropdown-item[data-value="'+curlang+'"]').innerHTML;
             }
         }
-    }, [aryLangs, locale]);
+    }, [locale]);
 
-    function changeLanguage(e) {
+    const changeLanguage = (e) => {
         e.preventDefault();
         var val = e.target.dataset.value;
         localStorage.setItem("lang", val);
@@ -40,7 +51,7 @@ export function LanguageWithFlagsComponent() {
         return aryusaterms.includes(xa.region) ? 'us' : aryukterms.includes(xa.region) ? 'gb' : xa.value;
     }
 
-    const listLangOpts = aryLangs.map((xa, i) => {
+    const listLangOpts = getLangs() && getLangs().map((xa) => {
         var flagicon = xa.flagimg !== null ? (
             <Image src={xa.flagimg} width={16} height={11} className="image imgflag" alt={xa.name} priority />
         ) : ( 

@@ -1,8 +1,8 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { sendMailUtil } from '../../../[locale]/utils/sendmailUtils';
 import { EmailTemplate } from '../../../[locale]/templates';
 
-export async function POST(req: any) {  
+export async function POST(req: NextRequest) {  
   const body = await req.json();
   const curpath = `${process.env.TYPEENV === 'production' ? 'https://lcp-pi.vercel.app' : './public'}`;
   const attachmentsobj = [{

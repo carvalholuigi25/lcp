@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LCPApi.Migrations
 {
     [DbContext(typeof(DBContext))]
-    [Migration("20231121163209_InitialCreate")]
+    [Migration("20250618121146_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -207,15 +207,15 @@ namespace LCPApi.Migrations
                             EmployeeCity = "Braga",
                             EmployeeCountry = "Portugal",
                             EmployeeDateBirthday = new DateTime(1996, 6, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EmployeeDateRegistered = new DateTime(2023, 11, 21, 16, 32, 7, 771, DateTimeKind.Local).AddTicks(152),
+                            EmployeeDateRegistered = new DateTime(2025, 6, 18, 13, 11, 43, 976, DateTimeKind.Local).AddTicks(4064),
                             EmployeeEmail = "luiscarvalho239@gmail.com",
                             EmployeeFirstName = "Luis",
                             EmployeeJob = "Programmer",
                             EmployeeLastName = "Carvalho",
                             EmployeeName = "admin",
-                            EmployeePassword = "$2a$11$Qd678ylOMNtjqvoE6MjdyO1hZVZeJykAjN065x5drAKM7miGmhbuO",
+                            EmployeePassword = "$2a$11$hrkSd.uLWh.VIrmDyuz2yubJyQ4hIWiLjtpN2XuyCcwKIB8xHKlY6",
                             EmployeePhoneNumber = "0123456789",
-                            EmployeePin = "$2a$11$OPoXbRKU/e94Y8nCKN.OkO50/6U7Xp37ViGoo45cXmcjNp.MF9Lnu",
+                            EmployeePin = "$2a$11$KNBKeXiWsMAgqmg4XLTDo.l6Jarcwx05FshUKPivDPDkH7w/q90JC",
                             EmployeePostalAddress = "1234-567",
                             EmployeeRole = "Administrator",
                             EmployeeStateProvince = "",

@@ -1,0 +1,262 @@
+2025-06-18 13:12:10.287 +01:00  INF  Executed DbCommand (368ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE DATABASE [LCPDB];
+2025-06-18 13:12:10.416 +01:00  INF  Executed DbCommand (118ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [LCPDB] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+2025-06-18 13:12:10.455 +01:00  INF  Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-18 13:12:10.592 +01:00  INF  Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);
+2025-06-18 13:12:10.597 +01:00  INF  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-18 13:12:10.632 +01:00  INF  Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-06-18 13:12:10.657 +01:00  INF  Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-06-18 13:12:10.688 +01:00  INF  Applying migration '20250618121146_InitialCreate'.
+2025-06-18 13:12:11.037 +01:00  INF  Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Categories] (
+    [CategoryId] int NOT NULL IDENTITY,
+    [CategoryDesc] nvarchar(max) NULL,
+    [ProjectId] int NULL,
+    CONSTRAINT [PK_Categories] PRIMARY KEY ([CategoryId])
+);
+2025-06-18 13:12:11.065 +01:00  INF  Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Customers] (
+    [CustomerId] int NOT NULL IDENTITY,
+    [CustomerName] nvarchar(max) NOT NULL,
+    [CustomerPassword] varchar(MAX) NOT NULL,
+    [CustomerRole] nvarchar(max) NULL,
+    [CustomerEmail] nvarchar(max) NULL,
+    [CustomerPin] varchar(MAX) NULL,
+    [CustomerFirstName] nvarchar(max) NULL,
+    [CustomerLastName] nvarchar(max) NULL,
+    [CustomerJob] nvarchar(max) NULL,
+    [CustomerDateBirthday] datetime2 NULL,
+    [CustomerDateRegistered] datetime2 NULL,
+    [CustomerCountry] nvarchar(max) NULL,
+    [CustomerPhoneNumber] nvarchar(max) NULL,
+    [CustomerPostalAddress] nvarchar(max) NULL,
+    [CustomerCity] nvarchar(max) NULL,
+    [CustomerZipCode] nvarchar(max) NULL,
+    [CustomerStateProvince] nvarchar(max) NULL,
+    CONSTRAINT [PK_Customers] PRIMARY KEY ([CustomerId])
+);
+2025-06-18 13:12:11.086 +01:00  INF  Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Departments] (
+    [DepartmentId] int NOT NULL IDENTITY,
+    [DepartmentName] nvarchar(max) NOT NULL,
+    [DepartmentType] nvarchar(max) NULL,
+    [DepartmentDesc] nvarchar(max) NULL,
+    [ProjectId] int NULL,
+    [EmployeeId] int NULL,
+    CONSTRAINT [PK_Departments] PRIMARY KEY ([DepartmentId])
+);
+2025-06-18 13:12:11.097 +01:00  INF  Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Employees] (
+    [EmployeeId] int NOT NULL IDENTITY(1000, 1),
+    [EmployeeName] nvarchar(max) NOT NULL,
+    [EmployeePassword] varchar(MAX) NOT NULL,
+    [EmployeeRole] nvarchar(max) NULL,
+    [EmployeeEmail] nvarchar(max) NULL,
+    [EmployeePin] varchar(MAX) NULL,
+    [EmployeeFirstName] nvarchar(max) NULL,
+    [EmployeeLastName] nvarchar(max) NULL,
+    [EmployeeJob] nvarchar(max) NULL,
+    [EmployeeDateBirthday] datetime2 NULL,
+    [EmployeeDateRegistered] datetime2 NULL,
+    [EmployeeCountry] nvarchar(max) NULL,
+    [EmployeePhoneNumber] nvarchar(max) NULL,
+    [EmployeePostalAddress] nvarchar(max) NULL,
+    [EmployeeCity] nvarchar(max) NULL,
+    [EmployeeZipCode] nvarchar(max) NULL,
+    [EmployeeStateProvince] nvarchar(max) NULL,
+    CONSTRAINT [PK_Employees] PRIMARY KEY ([EmployeeId])
+);
+2025-06-18 13:12:11.102 +01:00  INF  Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Feedbacks] (
+    [FeedbackId] int NOT NULL IDENTITY,
+    [FeedbackTitle] nvarchar(max) NOT NULL,
+    [FeedbackMsg] nvarchar(max) NULL,
+    [FeedbackStatus] int NULL,
+    [FeedbackDateCreated] datetime2 NULL,
+    [FeedbackDateUpdated] datetime2 NULL,
+    [FeedbackDateLocked] datetime2 NULL,
+    [FeedbackAssignBy] nvarchar(max) NULL,
+    [FeedbackUpvotes] int NULL,
+    [FeedbackDownvotes] int NULL,
+    [CustomerId] int NULL,
+    [ProjectId] int NULL,
+    [CommentId] int NULL,
+    CONSTRAINT [PK_Feedbacks] PRIMARY KEY ([FeedbackId])
+);
+2025-06-18 13:12:11.105 +01:00  INF  Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [FeedbacksComments] (
+    [FeedbackCommentId] int NOT NULL IDENTITY,
+    [FeedbackCommentMsg] nvarchar(max) NOT NULL,
+    [FeedbackCommentUpvotes] int NULL,
+    [FeedbackCommentDownvotes] int NULL,
+    [FeedbackCommentStatus] int NULL,
+    [FeedbackCommentDateCreated] datetime2 NULL,
+    [FeedbackCommentDateUpdated] datetime2 NULL,
+    [FeedbackCommentDateLocked] datetime2 NULL,
+    [FeedbackId] int NULL,
+    [CustomerId] int NULL,
+    [ProjectId] int NULL,
+    CONSTRAINT [PK_FeedbacksComments] PRIMARY KEY ([FeedbackCommentId])
+);
+2025-06-18 13:12:11.114 +01:00  INF  Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Orders] (
+    [OrderId] int NOT NULL IDENTITY,
+    [Quantity] int NOT NULL,
+    [OrderDate] datetime2 NOT NULL,
+    [ItemPrice] float NOT NULL,
+    [ItemDiscount] float NOT NULL,
+    [ItemStock] float NOT NULL,
+    [ProductId] int NOT NULL,
+    CONSTRAINT [PK_Orders] PRIMARY KEY ([OrderId])
+);
+2025-06-18 13:12:11.149 +01:00  INF  Executed DbCommand (35ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [OrdersCustomers] (
+    [OrderId] int NOT NULL IDENTITY,
+    [CustomerId] int NULL,
+    CONSTRAINT [PK_OrdersCustomers] PRIMARY KEY ([OrderId])
+);
+2025-06-18 13:12:11.154 +01:00  INF  Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [ProductsProjects] (
+    [ProductId] int NOT NULL IDENTITY,
+    [ProjectId] int NULL,
+    CONSTRAINT [PK_ProductsProjects] PRIMARY KEY ([ProductId])
+);
+2025-06-18 13:12:11.169 +01:00  INF  Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [ProductsSubscriptions] (
+    [ProductId] int NOT NULL IDENTITY,
+    [SubscriptionId] int NULL,
+    CONSTRAINT [PK_ProductsSubscriptions] PRIMARY KEY ([ProductId])
+);
+2025-06-18 13:12:11.179 +01:00  INF  Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Projects] (
+    [ProjectId] int NOT NULL IDENTITY,
+    [ProjectName] nvarchar(max) NOT NULL,
+    [ProjectDesc] nvarchar(max) NOT NULL,
+    [ProjectCompany] nvarchar(max) NOT NULL,
+    [ProjectOwner] nvarchar(max) NOT NULL,
+    [ProjectCategory] nvarchar(max) NULL,
+    [ProjectPriority] bit NULL,
+    [ProjectStatus] int NULL,
+    [ProjectDateStart] datetime2 NULL,
+    [ProjectDateEnd] datetime2 NULL,
+    [ProjectDateClose] datetime2 NULL,
+    [ProjectBudgetDays] int NULL,
+    [ProjectBudgetCost] float NULL,
+    [ProjectRecords] int NULL,
+    CONSTRAINT [PK_Projects] PRIMARY KEY ([ProjectId])
+);
+2025-06-18 13:12:11.184 +01:00  INF  Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [ProjectsPhases] (
+    [ProjectPhaseId] int NOT NULL IDENTITY,
+    [ProjectPhaseName] nvarchar(max) NOT NULL,
+    [ProjectPhaseDesc] nvarchar(max) NULL,
+    [ProjectPhaseStatus] int NULL,
+    [ProjectPhaseDateStart] datetime2 NULL,
+    [ProjectPhaseDateEnd] datetime2 NULL,
+    [ProjectPhaseActivities] nvarchar(max) NULL,
+    [TaskId] int NULL,
+    [CategoryId] int NULL,
+    CONSTRAINT [PK_ProjectsPhases] PRIMARY KEY ([ProjectPhaseId])
+);
+2025-06-18 13:12:11.188 +01:00  INF  Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [ProjectTasks] (
+    [ProjectTaskId] int NOT NULL IDENTITY,
+    [ProjectTaskName] nvarchar(max) NOT NULL,
+    [ProjectTaskDesc] nvarchar(max) NOT NULL,
+    [ProjectTaskProject] nvarchar(max) NOT NULL,
+    [ProjectTaskPhaseName] nvarchar(max) NOT NULL,
+    [ProjectTaskStatus] int NOT NULL,
+    [ProjectTaskOwner] nvarchar(max) NULL,
+    [ProjectTaskType] nvarchar(max) NULL,
+    [ProjectTaskPriority] int NULL,
+    [ProjectTaskStartDate] datetime2 NULL,
+    [ProjectTaskEndDate] datetime2 NULL,
+    [ProjectTaskTeam] nvarchar(max) NULL,
+    [ProjectTaskReviewDate] datetime2 NULL,
+    [ProjectTaskReviewReport] nvarchar(max) NULL,
+    [ProjectTaskDocument] nvarchar(max) NULL,
+    [ProjectTaskDetails] nvarchar(max) NULL,
+    [ProjectId] int NULL,
+    [CategoryId] int NULL,
+    CONSTRAINT [PK_ProjectTasks] PRIMARY KEY ([ProjectTaskId])
+);
+2025-06-18 13:12:11.197 +01:00  INF  Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [ProjectTasksTypes] (
+    [ProjectTaskTypeId] int NOT NULL IDENTITY,
+    [ProjectTaskTypeDesc] nvarchar(max) NULL,
+    [ProjectTaskId] int NULL,
+    CONSTRAINT [PK_ProjectTasksTypes] PRIMARY KEY ([ProjectTaskTypeId])
+);
+2025-06-18 13:12:11.201 +01:00  INF  Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Subscriptions] (
+    [SubscriptionId] int NOT NULL IDENTITY,
+    [SubscriptionTitle] nvarchar(max) NOT NULL,
+    [SubscriptionDesc] nvarchar(max) NULL,
+    [SubscriptionType] nvarchar(max) NULL,
+    [SubscriptionImage] nvarchar(max) NULL,
+    [SubscriptionDatePurchased] datetime2 NULL,
+    [SubscriptionDateEnded] datetime2 NULL,
+    [SubscriptionIsExpired] bit NULL,
+    [CustomerId] int NULL,
+    [EmployeeId] int NULL,
+    [ProductId] int NULL,
+    CONSTRAINT [PK_Subscriptions] PRIMARY KEY ([SubscriptionId])
+);
+2025-06-18 13:12:11.204 +01:00  INF  Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [SubscriptionsKeys] (
+    [SubscriptionKeyId] int NOT NULL IDENTITY,
+    [SubscriptionKeyValue] nvarchar(max) NULL,
+    [SubscriptionKeyDateStart] datetime2 NULL,
+    [SubscriptionKeyDateEnd] datetime2 NULL,
+    [SubscriptionKeyDateUpdated] datetime2 NULL,
+    [SubscriptionKeyStatus] int NULL,
+    [SubscriptionId] int NULL,
+    CONSTRAINT [PK_SubscriptionsKeys] PRIMARY KEY ([SubscriptionKeyId])
+);
+2025-06-18 13:12:11.212 +01:00  INF  Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Products] (
+    [ProductId] int NOT NULL IDENTITY,
+    [ProductTitle] nvarchar(max) NOT NULL,
+    [ProductType] nvarchar(max) NOT NULL,
+    [ProductDesc] nvarchar(max) NULL,
+    [ProductPrice] float NULL,
+    [ProductImageMain] nvarchar(max) NULL,
+    [ProductGallery] nvarchar(max) NULL,
+    [ProductIsFeatured] bit NULL,
+    [ProductDateCreated] datetime2 NULL,
+    [ProductDateUpdated] datetime2 NULL,
+    [CustomerId] int NULL,
+    [EmployeeId] int NULL,
+    CONSTRAINT [PK_Products] PRIMARY KEY ([ProductId]),
+    CONSTRAINT [FK_Products_Customers_CustomerId] FOREIGN KEY ([CustomerId]) REFERENCES [Customers] ([CustomerId]),
+    CONSTRAINT [FK_Products_Employees_EmployeeId] FOREIGN KEY ([EmployeeId]) REFERENCES [Employees] ([EmployeeId])
+);
+2025-06-18 13:12:11.330 +01:00  INF  Executed DbCommand (118ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'EmployeeId', N'EmployeeCity', N'EmployeeCountry', N'EmployeeDateBirthday', N'EmployeeDateRegistered', N'EmployeeEmail', N'EmployeeFirstName', N'EmployeeJob', N'EmployeeLastName', N'EmployeeName', N'EmployeePassword', N'EmployeePhoneNumber', N'EmployeePin', N'EmployeePostalAddress', N'EmployeeRole', N'EmployeeStateProvince', N'EmployeeZipCode') AND [object_id] = OBJECT_ID(N'[Employees]'))
+    SET IDENTITY_INSERT [Employees] ON;
+INSERT INTO [Employees] ([EmployeeId], [EmployeeCity], [EmployeeCountry], [EmployeeDateBirthday], [EmployeeDateRegistered], [EmployeeEmail], [EmployeeFirstName], [EmployeeJob], [EmployeeLastName], [EmployeeName], [EmployeePassword], [EmployeePhoneNumber], [EmployeePin], [EmployeePostalAddress], [EmployeeRole], [EmployeeStateProvince], [EmployeeZipCode])
+VALUES (1001, N'Braga', N'Portugal', '1996-06-04T00:00:00.0000000', '2025-06-18T13:11:43.9764064+01:00', N'luiscarvalho239@gmail.com', N'Luis', N'Programmer', N'Carvalho', N'admin', '$2a$11$hrkSd.uLWh.VIrmDyuz2yubJyQ4hIWiLjtpN2XuyCcwKIB8xHKlY6', N'0123456789', '$2a$11$KNBKeXiWsMAgqmg4XLTDo.l6Jarcwx05FshUKPivDPDkH7w/q90JC', N'1234-567', N'Administrator', N'', N'1234-567');
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'EmployeeId', N'EmployeeCity', N'EmployeeCountry', N'EmployeeDateBirthday', N'EmployeeDateRegistered', N'EmployeeEmail', N'EmployeeFirstName', N'EmployeeJob', N'EmployeeLastName', N'EmployeeName', N'EmployeePassword', N'EmployeePhoneNumber', N'EmployeePin', N'EmployeePostalAddress', N'EmployeeRole', N'EmployeeStateProvince', N'EmployeeZipCode') AND [object_id] = OBJECT_ID(N'[Employees]'))
+    SET IDENTITY_INSERT [Employees] OFF;
+2025-06-18 13:12:11.333 +01:00  INF  Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Products_CustomerId] ON [Products] ([CustomerId]);
+2025-06-18 13:12:11.335 +01:00  INF  Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Products_EmployeeId] ON [Products] ([EmployeeId]);
+2025-06-18 13:12:11.338 +01:00  INF  Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20250618121146_InitialCreate', N'8.0.0');
