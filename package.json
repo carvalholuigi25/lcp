@@ -24,7 +24,7 @@
     "bootstrap-icons": "^1.13.1",
     "chart.js": "^4.5.0",
     "dotenv": "^16.5.0",
-    "next": "^15.3.3",
+    "next": "^15.5.2",
     "next-intl": "^4.1.0",
     "nodemailer": "^7.0.3",
     "react": "latest",
