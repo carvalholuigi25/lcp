@@ -10,6 +10,7 @@
 html, body {
   max-width: 100vw;
   overflow-x: hidden;
+  overflow-y: auto;
   scroll-behavior: smooth;
 }
 
@@ -24,6 +25,11 @@ body {
   &.bg-body-tertiary {
     background: #08AEC5 !important;
   }
+}
+
+.navbar-toggler {
+  color: black !important;
+  border-color: inherit !important;
 }
 
 .navbaradm {
@@ -46,11 +52,6 @@ body {
 button, #lang .dropdown-toggle {
   white-space: normal;
   word-wrap: break-word;
-}
-
-.navbar-toggler {
-  color: white;
-  border-color: inherit;
 }
 
 a:not(.dropdown-item):not(.navbar-brand):not(.contactmsgblk) {
@@ -177,13 +178,6 @@ ul, ol, dl {
   }
 }
 
-.footerSocialNetworks {
-  a > img {
-    width: 40px;
-    height: 40px;
-  }
-}
-
 #team {
   .card-text {
     margin-bottom: -15px;
@@ -213,6 +207,17 @@ ul, ol, dl {
 
 .cwhite { color: white !important; }
 .cblack { color: black !important; }
+
+.footerSocialNetworks {
+  a > img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.footerCopyright {
+  color: black;
+}
 
 .mytoastcnt {
   position: static;
@@ -292,5 +297,9 @@ ul, ol, dl {
 
   .imggadgets {
     margin-top: 15px;
+  }
+
+  #theme {
+    width: auto !important;
   }
 }

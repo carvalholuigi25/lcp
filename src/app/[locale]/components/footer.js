@@ -8,6 +8,20 @@ import { getDefLocale } from '@applocale/helpers/defLocale';
 export default function Footer() {
     const t = useTranslations('Footer');
 
+    const snetworks = [
+        { id: 1, name: 'Facebook', url: 'https://www.facebook.com/lcp2267', icon: '/icons/socialnetworks/facebook.svg', alt: 'LCP Facebook' },
+        { id: 2, name: 'Github', url: 'https://github.com/carvalholuigi25', icon: '/icons/socialnetworks/github.svg', alt: 'LCP Github' },
+        { id: 3, name: 'Instagram', url: 'https://www.instagram.com/lcp2267/', icon: '/icons/socialnetworks/instagram.svg', alt: 'LCP Instagram' }
+    ];
+
+    const featureslinks = [
+        { id: 1, name: t('listLinksOpt1'), url: '#features' },
+        { id: 2, name: t('listLinksOpt2'), url: '#services' },
+        { id: 3, name: t('listLinksOpt3'), url: '#about' },
+        { id: 4, name: t('listLinksOpt4'), url: '#team' },
+        { id: 5, name: t('listLinksOpt5'), url: '#contacts' }
+    ];
+
     return (
         <>
             <div className={styles.footer + " " + styles.wave3}>
@@ -15,13 +29,14 @@ export default function Footer() {
                     <div className="row">
                         <div className="footerLinks col-12 col-md-6 col-lg-4 colleft mt-3">
                             <h3 className={styles.footerLinksTitle} dir="auto">{t('linksTitle')}</h3>
-                            <ul className={styles.footerListLinks}>
-                                <li><a href="#features" dir="auto">{t('listLinksOpt1')}</a></li>
-                                <li><a href="#services" dir="auto">{t('listLinksOpt2')}</a></li>
-                                <li><a href="#about" dir="auto">{t('listLinksOpt3')}</a></li>
-                                <li><a href="#team" dir="auto">{t('listLinksOpt4')}</a></li>
-                                <li><a href="#contacts" dir="auto">{t('listLinksOpt5')}</a></li>
-                            </ul>
+
+                            {featureslinks && featureslinks.length > 0 && (
+                                <ul className={styles.footerListLinks}>
+                                    {featureslinks.map((fl) => (
+                                        <li key={fl.id}><a href={fl.url} dir="auto">{fl.name}</a></li>
+                                    ))}
+                                </ul>
+                            )}
                         </div>
                         <div className="footerMisc col-12 col-md-6 col-lg-4 colcenter mt-3">
                             <div className="container">
@@ -32,30 +47,23 @@ export default function Footer() {
                                     </div>
                                     <div className="col-12 col-md-6 col-lg-6 mb-3">
                                         <h4 className={styles.footerMiscTitle} dir="auto">{t('miscTitleLang')}</h4>
-                                        <FlagsLang />
+                                        <FlagsLang seldeflang={t('miscDefSelLang')} />
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div className="footerSocialNetworks col-12 col-md-6 col-lg-4 colright mt-3">
                             <h3 className={styles.footerSocialNetworksTitle} dir="auto">{t('socialNetworksTitle')}</h3>
-                            <a href="https://www.facebook.com/lcp2267" className="ms-2" target='_blank'>
-                                <Image className="image" src="/icons/socialnetworks/facebook.svg" alt="LCP Facebook" width={40} height={40} />
-                            </a>
-                            <a href="https://github.com/carvalholuigi25" className="ms-2" target='_blank'>
-                                <Image className="image" src="/icons/socialnetworks/github.svg" alt="LCP Github" width={40} height={40} />
-                            </a>
-                            <a href="https://www.instagram.com/lcp2267/" className="ms-2" target='_blank'>
-                                <Image className="image" src="/icons/socialnetworks/instagram.svg" alt="LCP Instagram" width={40} height={40} />
-                            </a>
-                            <a href="https://www.linkedin.com/company/lcp2023" className="ms-2" target='_blank'>
-                                <Image className="image" src="/icons/socialnetworks/linkedin.svg" alt="LCP Linkedin" width={40} height={40} />
-                            </a>
+                            {snetworks && snetworks.length > 0 && snetworks.map((sn) => (
+                                <a href={sn.url} className="me-auto ms-2" target='_blank' key={sn.id}>
+                                    <Image className="image" src={sn.icon} alt={sn.alt} width={40} height={40} />
+                                </a>
+                            ))}
                         </div>
                     </div>
-                    <div className="row mt-3">
+                    <div className="row justify-content-center mt-3">
                         <div className="footerCopyright col-12 mt-3 ms-auto me-auto text-center">
-                            <p dir="auto">{t('copyrightTitle') ?? "Created by Luis Carvalho - &copy; 2023 LCP"}</p>
+                            <p dir="auto">{t.markup('copyrightTitle', {symcopy: "\u00A9", year: new Date().getFullYear()}) ?? `Created by Luis Carvalho - \u00A9 ${new Date().getFullYear()} LCP`}</p>
                         </div>
                     </div>
                 </div>

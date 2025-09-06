@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "api": "dotnet run --launch-profile https --project backend\\api\\LCPApi",
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "next dev --turbopack",
+    "build": "next build --turbopack",
     "start": "next start",
     "lint": "next lint",
     "clear": "npm cache verify --force",
@@ -19,11 +19,13 @@
     "updnodejs": "npm install -g npm@latest"
   },
   "dependencies": {
+    "@popperjs/core": "^2.11.8",
     "animate.css": "^4.1.1",
     "bootstrap": "^5.3.8",
     "bootstrap-icons": "^1.13.1",
     "chart.js": "^4.5.0",
     "dotenv": "^17.2.1",
+    "geoip-lite": "^1.4.10",
     "next": "^15.5.2",
     "next-intl": "^4.3.5",
     "nodemailer": "^7.0.6",

@@ -16,6 +16,7 @@ export default function Header() {
                             </p>
                             <a href="#features" className="btn btn-primary btnSeeMore" id="btnSeeMore" dir="auto">
                                 {t('btnSeeMore')}
+                                <i className="bi bi-arrow-down ms-2"></i>
                             </a>
                         </div>
                         <div className="col-12 col-md-6 order-0 order-md-1 headersideright animate__animated animate__fadeInUp">

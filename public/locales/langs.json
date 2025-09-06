@@ -55,48 +55,6 @@
             "value": "de",
             "region": "de-DE",
             "flagimg": null
-        },
-        {
-            "id": 8,
-            "name": "українська (Україна)",
-            "value": "ua",
-            "region": "ua-UA",
-            "flagimg": null
-        },
-        {
-            "id": 9,
-            "name": "日本語 (日本)",
-            "value": "jp",
-            "region": "jp-JP",
-            "flagimg": null
-        },
-        {
-            "id": 10,
-            "name": "'ōlelo Hawai'i (Hawaii)",
-            "value": "hi",
-            "region": "us-HI",
-            "flagimg": "/images/flags/us_hawaii.svg"
-        },
-        {
-            "id": 11,
-            "name": "हिंदी (भारत)",
-            "value": "in",
-            "region": "in-IN",
-            "flagimg": null
-        },
-        {
-            "id": 12,
-            "name": "עִברִית (ישראל)",
-            "value": "il",
-            "region": "il-IL",
-            "flagimg": null
-        },
-        {
-            "id": 13,
-            "name": "عربي (الإمارات العربية المتحدة)",
-            "value": "ae",
-            "region": "ae-AE",
-            "flagimg": null
         }
     ]
 }

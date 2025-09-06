@@ -90,7 +90,7 @@ export default function ContactComponent() {
         <>
             {emailSent && (
                 <ToastContainer className='mytoastcnt p-3' position="bottom-end">
-                    <Toast onClose={closeEmailSent} show={emailSent} delay={5000} className="mytoast text-bg-success" autohide={true}>
+                    <Toast onClose={closeEmailSent} show={emailSent} delay={5000} className="mytoast text-bg-success animate__animated animate__fadeIn" autohide={true}>
                         <Toast.Header>
                             <strong className="me-auto">LCP</strong>
                         </Toast.Header>

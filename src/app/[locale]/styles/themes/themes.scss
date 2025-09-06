@@ -27,6 +27,11 @@
             color: $fgColor !important;
         }
 
+        .navbar-toggler {
+            color: $fgColor !important;
+            border-color: $fgColor !important;
+        }
+
         .header, .footer {
             background-color: $bgColorSecondary !important;
             color: $fgColor !important;
@@ -99,13 +104,12 @@
         .label {
             color: $fgColor !important;
         }
-
-        .navbar-toggler {
-            color: $fgColor !important;
-            border-color: $fgColor !important;
-        }
           
         .footerListLinks {
+            color: $fgColor !important;
+        }
+
+        .footerCopyright {
             color: $fgColor !important;
         }
 

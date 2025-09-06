@@ -2,15 +2,16 @@
 "use client";
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
-import { useLocale } from 'next-intl';
 import { getFromStorage, saveToStorage } from '@applocale/hooks/localstorage';
+import { useLocale } from 'next-intl';
+import myconfig from '@myconfig';
 
-export function FlagsLang() {
+export function FlagsLang({ seldeflang = "Select the language" }) {
     const getLangs = () => {
         const langs = require('@assets/locales/langs.json');
-        const langsMode = "all"; // specific | all
-        const langsAllowed = ["pt", "en", "fr"];
-        const langsSearchMode = "value"; // value | region
+        const langsMode = myconfig.languages.langMode ?? "all"; // specific | all
+        const langsSearchMode = myconfig.languages.langSearchMode ?? "value"; // value | region
+        const langsAllowed = myconfig.languages.langAllowed ?? ["pt", "en", "fr"];
         return langsMode == "specific" ? langs.langs.filter(x => langsSearchMode == "value" ? langsAllowed.includes(x.value) : langsAllowed.includes(x.region)) : langs.langs;
     }
 
@@ -29,7 +30,7 @@ export function FlagsLang() {
             saveToStorage("lang", locale);
         }
 
-        var deflang = getFromStorage("lang") ?? locale ?? process.env.LANG_DEFAULT ?? "en";
+        var deflang = locale ?? getFromStorage("lang") ?? myconfig.languages.langDef ?? "en";
 
         if(alist) {
             var curlang = alist.filter(x => x.region == deflang).value ?? deflang;
@@ -74,7 +75,7 @@ export function FlagsLang() {
     return (
         <div id="lang" className="lang">
             <button type="button" className="btn btn-primary dropdown-toggle btnlanglist" id="btnlanglist" dir="auto" data-bs-toggle="dropdown" aria-expanded="false">
-                Select the language
+                {seldeflang ?? "Select the language"}
             </button>
             <div className="dropdown-menu" aria-labelledby="langlist">
                 {listLangOpts}

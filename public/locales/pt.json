@@ -30,6 +30,7 @@
     "servicesSocialNetworkTitle": "Rede Social",
     "servicesSocialNetworkDesc": "Rede Social",
     "getourappTitle": "Obtenha a nossa aplicação de multiplataforma",
+    "getourappTitleShort": "A nossa aplicação de multiplataforma",
     "getourappDesc": "A nossa aplicação de multiplataforma está aqui. Transfira e instale-o.",
     "getourappDescComingSoon": "Em breve",
     "getourappWin": "LCP App para Windows",
@@ -131,7 +132,7 @@
     "newsletterTitle": "Subscreve a nossa boletim de noticias",
     "newsletterPlaceholder": "e-mail@domínio.com",
     "socialNetworksTitle": "Redes Sociais",
-    "copyrightTitle": "Criado por Luis Carvalho - © 2023 LCP"
+    "copyrightTitle": "Criado por Luis Carvalho - {symcopy}{year} LCP"
   },
   "Currency": {
       "symbol": "€"

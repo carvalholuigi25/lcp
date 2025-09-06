@@ -19,13 +19,12 @@
       }
     ],
     "paths": {
-      "@/*": [
-        "./src/*"
-      ],
+      "@/*": ["./src/*"],
       "@applocale/*": ["./src/app/[locale]/*"],
       "@assets/*": ["./public/*"],
       "@styles/*": ["./src/app/[locale]/styles/*"],
-      "@i18n/*": ["./src/app/i18n/*"]
+      "@i18n/*": ["./src/app/i18n/*"],
+      "@myconfig": ["./src/app/myconfig/myconfig.json"]
     }
   },
   "include": [
@@ -37,8 +36,8 @@
     "src/app/[locale]/components/header.js",
     "src/app/[locale]/api/sendemail/sendemail.js",
     "src/app/[locale]/api/test.js",
-    "dist/types/**/*.ts",
     "src/app/[locale]/utils/authUtils.ts",
+    "dist/types/**/*.ts",
     "out/types/**/*.ts"
   ],
   "exclude": [

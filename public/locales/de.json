@@ -30,6 +30,7 @@
     "servicesSocialNetworkTitle": "Soziale Netzwerke",
     "servicesSocialNetworkDesc": "Soziale Netzwerke",
     "getourappTitle": "Holen Sie sich unsere plattformübergreifende App",
+    "getourappTitleShort": "Unsere plattformübergreifende App",
     "getourappDesc": "Unsere plattformübergreifende App ist da. Laden Sie sie herunter und installieren Sie sie.",
     "getourappDescComingSoon": "Bald verfügbar",
     "getourappWin": "LCP-App für Windows",
@@ -131,7 +132,7 @@
     "newsletterTitle": "Abonnieren Sie unseren Newsletter",
     "newsletterPlaceholder": "email@domain.com",
     "socialNetworksTitle": "Soziale Netzwerke",
-    "copyrightTitle": "Erstellt von Luis Carvalho - © 2023 LCP"
+    "copyrightTitle": "Erstellt von Luis Carvalho - {symcopy}{year} LCP"
   },
   "Currency": {
       "symbol": "€"

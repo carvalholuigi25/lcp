@@ -6,6 +6,7 @@ import Navbar from "./components/navbar";
 import Header from './components/header';
 import Footer from './components/footer';
 import ContactComponent from './components/contact';
+import myconfig from '@myconfig';
 
 export default async function Home({ params }: { params: any }) {
   const { locale } = await params;
@@ -13,54 +14,59 @@ export default async function Home({ params }: { params: any }) {
   setRequestLocale(locale);
 
   const t = await getTranslations('Home');
+  const apphidden = myconfig.general.isAppSecHidden ? " hidden" : "";
+  const appiscomingsoon = myconfig.general.isAppComingSoon ?? false;
 
   return (
     <>
       <Navbar />
 
-      <main className={styles.main + " fixpad "} data-bs-spy="scroll" data-bs-target="#mnavbar" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" tabIndex={0}>
+      <main className={styles.main + " fixpad"} data-bs-spy="scroll" data-bs-target="#mnavbar" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" tabIndex={0}>
         <Header />
 
         <div className={styles.features} id="features">
           <div className="container">
             <h3 className={styles.featuresTitle}>{t('featuresTitle')}</h3>
-            <div className="row mt-3 animate__animated animate__fadeInUp">
-              <div className="col-12 col-md-6 col-lg-4 mt-3">
+            <div className="row mt-3 justify-content-center animate__animated animate__fadeInUp">
+              <div className="col-12 col-md-6 col-lg-4 col-xl-4 mt-3">
                 <div className="card">
                   <Image
                     className="image mx-auto mt-3"
                     src="/icons/features/responsive.svg"
                     alt={t('featuresRespTitle')}
                     width={150}
-                    height={100}
+                    height={150}
+                    style={{ width: '150px', height: '150px' }}
                   />
                   <div className="card-body text-center">
                     <h3 className="card-title lngtxt">{t('featuresRespTitle')}</h3>
                   </div>
                 </div>
               </div>
-              <div className="col-12 col-md-6 col-lg-4 mt-3">
+              <div className="col-12 col-md-6 col-lg-4 col-xl-4 mt-3">
                 <div className="card">
                   <Image
                     className="image mx-auto mt-3"
                     src="/icons/features/quickSpeed.svg"
                     alt={t('featuresQSpeedTitle')}
                     width={150}
-                    height={100}
+                    height={150}
+                    style={{ width: '150px', height: '150px' }}
                   />
                   <div className="card-body text-center">
                     <h3 className="card-title lngtxt">{t('featuresQSpeedTitle')}</h3>
                   </div>
                 </div>
               </div>
-              <div className="col-12 col-md-6 col-lg-4 mt-3">
+              <div className="col-12 col-md-6 col-lg-4 col-xl-4 mt-3">
                 <div className="card">
                   <Image
                     className="image mx-auto mt-3"
                     src="/icons/features/support.svg"
                     alt={t('featuresSupportTitle')}
                     width={150}
-                    height={100}
+                    height={150}
+                    style={{ width: '150px', height: '150px' }}
                   />
                   <div className="card-body text-center">
                     <h3 className="card-title lngtxt">{t('featuresSupportTitle')}</h3>
@@ -74,15 +80,16 @@ export default async function Home({ params }: { params: any }) {
         <div className={styles.services} id="services">
           <div className="container">
             <h3 className={styles.servicesTitle}>{t('servicesTitle')}</h3>
-            <div className="row mt-3 animate__animated animate__fadeInUp">
-              <div className="col-12 col-md-6 col-lg-4 col-xl-3 mt-3">
+            <div className="row mt-3 justify-content-center animate__animated animate__fadeInUp">
+              <div className="col-12 col-md-6 col-lg-4 col-xl-4 mt-3">
                 <div className="card">
                   <Image
                     className="image mx-auto mt-3"
                     src="/icons/services/website.svg"
                     alt={t('servicesWebsitesAndSoftwaresTitle')}
                     width={150}
-                    height={100}
+                    height={150}
+                    style={{ width: '150px', height: '150px' }}
                   />
                   <div className="card-body text-center">
                     <h3 className="card-title lngtxt">{t('servicesWebsitesAndSoftwaresTitle')}</h3>
@@ -92,14 +99,15 @@ export default async function Home({ params }: { params: any }) {
                   </div>
                 </div>
               </div>
-              <div className="col-12 col-md-6 col-lg-4 col-xl-3 mt-3">
+              <div className="col-12 col-md-6 col-lg-4 col-xl-4 mt-3">
                 <div className="card">
                   <Image
                     className="image mx-auto mt-3"
                     src="/icons/services/blog.svg"
                     alt={t('servicesBlogTitle')}
                     width={150}
-                    height={100}
+                    height={150}
+                    style={{ width: '150px', height: '150px' }}
                   />
                   <div className="card-body text-center">
                     <h3 className="card-title lngtxt">{t('servicesBlogTitle')}</h3>
@@ -109,14 +117,15 @@ export default async function Home({ params }: { params: any }) {
                   </div>
                 </div>
               </div>
-              <div className="col-12 col-md-6 col-lg-4 col-xl-3 mt-3">
+              <div className="col-12 col-md-6 col-lg-4 col-xl-4 mt-3">
                 <div className="card">
                   <Image
                     className="image mx-auto mt-3"
                     src="/icons/services/mobileApp.svg"
                     alt={t('servicesMobileAppTitle')}
                     width={150}
-                    height={100}
+                    height={150}
+                    style={{ width: '150px', height: '150px' }}
                   />
                   <div className="card-body text-center">
                     <h3 className="card-title lngtxt">{t('servicesMobileAppTitle')}</h3>
@@ -126,30 +135,12 @@ export default async function Home({ params }: { params: any }) {
                   </div>
                 </div>
               </div>
-              <div className="col-12 col-md-6 col-lg-4 col-xl-3 mt-3">
-                <div className="card">
-                  <Image
-                    className="image mx-auto mt-3"
-                    src="/icons/services/socialNetwork.svg"
-                    alt={t('servicesSocialNetworkTitle')}
-                    width={150}
-                    height={100}
-                  />
-                  <div className="card-body text-center">
-                    <h3 className="card-title lngtxt">{t('servicesSocialNetworkTitle')}</h3>
-                    <p className="card-text lngtxt">
-                      {t('servicesSocialNetworkDesc')}
-                    </p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
-
-        <div className={styles.getourapp} id="getourapp">
+        <div className={styles.getourapp + "" + apphidden} id="getourapp">
           <div className={"container " + styles.contentfront}>
-            {process.env.IS_APP_COMING_SOON && (
+            {appiscomingsoon && (
               <>
                 <h2 className={styles.getourappTitle}>
                   Cross-platform app
@@ -164,7 +155,7 @@ export default async function Home({ params }: { params: any }) {
             )}
             <div className="row">
               <div className="col-12 col-md-6">
-                {process.env.IS_APP_COMING_SOON && (
+                {appiscomingsoon && (
                   <>
                     <p className={styles.getourappDesc + " cwhite"}>
                       {t('getourappDescComingSoon')}
@@ -187,16 +178,16 @@ export default async function Home({ params }: { params: any }) {
                         </a>
                       </li>
                       <li className="ms-2">
-                        <a href="#lcpmacos">
-                          <Image className="image" src="/icons/crossplatform/icoMacOS.svg" alt={t('getourappMacOS')} width={50} height={50} />
-                        </a>
-                      </li>
-                      <li className="ms-2">
                         <a href="#lcpandroid">
                           <Image className="image" src="/icons/crossplatform/icoAndroid.svg" alt={t('getourappAndroid')} width={50} height={50} />
                         </a>
                       </li>
-                      <li className="ms-2">
+                      <li className="ms-2 hidden">
+                        <a href="#lcpmacos">
+                          <Image className="image" src="/icons/crossplatform/icoMacOS.svg" alt={t('getourappMacOS')} width={50} height={50} />
+                        </a>
+                      </li>
+                      <li className="ms-2 hidden">
                         <a href="#lcpiphone">
                           <Image className="image" src="/icons/crossplatform/icoiPhone.svg" alt={t('getourappiPhone')} width={50} height={50} />
                         </a>
@@ -237,7 +228,7 @@ export default async function Home({ params }: { params: any }) {
                 <div className="card-body text-center">
                   <h2 className="card-title">Luis Carvalho</h2>
                   <p className={"card-text " + styles.careerdesc}>
-                    {t('teamMemberCareerDesc') ?? "Web programmer, programmer, engineer, specialist and technician of IT since 2015."}
+                    {t('teamMemberCareerDesc') ?? "Web programmer, programmer, specialist and technician of IT since 2015."}
                   </p>
                 </div>
               </div>

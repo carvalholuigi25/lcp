@@ -1,0 +1,12 @@
+{
+    "general": {
+        "isAppComingSoon": true,
+        "isAppSecHidden": true
+    },
+    "languages": {
+        "langDef": "pt",
+        "langMode": "all",
+        "langSearchMode": "value",
+        "langAllowed": ["pt", "en", "fr"]
+    }
+}

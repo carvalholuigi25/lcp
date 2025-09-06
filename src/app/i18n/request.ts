@@ -3,7 +3,7 @@ import { routing } from './routing';
  
 export default getRequestConfig(async ({requestLocale}: GetRequestConfigParams) => {
   // This typically corresponds to the `[locale]` segment
-  let locale = (await requestLocale) ?? "pt-PT";
+  let locale = (await requestLocale) ?? "pt";
  
   // Ensure that a valid locale is used
   if (!locale || !routing.locales.includes(locale as string)) {

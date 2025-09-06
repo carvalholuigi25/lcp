@@ -30,6 +30,7 @@
     "servicesSocialNetworkTitle": "Social Network",
     "servicesSocialNetworkDesc": "Social Network",
     "getourappTitle": "Get our cross-platform app",
+    "getourappTitleShort": "Our cross-platform app",
     "getourappDesc": "Our cross-platform app is here. Download and install it.",
     "getourappDescComingSoon": "Coming soon",
     "getourappWin": "LCP App for Windows",
@@ -41,7 +42,7 @@
     "aboutTitle": "About",
     "aboutDesc": "LCP (Luis Carvalho Projects) is a project of websites, apps and softwares, which my main goal is showcase to all my projects for everyone and also, using my skills and services to make everyone dreams comes true.",
     "teamTitle": "Team",
-    "teamMemberCareerDesc": "Web programmer, programmer, engineer, specialist and technician of IT since 2015.",
+    "teamMemberCareerDesc": "Web programmer, programmer, specialist and technician of IT since 2015.",
     "contactsTitle": "Contacts",
     "contactsName": "Name",
     "contactsNameInp": "Write your name here",
@@ -131,7 +132,7 @@
     "newsletterTitle": "Subscribe our newsletter",
     "newsletterPlaceholder": "email@domain.com",
     "socialNetworksTitle": "Social Networks",
-    "copyrightTitle": "Created by Luis Carvalho - © 2023 LCP"
+    "copyrightTitle": "Created by Luis Carvalho - {symcopy}{year} LCP"
   },
   "Currency": {
       "symbol": "£"

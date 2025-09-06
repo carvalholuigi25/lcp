@@ -3,7 +3,6 @@ import './styles/globals.scss';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-icons/font/bootstrap-icons.min.css';
 import 'animate.css';
-import ImportMyPlugins from "@applocale/plugins/impMyPlugins";
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { notFound } from 'next/navigation';
@@ -12,6 +11,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getValueLocales, getValueLocalesWithOnlyLocale } from '../i18n/routing';
 import { Suspense } from 'react';
 import { getDefLocale } from './helpers/defLocale';
+import ImportMyPlugins from './plugins/impMyPlugins';
 
 type Params = Promise<{
   locale: string;
@@ -44,6 +44,14 @@ export default async function RootLayout({
   const isValidLocale = locales.some((cur: any) => cur === alocale);
   if (!isValidLocale) notFound();
 
+  const loadsp = () => {
+    return (
+      <div className="ldspinner spinner-border text-primary" role="status">
+        <span className="visually-hidden">Loading...</span>
+      </div>
+    )
+  }
+
   return (
     <html lang={alocale} suppressHydrationWarning>
       <head>
@@ -52,12 +60,12 @@ export default async function RootLayout({
         <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png" />
         <link rel="manifest" href="/images/favicon/site.webmanifest" />
       </head>
-      <body className={inter.className + " " + `theme theme-${mytheme}`} suppressHydrationWarning={true}>
+      <body className={`${inter.className} theme theme-${mytheme}`} suppressHydrationWarning={true}>
         <NextIntlClientProvider locale={alocale} messages={messages}>
-          <Suspense fallback={<div><p>Loading...</p></div>}>
+          <Suspense fallback={loadsp()}>
             {children}
+            <ImportMyPlugins />
           </Suspense>
-          <ImportMyPlugins />
         </NextIntlClientProvider>
       </body>
     </html>
