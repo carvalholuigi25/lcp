@@ -3,5 +3,5 @@ export interface Languages {
   name: string;
   value: string;
   region: string;
-  flagimg?: string;
+  flagimg?: string | null;
 }

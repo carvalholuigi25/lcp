@@ -3,11 +3,11 @@ import { Languages } from '@applocale/interfaces/languages';
 import langs from '@assets/locales/langs.json';
 
 export const getValueLocales = () => {
-  return (langs.langs as Languages[]).map((x: Languages) => x.value);
+  return langs.langs.map((x: Languages) => x.value);
 }
 
 export const getValueLocalesWithOnlyLocale = () => {
-  return (langs.langs as Languages[]).map((x: Languages) =>  ({locale: x.value}));
+  return langs.langs.map((x: Languages) => ({locale: x.value}));
 }
 
 export const routing = defineRouting({
