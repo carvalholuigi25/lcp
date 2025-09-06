@@ -13,7 +13,7 @@ export default function LanguageComponent() {
 
     useEffect(() => {
         if(!location.href.includes(localStorage.getItem("lang"))) {
-            setLang(aryLangs[0].value ?? "en");
+            setLang(aryLangs[0].value ?? process.env.LANG_DEFAULT ?? "en");
         } else {
             setLang(localStorage.getItem("lang"));
         }

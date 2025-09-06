@@ -7,15 +7,21 @@ import { getFromStorage, saveToStorage } from '@applocale/hooks/localstorage';
 
 export function FlagsLang() {
     const getLangs = () => {
-        return require('@assets/locales/langs.json').langs;
+        const langs = require('@assets/locales/langs.json');
+        const langsMode = "all"; // specific | all
+        const langsAllowed = ["pt", "en", "fr"];
+        const langsSearchMode = "value"; // value | region
+        return langsMode == "specific" ? langs.langs.filter(x => langsSearchMode == "value" ? langsAllowed.includes(x.value) : langsAllowed.includes(x.region)) : langs.langs;
     }
+
+    const alist = getLangs();
 
     const [lang, setLang] = useState("");
     const locale = useLocale();
 
-    if(getLangs()) {
+    if(alist) {
         // langs.sort((a, b) => -1 * a.region.localeCompare(b.region)); // it will sort list by descending
-        getLangs().sort((a, b) => a.region.localeCompare(b.region)); // it will sort list by ascending
+        alist.sort((a, b) => a.region.localeCompare(b.region)); // it will sort list by ascending
     }
 
     useEffect(() => {
@@ -23,10 +29,10 @@ export function FlagsLang() {
             saveToStorage("lang", locale);
         }
 
-        var deflang = getFromStorage("lang") ?? locale ?? "en";
+        var deflang = getFromStorage("lang") ?? locale ?? process.env.LANG_DEFAULT ?? "en";
 
-        if(getLangs()) {
-            var curlang = getLangs().filter(x => x.region == deflang).value ?? deflang;
+        if(alist) {
+            var curlang = alist.filter(x => x.region == deflang).value ?? deflang;
             setLang(curlang);
         }
 
@@ -35,7 +41,7 @@ export function FlagsLang() {
                 document.querySelector('#btnlanglist').innerHTML = document.querySelector('#lang .dropdown-menu .dropdown-item[data-value="'+curlang+'"]').innerHTML;
             }
         }
-    }, [locale]);
+    }, [locale, alist]);
 
     const changeLanguage = (e) => {
         e.preventDefault();
@@ -51,7 +57,7 @@ export function FlagsLang() {
         return aryusaterms.includes(xa.region) ? 'us' : aryukterms.includes(xa.region) ? 'gb' : xa.value;
     }
 
-    const listLangOpts = getLangs() && getLangs().map((xa) => {
+    const listLangOpts = alist.map((xa) => {
         var flagicon = xa.flagimg !== null ? (
             <Image src={xa.flagimg} width={16} height={11} className="image imgflag" alt={xa.name} priority />
         ) : ( 

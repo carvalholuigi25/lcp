@@ -1,33 +1,51 @@
 "use client";
 
 import React, { useState } from 'react';
+import Toast from "react-bootstrap/Toast";
 import styles from '../styles/page/page.module.scss';
 import { useLocale, useTranslations } from 'next-intl';
+import { ToastContainer } from 'react-bootstrap';
 
 export default function ContactComponent() {
     const t = useTranslations('Home');
     const temailtrans = useTranslations('Templates.Email');
     const locale = useLocale();
 
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [subject, setSubject] = useState("");
-    const [message, setMessage] = useState("");
+    const [frmState, setFrmState] = useState({ 
+        name: '', 
+        email: '', 
+        subject: '', 
+        message: '' 
+    });
+
+    const [emailSent, setEmailSent] = useState(false);
+
+    const { name, email, subject, message } = frmState;
 
     const handleNameChange = (e) => {
-        setName(e.target.value);
+        setFrmState({ ...frmState, name: e.target.value });
     }
 
     const handleEmailChange = (e) => {
-        setEmail(e.target.value);
+        setFrmState({ ...frmState, email: e.target.value });
     }
 
     const handleSubjectChange = (e) => {
-        setSubject(e.target.value);
+        setFrmState({ ...frmState, subject: e.target.value });
     }
 
     const handleMessageChange = (e) => {
-        setMessage(e.target.value);
+        setFrmState({ ...frmState, message: e.target.value });
+    }
+
+    const clearFrmMail = (e) => {
+        e.preventDefault();
+        setFrmState({ name: '', email: '', subject: '', message: '' });
+        setEmailSent(false);
+    }
+
+    const closeEmailSent = () => {
+        setEmailSent(false);
     }
 
     const sendMail = async (e) => {
@@ -61,22 +79,28 @@ export default function ContactComponent() {
                 'Access-Control-Allow-Headers': 'Content-Type, Authorization'
             })
         })
-        .then((res) => {
-            console.log(res);
-            console.log('Response received');
-            console.log('Response succeeded!');
-            setSubmitted(true);
-            setName('');
-            setEmail('');
-            setSubject('');
-            setMessage('');
+        .then(() => {
+            console.log('Email sent successfully!');
+            setFrmState({ name: '', email: '', subject: '', message: '' });
+            setEmailSent(true);
         });
     }
 
     return (
         <>
+            {emailSent && (
+                <ToastContainer className='mytoastcnt p-3' position="bottom-end">
+                    <Toast onClose={closeEmailSent} show={emailSent} delay={5000} className="mytoast text-bg-success" autohide={true}>
+                        <Toast.Header>
+                            <strong className="me-auto">LCP</strong>
+                        </Toast.Header>
+                        <Toast.Body>Email sent successfully!</Toast.Body>
+                    </Toast>
+                </ToastContainer>
+            )}
+
             <div className={styles.contacts} id="contacts">
-                <form action="" method="post" className="container frmcontactus" id="frmcontactus" onSubmit={sendMail}>
+                <form action="" method="post" className="container frmcontactus" id="frmcontactus" onReset={clearFrmMail} onSubmit={sendMail}>
                     <h1 className={styles.contactsTitle} dir="auto">{t('contactsTitle')}</h1>
                     <div className="row mt-3">
                         <div className="col-12 col-md-6 mt-3">

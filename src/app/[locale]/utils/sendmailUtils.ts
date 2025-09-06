@@ -4,7 +4,7 @@ import nodemailer from 'nodemailer';
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export async function sendMailUtil(mailData: any) {
-  const debugOpt = true;
+  const debugOpt = false;
   const confopt = {
     host: process.env.EMAIL_HOST,
     port: parseInt(process.env.EMAIL_PORT!.toString()),
@@ -15,7 +15,7 @@ export async function sendMailUtil(mailData: any) {
     }
   };
 
-  if(debugOpt == true) {
+  if(debugOpt && debugOpt == true) {
     console.log(confopt)
   }
   

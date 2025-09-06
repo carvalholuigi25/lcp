@@ -13,6 +13,11 @@ import { getValueLocales, getValueLocalesWithOnlyLocale } from '../i18n/routing'
 import { Suspense } from 'react';
 import { getDefLocale } from './helpers/defLocale';
 
+type Params = Promise<{
+  locale: string;
+  theme?: string;
+}>;
+
 const inter = Inter({ subsets: ['latin'] })
 const locales = getValueLocales();
 
@@ -30,7 +35,7 @@ export default async function RootLayout({
   params
 }: Readonly<{
   children: React.ReactNode;
-  params: Promise<{ locale: string, theme: string }>;
+  params: Params;
 }>) {
   const alocale = (await params).locale ?? await getLocale() ?? getDefLocale();
   const mytheme = (await params).theme ?? 'default';

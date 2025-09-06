@@ -214,6 +214,25 @@ ul, ol, dl {
 .cwhite { color: white !important; }
 .cblack { color: black !important; }
 
+.mytoastcnt {
+  position: static;
+  margin-bottom: -15px;
+}
+
+.alert, .mytoast {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  top: auto;
+  width: 20rem;
+  max-width: 100%;
+  z-index: 99999;
+
+  .toast {
+    border-radius: inherit;
+  }
+}
+
 @media all and (max-width: 1199px) {
   .navbaradm {
     .dropdown {

@@ -13,43 +13,43 @@
     "clearnbuild": "npm run remgendirs & npm run clear && cross-env TYPEENV='production' OUTPUTEXP=0 npm run build",
     "clearnbuild2": "npm run remgendirs & npm run clear && cross-env TYPEENV='production' OUTPUTEXP=1 npm run build",
     "clearnbuild3": "npm run remgendirs & npm run clear && cross-env TYPEENV='production' OUTPUTEXP=2 npm run build",
-    "clearnbuildloc": "npm run remgendirs & npm run clear && cross-env TYPEENV='local' OUTPUTEXP=1 npm run build",
-    "clearnbuilddev": "npm run remgendirs & npm run clear && cross-env TYPEENV='development' OUTPUTEXP=1 npm run build",
+    "clearnbuildloc": "npm run remgendirs & npm run clear && cross-env TYPEENV='local' OUTPUTEXP=0 npm run build",
+    "clearnbuilddev": "npm run remgendirs & npm run clear && cross-env TYPEENV='development' OUTPUTEXP=0 npm run build",
     "updpkg": "npx ncu -u",
     "updnodejs": "npm install -g npm@latest"
   },
   "dependencies": {
     "animate.css": "^4.1.1",
-    "bootstrap": "^5.3.7",
+    "bootstrap": "^5.3.8",
     "bootstrap-icons": "^1.13.1",
     "chart.js": "^4.5.0",
-    "dotenv": "^16.5.0",
-    "next": "^15.3.3",
-    "next-intl": "^4.1.0",
-    "nodemailer": "^7.0.3",
+    "dotenv": "^17.2.1",
+    "next": "^15.5.2",
+    "next-intl": "^4.3.5",
+    "nodemailer": "^7.0.6",
     "react": "latest",
     "react-bootstrap": "^2.10.10",
     "react-chartjs-2": "^5.3.0",
     "react-dom": "latest",
-    "sass": "^1.89.2",
-    "sharp": "^0.34.2"
+    "sass": "^1.91.0",
+    "sharp": "^0.34.3"
   },
   "devDependencies": {
     "@types/bootstrap": "^5.2.10",
     "@types/negotiator": "^0.6.4",
     "@types/node": "latest",
-    "@types/nodemailer": "^6.4.17",
+    "@types/nodemailer": "^7.0.1",
     "@types/react": "latest",
     "@types/react-bootstrap": "^1.1.0",
     "@types/react-dom": "latest",
-    "cross-env": "^7.0.3",
+    "cross-env": "^10.0.0",
     "eslint": "latest",
     "eslint-config-next": "latest",
     "typescript": "latest"
   },
   "overrides": {
     "next-intl": {
-      "next": "^15.3.3"
+      "next": "^15.5.2"
     }
   }
 }

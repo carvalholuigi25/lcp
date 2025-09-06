@@ -149,41 +149,61 @@ export default async function Home({ params }: { params: any }) {
 
         <div className={styles.getourapp} id="getourapp">
           <div className={"container " + styles.contentfront}>
-            <h2 className={styles.getourappTitle}>
-              {t('getourappTitle')}
-            </h2>
+            {process.env.IS_APP_COMING_SOON && (
+              <>
+                <h2 className={styles.getourappTitle}>
+                  Cross-platform app
+                </h2>
+              </>
+            ) || (
+              <>
+                <h2 className={styles.getourappTitle}>
+                  {t('getourappTitle')}
+                </h2>
+              </>
+            )}
             <div className="row">
               <div className="col-12 col-md-6">
-                <p className={styles.getourappDesc + " cwhite"}>
-                  {t('getourappDesc')}
-                </p>
-                <ul className={styles.getourappLinks + " p-0 animate__animated animate__fadeInUp"}>
-                  <li>
-                    <a href="#lcpwindows">
-                      <Image className="image" src="/icons/crossplatform/icoWindows.svg" alt={t('getourappWin')} width={50} height={50} />
-                    </a>
-                  </li>
-                  <li className="ms-2">
-                    <a href="#lcplinux">
-                      <Image className="image" src="/icons/crossplatform/icoLinux.svg" alt={t('getourappLinux')} width={50} height={50} />
-                    </a>
-                  </li>
-                  <li className="ms-2">
-                    <a href="#lcpmacos">
-                      <Image className="image" src="/icons/crossplatform/icoMacOS.svg" alt={t('getourappMacOS')} width={50} height={50} />
-                    </a>
-                  </li>
-                  <li className="ms-2">
-                    <a href="#lcpandroid">
-                      <Image className="image" src="/icons/crossplatform/icoAndroid.svg" alt={t('getourappAndroid')} width={50} height={50} />
-                    </a>
-                  </li>
-                  <li className="ms-2">
-                    <a href="#lcpiphone">
-                      <Image className="image" src="/icons/crossplatform/icoiPhone.svg" alt={t('getourappiPhone')} width={50} height={50} />
-                    </a>
-                  </li>
-                </ul>
+                {process.env.IS_APP_COMING_SOON && (
+                  <>
+                    <p className={styles.getourappDesc + " cwhite"}>
+                      {t('getourappDescComingSoon')}
+                    </p>
+                  </>
+                ) || (
+                  <>
+                    <p className={styles.getourappDesc + " cwhite"}>
+                      {t('getourappDesc')}
+                    </p>
+                    <ul className={styles.getourappLinks + " p-0 animate__animated animate__fadeInUp"}>
+                      <li>
+                        <a href="#lcpwindows">
+                          <Image className="image" src="/icons/crossplatform/icoWindows.svg" alt={t('getourappWin')} width={50} height={50} />
+                        </a>
+                      </li>
+                      <li className="ms-2">
+                        <a href="#lcplinux">
+                          <Image className="image" src="/icons/crossplatform/icoLinux.svg" alt={t('getourappLinux')} width={50} height={50} />
+                        </a>
+                      </li>
+                      <li className="ms-2">
+                        <a href="#lcpmacos">
+                          <Image className="image" src="/icons/crossplatform/icoMacOS.svg" alt={t('getourappMacOS')} width={50} height={50} />
+                        </a>
+                      </li>
+                      <li className="ms-2">
+                        <a href="#lcpandroid">
+                          <Image className="image" src="/icons/crossplatform/icoAndroid.svg" alt={t('getourappAndroid')} width={50} height={50} />
+                        </a>
+                      </li>
+                      <li className="ms-2">
+                        <a href="#lcpiphone">
+                          <Image className="image" src="/icons/crossplatform/icoiPhone.svg" alt={t('getourappiPhone')} width={50} height={50} />
+                        </a>
+                      </li>
+                    </ul>
+                  </>
+                )}
               </div>
               <div className="col-12 col-md-6">
                 <Image className="image w-100 imggadgets" src="/icons/crossplatform/gadgets.svg" alt={t('getourappGadgets')} width={350} height={350} />

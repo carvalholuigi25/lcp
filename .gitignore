@@ -38,3 +38,5 @@ next-env.d.ts
 dist/
 backend/api/LCPApi/bin
 backend/api/LCPApi/obj
+
+*.log

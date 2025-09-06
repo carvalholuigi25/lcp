@@ -5,21 +5,31 @@
 
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const withNextIntl = require('next-intl/plugin')('./src/app/i18n/request.ts');
-const defLocale = "en";
+const ctoutput = process.env.OUTPUTEXP == 0 ? undefined : process.env.OUTPUTEXP == 1 ? 'export' : 'standalone';
+const defLocale = process.env.LANG_DEFAULT ?? "en";
 
-module.exports = withNextIntl({
+const getRedirects = async () => {
+  return [
+    {
+      source: '/',
+      destination: '/'+defLocale,
+      permanent: true,
+    }
+  ];
+}
+
+const nextConfig = {
     experimental: {
         webpackBuildWorker: true
     },
     reactStrictMode: false,
-    output: process.env.OUTPUTEXP == 0 ? undefined : process.env.OUTPUTEXP == 1 ? 'export' : 'standalone',
-    async redirects() {
-        return [
-          {
-            source: '/',
-            destination: '/'+defLocale,
-            permanent: true,
-          }
-        ]
-    },
-});
+    output: ctoutput == 'export' ? undefined : ctoutput
+}
+
+if(ctoutput !== 'export') {
+  nextConfig.redirects = async () => {
+    return getRedirects();
+  };
+}
+
+module.exports = withNextIntl(nextConfig);

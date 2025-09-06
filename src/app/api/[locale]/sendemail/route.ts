@@ -21,5 +21,5 @@ export async function POST(req: NextRequest) {
   };
 
   await sendMailUtil(dataobj);
-  return NextResponse.json({ dataobj });
+  return NextResponse.json({ message: 'Email sent successfully' });
 }
