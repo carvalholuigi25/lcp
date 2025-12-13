@@ -8,6 +8,7 @@
     "build": "next build --turbopack",
     "start": "next start",
     "lint": "next lint",
+    "startall": "concurrently \"npm run api\" \"npm run dev\"",
     "clear": "npm cache verify --force",
     "remgendirs": "rmdir /s /q .next & rmdir /s /q out",
     "clearnbuild": "npm run remgendirs & npm run clear && cross-env TYPEENV='production' OUTPUTEXP=0 npm run build",
@@ -23,35 +24,36 @@
     "animate.css": "^4.1.1",
     "bootstrap": "^5.3.8",
     "bootstrap-icons": "^1.13.1",
-    "chart.js": "^4.5.0",
-    "dotenv": "^17.2.1",
+    "chart.js": "^4.5.1",
+    "dotenv": "^17.2.3",
     "geoip-lite": "^1.4.10",
-    "next": "^15.5.2",
-    "next-intl": "^4.3.5",
-    "nodemailer": "^7.0.6",
+    "next": "^16.0.10",
+    "next-intl": "^4.6.0",
+    "nodemailer": "^7.0.11",
     "react": "latest",
     "react-bootstrap": "^2.10.10",
-    "react-chartjs-2": "^5.3.0",
+    "react-chartjs-2": "^5.3.1",
     "react-dom": "latest",
-    "sass": "^1.91.0",
-    "sharp": "^0.34.3"
+    "sass": "^1.96.0",
+    "sharp": "^0.34.5"
   },
   "devDependencies": {
     "@types/bootstrap": "^5.2.10",
     "@types/negotiator": "^0.6.4",
     "@types/node": "latest",
-    "@types/nodemailer": "^7.0.1",
+    "@types/nodemailer": "^7.0.4",
     "@types/react": "latest",
     "@types/react-bootstrap": "^1.1.0",
     "@types/react-dom": "latest",
-    "cross-env": "^10.0.0",
+    "concurrently": "^9.2.1",
+    "cross-env": "^10.1.0",
     "eslint": "latest",
     "eslint-config-next": "latest",
     "typescript": "latest"
   },
   "overrides": {
     "next-intl": {
-      "next": "^15.5.2"
+      "next": "^16.0.10"
     }
   }
 }
