@@ -2,7 +2,7 @@ import { chain } from '@/middlewares/chain';
 import { withI18nMiddleware } from '@/middlewares/withI18nMiddleware';
 import { NextRequest, NextResponse } from 'next/server';
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const headers = new Headers(request.headers);
   headers.set("x-current-path", request.nextUrl.pathname);
   headers.set("x-current-href", request.nextUrl.href);
