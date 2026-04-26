@@ -40,3 +40,7 @@ backend/api/LCPApi/bin
 backend/api/LCPApi/obj
 
 *.log
+.env
+.env.development
+.env.production
+.env.test
