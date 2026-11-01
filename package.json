@@ -23,29 +23,29 @@
     "@popperjs/core": "^2.11.8",
     "animate.css": "^4.1.1",
     "bootstrap": "^5.3.8",
-    "bootstrap-icons": "^1.13.1",
-    "chart.js": "^4.5.1",
-    "dotenv": "^17.4.2",
-    "geoip-lite": "^2.0.1",
-    "next": "^16.2.4",
-    "next-intl": "^4.9.1",
-    "nodemailer": "^10.0.3",
+    "bootstrap-icons": "^1.13.2",
+    "chart.js": "^4.6.1",
+    "dotenv": "^18.0.9",
+    "geoip-lite": "^2.0.3",
+    "next": "^16.4.3",
+    "next-intl": "^4.14.9",
+    "nodemailer": "^10.3.1",
     "react": "latest",
     "react-bootstrap": "^2.10.10",
     "react-chartjs-2": "^5.3.1",
     "react-dom": "latest",
-    "sass": "^1.99.0",
-    "sharp": "^0.35.4"
+    "sass": "^1.107.1",
+    "sharp": "^0.35.5"
   },
   "devDependencies": {
-    "@types/bootstrap": "^5.2.10",
-    "@types/negotiator": "^0.6.4",
+    "@types/bootstrap": "^5.2.11",
+    "@types/negotiator": "^0.6.5",
     "@types/node": "latest",
-    "@types/nodemailer": "^8.0.0",
+    "@types/nodemailer": "^8.0.2",
     "@types/react": "latest",
     "@types/react-bootstrap": "^1.1.0",
     "@types/react-dom": "latest",
-    "concurrently": "^9.2.1",
+    "concurrently": "^10.0.6",
     "cross-env": "^10.1.0",
     "eslint": "latest",
     "eslint-config-next": "latest",
@@ -53,7 +53,7 @@
   },
   "overrides": {
     "next-intl": {
-      "next": "^16.2.4"
+      "next": "^16.4.3"
     }
   }
 }
